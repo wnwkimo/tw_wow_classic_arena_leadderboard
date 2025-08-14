@@ -1,0 +1,98 @@
+/* Main styles for Arena Leaderboard */
+:root {
+  --background-color: #0c1a2f; /* 深藍色背景 */
+  --text-color: #e6eef6;
+  --primary-color: #007bff; /* 主要按鈕顏色 */
+  --secondary-color: #6c757d; /* 次要按鈕顏色 */
+  --highlight-color: #a9d1ff; /* 連結高亮顏色 */
+  --table-header-bg: #1a2a40; /* 表格標題背景 */
+  --table-row-bg-odd: #101c2e; /* 奇數行背景 */
+  --table-row-bg-even: #142136; /* 偶數行背景 */
+}
+
+body {
+  background-color: var(--background-color);
+  color: var(--text-color);
+  font-family: 'Inter', system-ui, Arial, sans-serif;
+}
+.container { 
+  margin-top: 28px; 
+}
+.summary-text { 
+  color: #f4f7fb; 
+  font-weight: 600; 
+}
+.class-race-container { 
+  white-space: nowrap; 
+  display:flex; 
+  align-items:center; 
+  gap: 6px; 
+}
+.class-race-container img { 
+  width:20px; 
+  height:20px; 
+  border-radius:3px; 
+}
+a.name-link { 
+  cursor: pointer; 
+  color: var(--highlight-color); 
+  text-decoration: none; 
+}
+a.name-link:hover { 
+  text-decoration: underline; 
+}
+canvas { 
+  background: #fff; 
+  border-radius: 8px; 
+  padding: 8px; 
+}
+.text-muted { 
+  opacity: 0.8; 
+}
+.member-names-hidden { 
+  display:none; 
+}
+
+/* DataTables and Bootstrap overrides for better aesthetics */
+.table-striped > tbody > tr:nth-of-type(odd) {
+  background-color: var(--table-row-bg-odd);
+}
+.table-striped > tbody > tr:nth-of-type(even) {
+  background-color: var(--table-row-bg-even);
+}
+.table-dark {
+  --bs-table-bg: var(--background-color);
+  --bs-table-striped-bg: var(--table-row-bg-odd);
+  --bs-table-striped-color: var(--text-color);
+}
+.table-dark thead th {
+  background-color: var(--table-header-bg);
+  border-bottom-color: #333;
+  color: var(--text-color);
+}
+.table-dark th, .table-dark td {
+  border-color: #222;
+}
+.dataTables_wrapper .dataTables_paginate .paginate_button.current, .dataTables_wrapper .dataTables_paginate .paginate_button.current:hover {
+  background: var(--primary-color) !important;
+  border-color: var(--primary-color) !important;
+}
+.dataTables_wrapper .dataTables_paginate .paginate_button {
+  color: var(--text-color) !important;
+  background: #333 !important;
+}
+.dataTables_wrapper .dataTables_filter input {
+  background-color: #333;
+  color: var(--text-color);
+  border: 1px solid #555;
+}
+.modal-content {
+  background-color: #1a2a40;
+  color: var(--text-color);
+}
+.modal-header {
+  border-bottom: 1px solid #333;
+}
+.modal-footer {
+  border-top: 1px solid #333;
+}

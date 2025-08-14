@@ -1,0 +1,18 @@
+{
+  "_links": {
+    "self": {
+      "href": "https://tw.api.blizzard.com/data/wow/pvp-season/11/pvp-leaderboard/5v5?namespace=dynamic-classic-tw"
+    }
+  },
+  "season": {
+    "key": {
+      "href": "https://tw.api.blizzard.com/data/wow/pvp-season/11?namespace=dynamic-classic-tw"
+    },
+    "id": 11
+  },
+  "name": "5v5",
+  "bracket": {
+    "id": 2,
+    "type": "ARENA_5v5"
+  }
+}
