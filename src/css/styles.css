@@ -376,6 +376,18 @@ canvas {
   border-color: #545b62 !important;
 }
 
+.file-upload-btn {
+  position: fixed;
+  top: 10px;
+  left: 10px;
+  z-index: 1000;
+  font-size: 12px;
+  padding: 6px 12px;
+}
+.file-upload-btn input[type="file"] {
+  display: none;
+}
+
 /* Bootstrap Grid System Background Reset */
 .row, .col, .col-auto, .col-1, .col-2, .col-3, .col-4, .col-5, .col-6,
 .col-7, .col-8, .col-9, .col-10, .col-11, .col-12,
