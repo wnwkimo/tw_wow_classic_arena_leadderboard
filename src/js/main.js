@@ -29,7 +29,7 @@ async function onFileSelected(file){
 async function onLoadFromGithub(){
   const season = document.getElementById('seasonSelect').value;
   const bracket = document.getElementById('bracketSelect').value;
-  const url = `https://wnwkimo.github.io/tw_wow_classic_arena_leadderboard/data/season_${season}_${bracket}_tw_arena.json`;
+  const url = `https://wnwkimo.github.io/tw_wow_classic_arena_leadderboard/../data/season_${season}_${bracket}_tw_arena.json`;
   try {
     const list = await loadFromUrl(url);
     currentVisible = list;
