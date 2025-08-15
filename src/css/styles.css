@@ -387,7 +387,11 @@ canvas {
 .file-upload-btn input[type="file"] {
   display: none;
 }
-
+.table-striped tbody tr:hover {
+  background-color: rgba(0,123,255,0.2) !important;
+  transform: scale(1.01);
+  transition: all 0.2s ease-in-out;
+}
 /* Bootstrap Grid System Background Reset */
 .row, .col, .col-auto, .col-1, .col-2, .col-3, .col-4, .col-5, .col-6,
 .col-7, .col-8, .col-9, .col-10, .col-11, .col-12,
