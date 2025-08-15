@@ -64,6 +64,7 @@ html::before {
   max-width: 100%;
   padding-left: 15px;
   padding-right: 15px;
+  white-space: nowrap;
 }
 
 .container-fluid, 
@@ -74,6 +75,7 @@ html::before {
 .container-xl,
 .container-xxl {
   background-color: var(--background-color) !important;
+  white-space: nowrap;
 }
 
 #app {
@@ -141,6 +143,10 @@ canvas {
   padding: 8px; 
 }
 
+#memberTable 
+td:nth-child(2) {
+  white-space: nowrap;
+}
 .member-names-hidden { 
   display: none; 
 }
@@ -355,9 +361,11 @@ canvas {
 }
 
 .btn-primary {
-  background: linear-gradient(135deg, #007bff, #0056b3) !important;
-  border-color: #007bff !important;
-  color: #ffffff !important;
+  animation: pulseGlow 2s infinite;
+}
+@keyframes pulseGlow {
+  0%,100% { box-shadow: 0 0 8px rgba(0,123,255,0.6); }
+  50% { box-shadow: 0 0 16px rgba(0,123,255,1); }
 }
 
 .btn-primary:hover {
