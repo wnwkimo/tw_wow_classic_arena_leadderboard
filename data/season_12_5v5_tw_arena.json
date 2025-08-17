@@ -26,6 +26,20 @@
           },
           "id": 4487,
           "slug": "ivus"
+        },
+        "playable_class": {
+          "key": {
+            "href": "https://tw.api.blizzard.com/data/wow/playable-class/1?namespace=static-5.5.0_61496-classic-tw"
+          },
+          "name": null,
+          "id": 1
+        },
+        "playable_race": {
+          "key": {
+            "href": "https://tw.api.blizzard.com/data/wow/playable-race/1?namespace=static-5.5.0_61496-classic-tw"
+          },
+          "name": null,
+          "id": 1
         }
       },
       "faction": {
@@ -55,6 +69,20 @@
           },
           "id": 4487,
           "slug": "ivus"
+        },
+        "playable_class": {
+          "key": {
+            "href": "https://tw.api.blizzard.com/data/wow/playable-class/2?namespace=static-5.5.0_61496-classic-tw"
+          },
+          "name": null,
+          "id": 2
+        },
+        "playable_race": {
+          "key": {
+            "href": "https://tw.api.blizzard.com/data/wow/playable-race/1?namespace=static-5.5.0_61496-classic-tw"
+          },
+          "name": null,
+          "id": 1
         }
       },
       "faction": {
@@ -84,6 +112,20 @@
           },
           "id": 4487,
           "slug": "ivus"
+        },
+        "playable_class": {
+          "key": {
+            "href": "https://tw.api.blizzard.com/data/wow/playable-class/9?namespace=static-5.5.0_61496-classic-tw"
+          },
+          "name": null,
+          "id": 9
+        },
+        "playable_race": {
+          "key": {
+            "href": "https://tw.api.blizzard.com/data/wow/playable-race/1?namespace=static-5.5.0_61496-classic-tw"
+          },
+          "name": null,
+          "id": 1
         }
       },
       "faction": {
@@ -113,6 +155,20 @@
           },
           "id": 4487,
           "slug": "ivus"
+        },
+        "playable_class": {
+          "key": {
+            "href": "https://tw.api.blizzard.com/data/wow/playable-class/2?namespace=static-5.5.0_61496-classic-tw"
+          },
+          "name": null,
+          "id": 2
+        },
+        "playable_race": {
+          "key": {
+            "href": "https://tw.api.blizzard.com/data/wow/playable-race/1?namespace=static-5.5.0_61496-classic-tw"
+          },
+          "name": null,
+          "id": 1
         }
       },
       "faction": {
@@ -142,6 +198,20 @@
           },
           "id": 4485,
           "slug": "maraudon"
+        },
+        "playable_class": {
+          "key": {
+            "href": "https://tw.api.blizzard.com/data/wow/playable-class/10?namespace=static-5.5.0_61496-classic-tw"
+          },
+          "name": null,
+          "id": 10
+        },
+        "playable_race": {
+          "key": {
+            "href": "https://tw.api.blizzard.com/data/wow/playable-race/25?namespace=static-5.5.0_61496-classic-tw"
+          },
+          "name": null,
+          "id": 25
         }
       },
       "faction": {
@@ -171,6 +241,20 @@
           },
           "id": 4485,
           "slug": "maraudon"
+        },
+        "playable_class": {
+          "key": {
+            "href": "https://tw.api.blizzard.com/data/wow/playable-class/7?namespace=static-5.5.0_61496-classic-tw"
+          },
+          "name": null,
+          "id": 7
+        },
+        "playable_race": {
+          "key": {
+            "href": "https://tw.api.blizzard.com/data/wow/playable-race/11?namespace=static-5.5.0_61496-classic-tw"
+          },
+          "name": null,
+          "id": 11
         }
       },
       "faction": {
@@ -200,6 +284,20 @@
           },
           "id": 4485,
           "slug": "maraudon"
+        },
+        "playable_class": {
+          "key": {
+            "href": "https://tw.api.blizzard.com/data/wow/playable-class/3?namespace=static-5.5.0_61496-classic-tw"
+          },
+          "name": null,
+          "id": 3
+        },
+        "playable_race": {
+          "key": {
+            "href": "https://tw.api.blizzard.com/data/wow/playable-race/11?namespace=static-5.5.0_61496-classic-tw"
+          },
+          "name": null,
+          "id": 11
         }
       },
       "faction": {
@@ -229,6 +327,20 @@
           },
           "id": 4485,
           "slug": "maraudon"
+        },
+        "playable_class": {
+          "key": {
+            "href": "https://tw.api.blizzard.com/data/wow/playable-class/3?namespace=static-5.5.0_61496-classic-tw"
+          },
+          "name": null,
+          "id": 3
+        },
+        "playable_race": {
+          "key": {
+            "href": "https://tw.api.blizzard.com/data/wow/playable-race/4?namespace=static-5.5.0_61496-classic-tw"
+          },
+          "name": null,
+          "id": 4
         }
       },
       "faction": {
@@ -287,6 +399,20 @@
           },
           "id": 4487,
           "slug": "ivus"
+        },
+        "playable_class": {
+          "key": {
+            "href": "https://tw.api.blizzard.com/data/wow/playable-class/10?namespace=static-5.5.0_61496-classic-tw"
+          },
+          "name": null,
+          "id": 10
+        },
+        "playable_race": {
+          "key": {
+            "href": "https://tw.api.blizzard.com/data/wow/playable-race/25?namespace=static-5.5.0_61496-classic-tw"
+          },
+          "name": null,
+          "id": 25
         }
       },
       "faction": {
@@ -316,6 +442,20 @@
           },
           "id": 4485,
           "slug": "maraudon"
+        },
+        "playable_class": {
+          "key": {
+            "href": "https://tw.api.blizzard.com/data/wow/playable-class/5?namespace=static-5.5.0_61496-classic-tw"
+          },
+          "name": null,
+          "id": 5
+        },
+        "playable_race": {
+          "key": {
+            "href": "https://tw.api.blizzard.com/data/wow/playable-race/11?namespace=static-5.5.0_61496-classic-tw"
+          },
+          "name": null,
+          "id": 11
         }
       },
       "faction": {
@@ -345,6 +485,20 @@
           },
           "id": 4487,
           "slug": "ivus"
+        },
+        "playable_class": {
+          "key": {
+            "href": "https://tw.api.blizzard.com/data/wow/playable-class/1?namespace=static-5.5.0_61496-classic-tw"
+          },
+          "name": null,
+          "id": 1
+        },
+        "playable_race": {
+          "key": {
+            "href": "https://tw.api.blizzard.com/data/wow/playable-race/1?namespace=static-5.5.0_61496-classic-tw"
+          },
+          "name": null,
+          "id": 1
         }
       },
       "faction": {
@@ -374,6 +528,20 @@
           },
           "id": 4487,
           "slug": "ivus"
+        },
+        "playable_class": {
+          "key": {
+            "href": "https://tw.api.blizzard.com/data/wow/playable-class/11?namespace=static-5.5.0_61496-classic-tw"
+          },
+          "name": null,
+          "id": 11
+        },
+        "playable_race": {
+          "key": {
+            "href": "https://tw.api.blizzard.com/data/wow/playable-race/4?namespace=static-5.5.0_61496-classic-tw"
+          },
+          "name": null,
+          "id": 4
         }
       },
       "faction": {
@@ -403,6 +571,20 @@
           },
           "id": 4487,
           "slug": "ivus"
+        },
+        "playable_class": {
+          "key": {
+            "href": "https://tw.api.blizzard.com/data/wow/playable-class/1?namespace=static-5.5.0_61496-classic-tw"
+          },
+          "name": null,
+          "id": 1
+        },
+        "playable_race": {
+          "key": {
+            "href": "https://tw.api.blizzard.com/data/wow/playable-race/1?namespace=static-5.5.0_61496-classic-tw"
+          },
+          "name": null,
+          "id": 1
         }
       },
       "faction": {
@@ -432,6 +614,20 @@
           },
           "id": 4487,
           "slug": "ivus"
+        },
+        "playable_class": {
+          "key": {
+            "href": "https://tw.api.blizzard.com/data/wow/playable-class/7?namespace=static-5.5.0_61496-classic-tw"
+          },
+          "name": null,
+          "id": 7
+        },
+        "playable_race": {
+          "key": {
+            "href": "https://tw.api.blizzard.com/data/wow/playable-race/11?namespace=static-5.5.0_61496-classic-tw"
+          },
+          "name": null,
+          "id": 11
         }
       },
       "faction": {
@@ -461,6 +657,20 @@
           },
           "id": 4487,
           "slug": "ivus"
+        },
+        "playable_class": {
+          "key": {
+            "href": "https://tw.api.blizzard.com/data/wow/playable-class/7?namespace=static-5.5.0_61496-classic-tw"
+          },
+          "name": null,
+          "id": 7
+        },
+        "playable_race": {
+          "key": {
+            "href": "https://tw.api.blizzard.com/data/wow/playable-race/3?namespace=static-5.5.0_61496-classic-tw"
+          },
+          "name": null,
+          "id": 3
         }
       },
       "faction": {
@@ -490,6 +700,20 @@
           },
           "id": 4487,
           "slug": "ivus"
+        },
+        "playable_class": {
+          "key": {
+            "href": "https://tw.api.blizzard.com/data/wow/playable-class/4?namespace=static-5.5.0_61496-classic-tw"
+          },
+          "name": null,
+          "id": 4
+        },
+        "playable_race": {
+          "key": {
+            "href": "https://tw.api.blizzard.com/data/wow/playable-race/1?namespace=static-5.5.0_61496-classic-tw"
+          },
+          "name": null,
+          "id": 1
         }
       },
       "faction": {
@@ -519,6 +743,20 @@
           },
           "id": 4485,
           "slug": "maraudon"
+        },
+        "playable_class": {
+          "key": {
+            "href": "https://tw.api.blizzard.com/data/wow/playable-class/8?namespace=static-5.5.0_61496-classic-tw"
+          },
+          "name": null,
+          "id": 8
+        },
+        "playable_race": {
+          "key": {
+            "href": "https://tw.api.blizzard.com/data/wow/playable-race/1?namespace=static-5.5.0_61496-classic-tw"
+          },
+          "name": null,
+          "id": 1
         }
       },
       "faction": {
@@ -548,6 +786,20 @@
           },
           "id": 4487,
           "slug": "ivus"
+        },
+        "playable_class": {
+          "key": {
+            "href": "https://tw.api.blizzard.com/data/wow/playable-class/11?namespace=static-5.5.0_61496-classic-tw"
+          },
+          "name": null,
+          "id": 11
+        },
+        "playable_race": {
+          "key": {
+            "href": "https://tw.api.blizzard.com/data/wow/playable-race/4?namespace=static-5.5.0_61496-classic-tw"
+          },
+          "name": null,
+          "id": 4
         }
       },
       "faction": {
@@ -577,6 +829,20 @@
           },
           "id": 4487,
           "slug": "ivus"
+        },
+        "playable_class": {
+          "key": {
+            "href": "https://tw.api.blizzard.com/data/wow/playable-class/5?namespace=static-5.5.0_61496-classic-tw"
+          },
+          "name": null,
+          "id": 5
+        },
+        "playable_race": {
+          "key": {
+            "href": "https://tw.api.blizzard.com/data/wow/playable-race/22?namespace=static-5.5.0_61496-classic-tw"
+          },
+          "name": null,
+          "id": 22
         }
       },
       "faction": {
@@ -606,6 +872,20 @@
           },
           "id": 4487,
           "slug": "ivus"
+        },
+        "playable_class": {
+          "key": {
+            "href": "https://tw.api.blizzard.com/data/wow/playable-class/5?namespace=static-5.5.0_61496-classic-tw"
+          },
+          "name": null,
+          "id": 5
+        },
+        "playable_race": {
+          "key": {
+            "href": "https://tw.api.blizzard.com/data/wow/playable-race/1?namespace=static-5.5.0_61496-classic-tw"
+          },
+          "name": null,
+          "id": 1
         }
       },
       "faction": {
@@ -635,6 +915,20 @@
           },
           "id": 4487,
           "slug": "ivus"
+        },
+        "playable_class": {
+          "key": {
+            "href": "https://tw.api.blizzard.com/data/wow/playable-class/9?namespace=static-5.5.0_61496-classic-tw"
+          },
+          "name": null,
+          "id": 9
+        },
+        "playable_race": {
+          "key": {
+            "href": "https://tw.api.blizzard.com/data/wow/playable-race/2?namespace=static-5.5.0_61496-classic-tw"
+          },
+          "name": null,
+          "id": 2
         }
       },
       "faction": {
@@ -664,6 +958,20 @@
           },
           "id": 4487,
           "slug": "ivus"
+        },
+        "playable_class": {
+          "key": {
+            "href": "https://tw.api.blizzard.com/data/wow/playable-class/7?namespace=static-5.5.0_61496-classic-tw"
+          },
+          "name": null,
+          "id": 7
+        },
+        "playable_race": {
+          "key": {
+            "href": "https://tw.api.blizzard.com/data/wow/playable-race/8?namespace=static-5.5.0_61496-classic-tw"
+          },
+          "name": null,
+          "id": 8
         }
       },
       "faction": {
@@ -693,6 +1001,20 @@
           },
           "id": 4487,
           "slug": "ivus"
+        },
+        "playable_class": {
+          "key": {
+            "href": "https://tw.api.blizzard.com/data/wow/playable-class/8?namespace=static-5.5.0_61496-classic-tw"
+          },
+          "name": null,
+          "id": 8
+        },
+        "playable_race": {
+          "key": {
+            "href": "https://tw.api.blizzard.com/data/wow/playable-race/8?namespace=static-5.5.0_61496-classic-tw"
+          },
+          "name": null,
+          "id": 8
         }
       },
       "faction": {
@@ -722,6 +1044,20 @@
           },
           "id": 4487,
           "slug": "ivus"
+        },
+        "playable_class": {
+          "key": {
+            "href": "https://tw.api.blizzard.com/data/wow/playable-class/2?namespace=static-5.5.0_61496-classic-tw"
+          },
+          "name": null,
+          "id": 2
+        },
+        "playable_race": {
+          "key": {
+            "href": "https://tw.api.blizzard.com/data/wow/playable-race/10?namespace=static-5.5.0_61496-classic-tw"
+          },
+          "name": null,
+          "id": 10
         }
       },
       "faction": {
@@ -751,6 +1087,20 @@
           },
           "id": 4485,
           "slug": "maraudon"
+        },
+        "playable_class": {
+          "key": {
+            "href": "https://tw.api.blizzard.com/data/wow/playable-class/9?namespace=static-5.5.0_61496-classic-tw"
+          },
+          "name": null,
+          "id": 9
+        },
+        "playable_race": {
+          "key": {
+            "href": "https://tw.api.blizzard.com/data/wow/playable-race/1?namespace=static-5.5.0_61496-classic-tw"
+          },
+          "name": null,
+          "id": 1
         }
       },
       "faction": {
@@ -780,6 +1130,20 @@
           },
           "id": 4487,
           "slug": "ivus"
+        },
+        "playable_class": {
+          "key": {
+            "href": "https://tw.api.blizzard.com/data/wow/playable-class/6?namespace=static-5.5.0_61496-classic-tw"
+          },
+          "name": null,
+          "id": 6
+        },
+        "playable_race": {
+          "key": {
+            "href": "https://tw.api.blizzard.com/data/wow/playable-race/8?namespace=static-5.5.0_61496-classic-tw"
+          },
+          "name": null,
+          "id": 8
         }
       },
       "faction": {
@@ -809,6 +1173,20 @@
           },
           "id": 4487,
           "slug": "ivus"
+        },
+        "playable_class": {
+          "key": {
+            "href": "https://tw.api.blizzard.com/data/wow/playable-class/3?namespace=static-5.5.0_61496-classic-tw"
+          },
+          "name": null,
+          "id": 3
+        },
+        "playable_race": {
+          "key": {
+            "href": "https://tw.api.blizzard.com/data/wow/playable-race/8?namespace=static-5.5.0_61496-classic-tw"
+          },
+          "name": null,
+          "id": 8
         }
       },
       "faction": {
@@ -838,6 +1216,20 @@
           },
           "id": 4487,
           "slug": "ivus"
+        },
+        "playable_class": {
+          "key": {
+            "href": "https://tw.api.blizzard.com/data/wow/playable-class/7?namespace=static-5.5.0_61496-classic-tw"
+          },
+          "name": null,
+          "id": 7
+        },
+        "playable_race": {
+          "key": {
+            "href": "https://tw.api.blizzard.com/data/wow/playable-race/8?namespace=static-5.5.0_61496-classic-tw"
+          },
+          "name": null,
+          "id": 8
         }
       },
       "faction": {
@@ -867,6 +1259,20 @@
           },
           "id": 4487,
           "slug": "ivus"
+        },
+        "playable_class": {
+          "key": {
+            "href": "https://tw.api.blizzard.com/data/wow/playable-class/1?namespace=static-5.5.0_61496-classic-tw"
+          },
+          "name": null,
+          "id": 1
+        },
+        "playable_race": {
+          "key": {
+            "href": "https://tw.api.blizzard.com/data/wow/playable-race/2?namespace=static-5.5.0_61496-classic-tw"
+          },
+          "name": null,
+          "id": 2
         }
       },
       "faction": {
@@ -896,6 +1302,20 @@
           },
           "id": 4487,
           "slug": "ivus"
+        },
+        "playable_class": {
+          "key": {
+            "href": "https://tw.api.blizzard.com/data/wow/playable-class/5?namespace=static-5.5.0_61496-classic-tw"
+          },
+          "name": null,
+          "id": 5
+        },
+        "playable_race": {
+          "key": {
+            "href": "https://tw.api.blizzard.com/data/wow/playable-race/10?namespace=static-5.5.0_61496-classic-tw"
+          },
+          "name": null,
+          "id": 10
         }
       },
       "faction": {
@@ -925,6 +1345,20 @@
           },
           "id": 4487,
           "slug": "ivus"
+        },
+        "playable_class": {
+          "key": {
+            "href": "https://tw.api.blizzard.com/data/wow/playable-class/10?namespace=static-5.5.0_61496-classic-tw"
+          },
+          "name": null,
+          "id": 10
+        },
+        "playable_race": {
+          "key": {
+            "href": "https://tw.api.blizzard.com/data/wow/playable-race/26?namespace=static-5.5.0_61496-classic-tw"
+          },
+          "name": null,
+          "id": 26
         }
       },
       "faction": {
@@ -954,6 +1388,20 @@
           },
           "id": 4487,
           "slug": "ivus"
+        },
+        "playable_class": {
+          "key": {
+            "href": "https://tw.api.blizzard.com/data/wow/playable-class/10?namespace=static-5.5.0_61496-classic-tw"
+          },
+          "name": null,
+          "id": 10
+        },
+        "playable_race": {
+          "key": {
+            "href": "https://tw.api.blizzard.com/data/wow/playable-race/26?namespace=static-5.5.0_61496-classic-tw"
+          },
+          "name": null,
+          "id": 26
         }
       },
       "faction": {
@@ -983,6 +1431,20 @@
           },
           "id": 4487,
           "slug": "ivus"
+        },
+        "playable_class": {
+          "key": {
+            "href": "https://tw.api.blizzard.com/data/wow/playable-class/2?namespace=static-5.5.0_61496-classic-tw"
+          },
+          "name": null,
+          "id": 2
+        },
+        "playable_race": {
+          "key": {
+            "href": "https://tw.api.blizzard.com/data/wow/playable-race/10?namespace=static-5.5.0_61496-classic-tw"
+          },
+          "name": null,
+          "id": 10
         }
       },
       "faction": {
@@ -1012,6 +1474,20 @@
           },
           "id": 4487,
           "slug": "ivus"
+        },
+        "playable_class": {
+          "key": {
+            "href": "https://tw.api.blizzard.com/data/wow/playable-class/5?namespace=static-5.5.0_61496-classic-tw"
+          },
+          "name": null,
+          "id": 5
+        },
+        "playable_race": {
+          "key": {
+            "href": "https://tw.api.blizzard.com/data/wow/playable-race/8?namespace=static-5.5.0_61496-classic-tw"
+          },
+          "name": null,
+          "id": 8
         }
       },
       "faction": {
@@ -1041,6 +1517,20 @@
           },
           "id": 4487,
           "slug": "ivus"
+        },
+        "playable_class": {
+          "key": {
+            "href": "https://tw.api.blizzard.com/data/wow/playable-class/7?namespace=static-5.5.0_61496-classic-tw"
+          },
+          "name": null,
+          "id": 7
+        },
+        "playable_race": {
+          "key": {
+            "href": "https://tw.api.blizzard.com/data/wow/playable-race/8?namespace=static-5.5.0_61496-classic-tw"
+          },
+          "name": null,
+          "id": 8
         }
       },
       "faction": {
@@ -1070,6 +1560,20 @@
           },
           "id": 4487,
           "slug": "ivus"
+        },
+        "playable_class": {
+          "key": {
+            "href": "https://tw.api.blizzard.com/data/wow/playable-class/10?namespace=static-5.5.0_61496-classic-tw"
+          },
+          "name": null,
+          "id": 10
+        },
+        "playable_race": {
+          "key": {
+            "href": "https://tw.api.blizzard.com/data/wow/playable-race/10?namespace=static-5.5.0_61496-classic-tw"
+          },
+          "name": null,
+          "id": 10
         }
       },
       "faction": {
@@ -1099,6 +1603,20 @@
           },
           "id": 4487,
           "slug": "ivus"
+        },
+        "playable_class": {
+          "key": {
+            "href": "https://tw.api.blizzard.com/data/wow/playable-class/6?namespace=static-5.5.0_61496-classic-tw"
+          },
+          "name": null,
+          "id": 6
+        },
+        "playable_race": {
+          "key": {
+            "href": "https://tw.api.blizzard.com/data/wow/playable-race/10?namespace=static-5.5.0_61496-classic-tw"
+          },
+          "name": null,
+          "id": 10
         }
       },
       "faction": {
@@ -1128,6 +1646,20 @@
           },
           "id": 4487,
           "slug": "ivus"
+        },
+        "playable_class": {
+          "key": {
+            "href": "https://tw.api.blizzard.com/data/wow/playable-class/3?namespace=static-5.5.0_61496-classic-tw"
+          },
+          "name": null,
+          "id": 3
+        },
+        "playable_race": {
+          "key": {
+            "href": "https://tw.api.blizzard.com/data/wow/playable-race/26?namespace=static-5.5.0_61496-classic-tw"
+          },
+          "name": null,
+          "id": 26
         }
       },
       "faction": {
@@ -1157,6 +1689,20 @@
           },
           "id": 4487,
           "slug": "ivus"
+        },
+        "playable_class": {
+          "key": {
+            "href": "https://tw.api.blizzard.com/data/wow/playable-class/8?namespace=static-5.5.0_61496-classic-tw"
+          },
+          "name": null,
+          "id": 8
+        },
+        "playable_race": {
+          "key": {
+            "href": "https://tw.api.blizzard.com/data/wow/playable-race/8?namespace=static-5.5.0_61496-classic-tw"
+          },
+          "name": null,
+          "id": 8
         }
       },
       "faction": {
@@ -1186,6 +1732,20 @@
           },
           "id": 4487,
           "slug": "ivus"
+        },
+        "playable_class": {
+          "key": {
+            "href": "https://tw.api.blizzard.com/data/wow/playable-class/10?namespace=static-5.5.0_61496-classic-tw"
+          },
+          "name": null,
+          "id": 10
+        },
+        "playable_race": {
+          "key": {
+            "href": "https://tw.api.blizzard.com/data/wow/playable-race/2?namespace=static-5.5.0_61496-classic-tw"
+          },
+          "name": null,
+          "id": 2
         }
       },
       "faction": {
@@ -1215,6 +1775,20 @@
           },
           "id": 4487,
           "slug": "ivus"
+        },
+        "playable_class": {
+          "key": {
+            "href": "https://tw.api.blizzard.com/data/wow/playable-class/7?namespace=static-5.5.0_61496-classic-tw"
+          },
+          "name": null,
+          "id": 7
+        },
+        "playable_race": {
+          "key": {
+            "href": "https://tw.api.blizzard.com/data/wow/playable-race/8?namespace=static-5.5.0_61496-classic-tw"
+          },
+          "name": null,
+          "id": 8
         }
       },
       "faction": {
@@ -1244,6 +1818,20 @@
           },
           "id": 4487,
           "slug": "ivus"
+        },
+        "playable_class": {
+          "key": {
+            "href": "https://tw.api.blizzard.com/data/wow/playable-class/3?namespace=static-5.5.0_61496-classic-tw"
+          },
+          "name": null,
+          "id": 3
+        },
+        "playable_race": {
+          "key": {
+            "href": "https://tw.api.blizzard.com/data/wow/playable-race/2?namespace=static-5.5.0_61496-classic-tw"
+          },
+          "name": null,
+          "id": 2
         }
       },
       "faction": {
@@ -1273,6 +1861,20 @@
           },
           "id": 4487,
           "slug": "ivus"
+        },
+        "playable_class": {
+          "key": {
+            "href": "https://tw.api.blizzard.com/data/wow/playable-class/9?namespace=static-5.5.0_61496-classic-tw"
+          },
+          "name": null,
+          "id": 9
+        },
+        "playable_race": {
+          "key": {
+            "href": "https://tw.api.blizzard.com/data/wow/playable-race/8?namespace=static-5.5.0_61496-classic-tw"
+          },
+          "name": null,
+          "id": 8
         }
       },
       "faction": {
@@ -1302,6 +1904,20 @@
           },
           "id": 4487,
           "slug": "ivus"
+        },
+        "playable_class": {
+          "key": {
+            "href": "https://tw.api.blizzard.com/data/wow/playable-class/7?namespace=static-5.5.0_61496-classic-tw"
+          },
+          "name": null,
+          "id": 7
+        },
+        "playable_race": {
+          "key": {
+            "href": "https://tw.api.blizzard.com/data/wow/playable-race/8?namespace=static-5.5.0_61496-classic-tw"
+          },
+          "name": null,
+          "id": 8
         }
       },
       "faction": {
@@ -1331,6 +1947,20 @@
           },
           "id": 4487,
           "slug": "ivus"
+        },
+        "playable_class": {
+          "key": {
+            "href": "https://tw.api.blizzard.com/data/wow/playable-class/4?namespace=static-5.5.0_61496-classic-tw"
+          },
+          "name": null,
+          "id": 4
+        },
+        "playable_race": {
+          "key": {
+            "href": "https://tw.api.blizzard.com/data/wow/playable-race/2?namespace=static-5.5.0_61496-classic-tw"
+          },
+          "name": null,
+          "id": 2
         }
       },
       "faction": {
@@ -1360,6 +1990,20 @@
           },
           "id": 4487,
           "slug": "ivus"
+        },
+        "playable_class": {
+          "key": {
+            "href": "https://tw.api.blizzard.com/data/wow/playable-class/11?namespace=static-5.5.0_61496-classic-tw"
+          },
+          "name": null,
+          "id": 11
+        },
+        "playable_race": {
+          "key": {
+            "href": "https://tw.api.blizzard.com/data/wow/playable-race/6?namespace=static-5.5.0_61496-classic-tw"
+          },
+          "name": null,
+          "id": 6
         }
       },
       "faction": {
@@ -1389,6 +2033,20 @@
           },
           "id": 4487,
           "slug": "ivus"
+        },
+        "playable_class": {
+          "key": {
+            "href": "https://tw.api.blizzard.com/data/wow/playable-class/1?namespace=static-5.5.0_61496-classic-tw"
+          },
+          "name": null,
+          "id": 1
+        },
+        "playable_race": {
+          "key": {
+            "href": "https://tw.api.blizzard.com/data/wow/playable-race/2?namespace=static-5.5.0_61496-classic-tw"
+          },
+          "name": null,
+          "id": 2
         }
       },
       "faction": {
@@ -1418,6 +2076,20 @@
           },
           "id": 4485,
           "slug": "maraudon"
+        },
+        "playable_class": {
+          "key": {
+            "href": "https://tw.api.blizzard.com/data/wow/playable-class/8?namespace=static-5.5.0_61496-classic-tw"
+          },
+          "name": null,
+          "id": 8
+        },
+        "playable_race": {
+          "key": {
+            "href": "https://tw.api.blizzard.com/data/wow/playable-race/25?namespace=static-5.5.0_61496-classic-tw"
+          },
+          "name": null,
+          "id": 25
         }
       },
       "faction": {
@@ -1447,6 +2119,20 @@
           },
           "id": 4485,
           "slug": "maraudon"
+        },
+        "playable_class": {
+          "key": {
+            "href": "https://tw.api.blizzard.com/data/wow/playable-class/7?namespace=static-5.5.0_61496-classic-tw"
+          },
+          "name": null,
+          "id": 7
+        },
+        "playable_race": {
+          "key": {
+            "href": "https://tw.api.blizzard.com/data/wow/playable-race/11?namespace=static-5.5.0_61496-classic-tw"
+          },
+          "name": null,
+          "id": 11
         }
       },
       "faction": {
@@ -1476,6 +2162,20 @@
           },
           "id": 4485,
           "slug": "maraudon"
+        },
+        "playable_class": {
+          "key": {
+            "href": "https://tw.api.blizzard.com/data/wow/playable-class/11?namespace=static-5.5.0_61496-classic-tw"
+          },
+          "name": null,
+          "id": 11
+        },
+        "playable_race": {
+          "key": {
+            "href": "https://tw.api.blizzard.com/data/wow/playable-race/4?namespace=static-5.5.0_61496-classic-tw"
+          },
+          "name": null,
+          "id": 4
         }
       },
       "faction": {
@@ -1505,6 +2205,20 @@
           },
           "id": 4485,
           "slug": "maraudon"
+        },
+        "playable_class": {
+          "key": {
+            "href": "https://tw.api.blizzard.com/data/wow/playable-class/6?namespace=static-5.5.0_61496-classic-tw"
+          },
+          "name": null,
+          "id": 6
+        },
+        "playable_race": {
+          "key": {
+            "href": "https://tw.api.blizzard.com/data/wow/playable-race/1?namespace=static-5.5.0_61496-classic-tw"
+          },
+          "name": null,
+          "id": 1
         }
       },
       "faction": {
@@ -1534,6 +2248,20 @@
           },
           "id": 4485,
           "slug": "maraudon"
+        },
+        "playable_class": {
+          "key": {
+            "href": "https://tw.api.blizzard.com/data/wow/playable-class/11?namespace=static-5.5.0_61496-classic-tw"
+          },
+          "name": null,
+          "id": 11
+        },
+        "playable_race": {
+          "key": {
+            "href": "https://tw.api.blizzard.com/data/wow/playable-race/22?namespace=static-5.5.0_61496-classic-tw"
+          },
+          "name": null,
+          "id": 22
         }
       },
       "faction": {
@@ -1563,6 +2291,20 @@
           },
           "id": 4485,
           "slug": "maraudon"
+        },
+        "playable_class": {
+          "key": {
+            "href": "https://tw.api.blizzard.com/data/wow/playable-class/10?namespace=static-5.5.0_61496-classic-tw"
+          },
+          "name": null,
+          "id": 10
+        },
+        "playable_race": {
+          "key": {
+            "href": "https://tw.api.blizzard.com/data/wow/playable-race/4?namespace=static-5.5.0_61496-classic-tw"
+          },
+          "name": null,
+          "id": 4
         }
       },
       "faction": {
@@ -1592,6 +2334,20 @@
           },
           "id": 4487,
           "slug": "ivus"
+        },
+        "playable_class": {
+          "key": {
+            "href": "https://tw.api.blizzard.com/data/wow/playable-class/5?namespace=static-5.5.0_61496-classic-tw"
+          },
+          "name": null,
+          "id": 5
+        },
+        "playable_race": {
+          "key": {
+            "href": "https://tw.api.blizzard.com/data/wow/playable-race/10?namespace=static-5.5.0_61496-classic-tw"
+          },
+          "name": null,
+          "id": 10
         }
       },
       "faction": {
@@ -1621,6 +2377,20 @@
           },
           "id": 4485,
           "slug": "maraudon"
+        },
+        "playable_class": {
+          "key": {
+            "href": "https://tw.api.blizzard.com/data/wow/playable-class/3?namespace=static-5.5.0_61496-classic-tw"
+          },
+          "name": null,
+          "id": 3
+        },
+        "playable_race": {
+          "key": {
+            "href": "https://tw.api.blizzard.com/data/wow/playable-race/11?namespace=static-5.5.0_61496-classic-tw"
+          },
+          "name": null,
+          "id": 11
         }
       },
       "faction": {
@@ -1650,6 +2420,20 @@
           },
           "id": 4485,
           "slug": "maraudon"
+        },
+        "playable_class": {
+          "key": {
+            "href": "https://tw.api.blizzard.com/data/wow/playable-class/5?namespace=static-5.5.0_61496-classic-tw"
+          },
+          "name": null,
+          "id": 5
+        },
+        "playable_race": {
+          "key": {
+            "href": "https://tw.api.blizzard.com/data/wow/playable-race/1?namespace=static-5.5.0_61496-classic-tw"
+          },
+          "name": null,
+          "id": 1
         }
       },
       "faction": {
@@ -1679,6 +2463,20 @@
           },
           "id": 4487,
           "slug": "ivus"
+        },
+        "playable_class": {
+          "key": {
+            "href": "https://tw.api.blizzard.com/data/wow/playable-class/9?namespace=static-5.5.0_61496-classic-tw"
+          },
+          "name": null,
+          "id": 9
+        },
+        "playable_race": {
+          "key": {
+            "href": "https://tw.api.blizzard.com/data/wow/playable-race/1?namespace=static-5.5.0_61496-classic-tw"
+          },
+          "name": null,
+          "id": 1
         }
       },
       "faction": {
@@ -1708,6 +2506,20 @@
           },
           "id": 4485,
           "slug": "maraudon"
+        },
+        "playable_class": {
+          "key": {
+            "href": "https://tw.api.blizzard.com/data/wow/playable-class/7?namespace=static-5.5.0_61496-classic-tw"
+          },
+          "name": null,
+          "id": 7
+        },
+        "playable_race": {
+          "key": {
+            "href": "https://tw.api.blizzard.com/data/wow/playable-race/3?namespace=static-5.5.0_61496-classic-tw"
+          },
+          "name": null,
+          "id": 3
         }
       },
       "faction": {
@@ -1737,6 +2549,20 @@
           },
           "id": 4485,
           "slug": "maraudon"
+        },
+        "playable_class": {
+          "key": {
+            "href": "https://tw.api.blizzard.com/data/wow/playable-class/1?namespace=static-5.5.0_61496-classic-tw"
+          },
+          "name": null,
+          "id": 1
+        },
+        "playable_race": {
+          "key": {
+            "href": "https://tw.api.blizzard.com/data/wow/playable-race/1?namespace=static-5.5.0_61496-classic-tw"
+          },
+          "name": null,
+          "id": 1
         }
       },
       "faction": {
@@ -1766,6 +2592,20 @@
           },
           "id": 4487,
           "slug": "ivus"
+        },
+        "playable_class": {
+          "key": {
+            "href": "https://tw.api.blizzard.com/data/wow/playable-class/1?namespace=static-5.5.0_61496-classic-tw"
+          },
+          "name": null,
+          "id": 1
+        },
+        "playable_race": {
+          "key": {
+            "href": "https://tw.api.blizzard.com/data/wow/playable-race/7?namespace=static-5.5.0_61496-classic-tw"
+          },
+          "name": null,
+          "id": 7
         }
       },
       "faction": {
@@ -1795,6 +2635,20 @@
           },
           "id": 4487,
           "slug": "ivus"
+        },
+        "playable_class": {
+          "key": {
+            "href": "https://tw.api.blizzard.com/data/wow/playable-class/8?namespace=static-5.5.0_61496-classic-tw"
+          },
+          "name": null,
+          "id": 8
+        },
+        "playable_race": {
+          "key": {
+            "href": "https://tw.api.blizzard.com/data/wow/playable-race/26?namespace=static-5.5.0_61496-classic-tw"
+          },
+          "name": null,
+          "id": 26
         }
       },
       "faction": {
@@ -1824,6 +2678,20 @@
           },
           "id": 4487,
           "slug": "ivus"
+        },
+        "playable_class": {
+          "key": {
+            "href": "https://tw.api.blizzard.com/data/wow/playable-class/3?namespace=static-5.5.0_61496-classic-tw"
+          },
+          "name": null,
+          "id": 3
+        },
+        "playable_race": {
+          "key": {
+            "href": "https://tw.api.blizzard.com/data/wow/playable-race/26?namespace=static-5.5.0_61496-classic-tw"
+          },
+          "name": null,
+          "id": 26
         }
       },
       "faction": {
@@ -1853,6 +2721,20 @@
           },
           "id": 4487,
           "slug": "ivus"
+        },
+        "playable_class": {
+          "key": {
+            "href": "https://tw.api.blizzard.com/data/wow/playable-class/1?namespace=static-5.5.0_61496-classic-tw"
+          },
+          "name": null,
+          "id": 1
+        },
+        "playable_race": {
+          "key": {
+            "href": "https://tw.api.blizzard.com/data/wow/playable-race/3?namespace=static-5.5.0_61496-classic-tw"
+          },
+          "name": null,
+          "id": 3
         }
       },
       "faction": {
@@ -1882,6 +2764,20 @@
           },
           "id": 4487,
           "slug": "ivus"
+        },
+        "playable_class": {
+          "key": {
+            "href": "https://tw.api.blizzard.com/data/wow/playable-class/6?namespace=static-5.5.0_61496-classic-tw"
+          },
+          "name": null,
+          "id": 6
+        },
+        "playable_race": {
+          "key": {
+            "href": "https://tw.api.blizzard.com/data/wow/playable-race/6?namespace=static-5.5.0_61496-classic-tw"
+          },
+          "name": null,
+          "id": 6
         }
       },
       "faction": {
@@ -1911,6 +2807,20 @@
           },
           "id": 4487,
           "slug": "ivus"
+        },
+        "playable_class": {
+          "key": {
+            "href": "https://tw.api.blizzard.com/data/wow/playable-class/4?namespace=static-5.5.0_61496-classic-tw"
+          },
+          "name": null,
+          "id": 4
+        },
+        "playable_race": {
+          "key": {
+            "href": "https://tw.api.blizzard.com/data/wow/playable-race/1?namespace=static-5.5.0_61496-classic-tw"
+          },
+          "name": null,
+          "id": 1
         }
       },
       "faction": {
@@ -1940,6 +2850,20 @@
           },
           "id": 4487,
           "slug": "ivus"
+        },
+        "playable_class": {
+          "key": {
+            "href": "https://tw.api.blizzard.com/data/wow/playable-class/5?namespace=static-5.5.0_61496-classic-tw"
+          },
+          "name": null,
+          "id": 5
+        },
+        "playable_race": {
+          "key": {
+            "href": "https://tw.api.blizzard.com/data/wow/playable-race/6?namespace=static-5.5.0_61496-classic-tw"
+          },
+          "name": null,
+          "id": 6
         }
       },
       "faction": {
@@ -1969,6 +2893,20 @@
           },
           "id": 4487,
           "slug": "ivus"
+        },
+        "playable_class": {
+          "key": {
+            "href": "https://tw.api.blizzard.com/data/wow/playable-class/7?namespace=static-5.5.0_61496-classic-tw"
+          },
+          "name": null,
+          "id": 7
+        },
+        "playable_race": {
+          "key": {
+            "href": "https://tw.api.blizzard.com/data/wow/playable-race/26?namespace=static-5.5.0_61496-classic-tw"
+          },
+          "name": null,
+          "id": 26
         }
       },
       "faction": {
@@ -1998,6 +2936,20 @@
           },
           "id": 4487,
           "slug": "ivus"
+        },
+        "playable_class": {
+          "key": {
+            "href": "https://tw.api.blizzard.com/data/wow/playable-class/11?namespace=static-5.5.0_61496-classic-tw"
+          },
+          "name": null,
+          "id": 11
+        },
+        "playable_race": {
+          "key": {
+            "href": "https://tw.api.blizzard.com/data/wow/playable-race/8?namespace=static-5.5.0_61496-classic-tw"
+          },
+          "name": null,
+          "id": 8
         }
       },
       "faction": {
@@ -2027,6 +2979,20 @@
           },
           "id": 4487,
           "slug": "ivus"
+        },
+        "playable_class": {
+          "key": {
+            "href": "https://tw.api.blizzard.com/data/wow/playable-class/7?namespace=static-5.5.0_61496-classic-tw"
+          },
+          "name": null,
+          "id": 7
+        },
+        "playable_race": {
+          "key": {
+            "href": "https://tw.api.blizzard.com/data/wow/playable-race/8?namespace=static-5.5.0_61496-classic-tw"
+          },
+          "name": null,
+          "id": 8
         }
       },
       "faction": {
@@ -2056,6 +3022,20 @@
           },
           "id": 4487,
           "slug": "ivus"
+        },
+        "playable_class": {
+          "key": {
+            "href": "https://tw.api.blizzard.com/data/wow/playable-class/5?namespace=static-5.5.0_61496-classic-tw"
+          },
+          "name": null,
+          "id": 5
+        },
+        "playable_race": {
+          "key": {
+            "href": "https://tw.api.blizzard.com/data/wow/playable-race/1?namespace=static-5.5.0_61496-classic-tw"
+          },
+          "name": null,
+          "id": 1
         }
       },
       "faction": {
@@ -2085,6 +3065,20 @@
           },
           "id": 4487,
           "slug": "ivus"
+        },
+        "playable_class": {
+          "key": {
+            "href": "https://tw.api.blizzard.com/data/wow/playable-class/10?namespace=static-5.5.0_61496-classic-tw"
+          },
+          "name": null,
+          "id": 10
+        },
+        "playable_race": {
+          "key": {
+            "href": "https://tw.api.blizzard.com/data/wow/playable-race/1?namespace=static-5.5.0_61496-classic-tw"
+          },
+          "name": null,
+          "id": 1
         }
       },
       "faction": {
@@ -2114,6 +3108,20 @@
           },
           "id": 4487,
           "slug": "ivus"
+        },
+        "playable_class": {
+          "key": {
+            "href": "https://tw.api.blizzard.com/data/wow/playable-class/3?namespace=static-5.5.0_61496-classic-tw"
+          },
+          "name": null,
+          "id": 3
+        },
+        "playable_race": {
+          "key": {
+            "href": "https://tw.api.blizzard.com/data/wow/playable-race/8?namespace=static-5.5.0_61496-classic-tw"
+          },
+          "name": null,
+          "id": 8
         }
       },
       "faction": {
@@ -2143,6 +3151,20 @@
           },
           "id": 4487,
           "slug": "ivus"
+        },
+        "playable_class": {
+          "key": {
+            "href": "https://tw.api.blizzard.com/data/wow/playable-class/3?namespace=static-5.5.0_61496-classic-tw"
+          },
+          "name": null,
+          "id": 3
+        },
+        "playable_race": {
+          "key": {
+            "href": "https://tw.api.blizzard.com/data/wow/playable-race/8?namespace=static-5.5.0_61496-classic-tw"
+          },
+          "name": null,
+          "id": 8
         }
       },
       "faction": {
@@ -2172,6 +3194,20 @@
           },
           "id": 4487,
           "slug": "ivus"
+        },
+        "playable_class": {
+          "key": {
+            "href": "https://tw.api.blizzard.com/data/wow/playable-class/6?namespace=static-5.5.0_61496-classic-tw"
+          },
+          "name": null,
+          "id": 6
+        },
+        "playable_race": {
+          "key": {
+            "href": "https://tw.api.blizzard.com/data/wow/playable-race/10?namespace=static-5.5.0_61496-classic-tw"
+          },
+          "name": null,
+          "id": 10
         }
       },
       "faction": {
@@ -2201,6 +3237,20 @@
           },
           "id": 4487,
           "slug": "ivus"
+        },
+        "playable_class": {
+          "key": {
+            "href": "https://tw.api.blizzard.com/data/wow/playable-class/1?namespace=static-5.5.0_61496-classic-tw"
+          },
+          "name": null,
+          "id": 1
+        },
+        "playable_race": {
+          "key": {
+            "href": "https://tw.api.blizzard.com/data/wow/playable-race/2?namespace=static-5.5.0_61496-classic-tw"
+          },
+          "name": null,
+          "id": 2
         }
       },
       "faction": {
@@ -2230,6 +3280,20 @@
           },
           "id": 4487,
           "slug": "ivus"
+        },
+        "playable_class": {
+          "key": {
+            "href": "https://tw.api.blizzard.com/data/wow/playable-class/1?namespace=static-5.5.0_61496-classic-tw"
+          },
+          "name": null,
+          "id": 1
+        },
+        "playable_race": {
+          "key": {
+            "href": "https://tw.api.blizzard.com/data/wow/playable-race/26?namespace=static-5.5.0_61496-classic-tw"
+          },
+          "name": null,
+          "id": 26
         }
       },
       "faction": {
@@ -2259,6 +3323,20 @@
           },
           "id": 4487,
           "slug": "ivus"
+        },
+        "playable_class": {
+          "key": {
+            "href": "https://tw.api.blizzard.com/data/wow/playable-class/6?namespace=static-5.5.0_61496-classic-tw"
+          },
+          "name": null,
+          "id": 6
+        },
+        "playable_race": {
+          "key": {
+            "href": "https://tw.api.blizzard.com/data/wow/playable-race/2?namespace=static-5.5.0_61496-classic-tw"
+          },
+          "name": null,
+          "id": 2
         }
       },
       "faction": {
@@ -2288,6 +3366,20 @@
           },
           "id": 4487,
           "slug": "ivus"
+        },
+        "playable_class": {
+          "key": {
+            "href": "https://tw.api.blizzard.com/data/wow/playable-class/1?namespace=static-5.5.0_61496-classic-tw"
+          },
+          "name": null,
+          "id": 1
+        },
+        "playable_race": {
+          "key": {
+            "href": "https://tw.api.blizzard.com/data/wow/playable-race/2?namespace=static-5.5.0_61496-classic-tw"
+          },
+          "name": null,
+          "id": 2
         }
       },
       "faction": {
@@ -2317,6 +3409,20 @@
           },
           "id": 4485,
           "slug": "maraudon"
+        },
+        "playable_class": {
+          "key": {
+            "href": "https://tw.api.blizzard.com/data/wow/playable-class/2?namespace=static-5.5.0_61496-classic-tw"
+          },
+          "name": null,
+          "id": 2
+        },
+        "playable_race": {
+          "key": {
+            "href": "https://tw.api.blizzard.com/data/wow/playable-race/1?namespace=static-5.5.0_61496-classic-tw"
+          },
+          "name": null,
+          "id": 1
         }
       },
       "faction": {
@@ -2346,6 +3452,20 @@
           },
           "id": 4487,
           "slug": "ivus"
+        },
+        "playable_class": {
+          "key": {
+            "href": "https://tw.api.blizzard.com/data/wow/playable-class/10?namespace=static-5.5.0_61496-classic-tw"
+          },
+          "name": null,
+          "id": 10
+        },
+        "playable_race": {
+          "key": {
+            "href": "https://tw.api.blizzard.com/data/wow/playable-race/26?namespace=static-5.5.0_61496-classic-tw"
+          },
+          "name": null,
+          "id": 26
         }
       },
       "faction": {
@@ -2375,6 +3495,20 @@
           },
           "id": 4487,
           "slug": "ivus"
+        },
+        "playable_class": {
+          "key": {
+            "href": "https://tw.api.blizzard.com/data/wow/playable-class/8?namespace=static-5.5.0_61496-classic-tw"
+          },
+          "name": null,
+          "id": 8
+        },
+        "playable_race": {
+          "key": {
+            "href": "https://tw.api.blizzard.com/data/wow/playable-race/5?namespace=static-5.5.0_61496-classic-tw"
+          },
+          "name": null,
+          "id": 5
         }
       },
       "faction": {
@@ -2404,6 +3538,20 @@
           },
           "id": 4487,
           "slug": "ivus"
+        },
+        "playable_class": {
+          "key": {
+            "href": "https://tw.api.blizzard.com/data/wow/playable-class/6?namespace=static-5.5.0_61496-classic-tw"
+          },
+          "name": null,
+          "id": 6
+        },
+        "playable_race": {
+          "key": {
+            "href": "https://tw.api.blizzard.com/data/wow/playable-race/10?namespace=static-5.5.0_61496-classic-tw"
+          },
+          "name": null,
+          "id": 10
         }
       },
       "faction": {
@@ -2433,6 +3581,20 @@
           },
           "id": 4487,
           "slug": "ivus"
+        },
+        "playable_class": {
+          "key": {
+            "href": "https://tw.api.blizzard.com/data/wow/playable-class/4?namespace=static-5.5.0_61496-classic-tw"
+          },
+          "name": null,
+          "id": 4
+        },
+        "playable_race": {
+          "key": {
+            "href": "https://tw.api.blizzard.com/data/wow/playable-race/8?namespace=static-5.5.0_61496-classic-tw"
+          },
+          "name": null,
+          "id": 8
         }
       },
       "faction": {
@@ -2462,6 +3624,20 @@
           },
           "id": 4487,
           "slug": "ivus"
+        },
+        "playable_class": {
+          "key": {
+            "href": "https://tw.api.blizzard.com/data/wow/playable-class/1?namespace=static-5.5.0_61496-classic-tw"
+          },
+          "name": null,
+          "id": 1
+        },
+        "playable_race": {
+          "key": {
+            "href": "https://tw.api.blizzard.com/data/wow/playable-race/4?namespace=static-5.5.0_61496-classic-tw"
+          },
+          "name": null,
+          "id": 4
         }
       },
       "faction": {
@@ -2491,6 +3667,20 @@
           },
           "id": 4487,
           "slug": "ivus"
+        },
+        "playable_class": {
+          "key": {
+            "href": "https://tw.api.blizzard.com/data/wow/playable-class/6?namespace=static-5.5.0_61496-classic-tw"
+          },
+          "name": null,
+          "id": 6
+        },
+        "playable_race": {
+          "key": {
+            "href": "https://tw.api.blizzard.com/data/wow/playable-race/10?namespace=static-5.5.0_61496-classic-tw"
+          },
+          "name": null,
+          "id": 10
         }
       },
       "faction": {
@@ -2520,6 +3710,20 @@
           },
           "id": 4487,
           "slug": "ivus"
+        },
+        "playable_class": {
+          "key": {
+            "href": "https://tw.api.blizzard.com/data/wow/playable-class/3?namespace=static-5.5.0_61496-classic-tw"
+          },
+          "name": null,
+          "id": 3
+        },
+        "playable_race": {
+          "key": {
+            "href": "https://tw.api.blizzard.com/data/wow/playable-race/11?namespace=static-5.5.0_61496-classic-tw"
+          },
+          "name": null,
+          "id": 11
         }
       },
       "faction": {
@@ -2549,6 +3753,20 @@
           },
           "id": 4487,
           "slug": "ivus"
+        },
+        "playable_class": {
+          "key": {
+            "href": "https://tw.api.blizzard.com/data/wow/playable-class/9?namespace=static-5.5.0_61496-classic-tw"
+          },
+          "name": null,
+          "id": 9
+        },
+        "playable_race": {
+          "key": {
+            "href": "https://tw.api.blizzard.com/data/wow/playable-race/2?namespace=static-5.5.0_61496-classic-tw"
+          },
+          "name": null,
+          "id": 2
         }
       },
       "faction": {
@@ -2578,6 +3796,20 @@
           },
           "id": 4485,
           "slug": "maraudon"
+        },
+        "playable_class": {
+          "key": {
+            "href": "https://tw.api.blizzard.com/data/wow/playable-class/10?namespace=static-5.5.0_61496-classic-tw"
+          },
+          "name": null,
+          "id": 10
+        },
+        "playable_race": {
+          "key": {
+            "href": "https://tw.api.blizzard.com/data/wow/playable-race/25?namespace=static-5.5.0_61496-classic-tw"
+          },
+          "name": null,
+          "id": 25
         }
       },
       "faction": {
@@ -2607,6 +3839,20 @@
           },
           "id": 4485,
           "slug": "maraudon"
+        },
+        "playable_class": {
+          "key": {
+            "href": "https://tw.api.blizzard.com/data/wow/playable-class/5?namespace=static-5.5.0_61496-classic-tw"
+          },
+          "name": null,
+          "id": 5
+        },
+        "playable_race": {
+          "key": {
+            "href": "https://tw.api.blizzard.com/data/wow/playable-race/1?namespace=static-5.5.0_61496-classic-tw"
+          },
+          "name": null,
+          "id": 1
         }
       },
       "faction": {
@@ -2636,6 +3882,20 @@
           },
           "id": 4487,
           "slug": "ivus"
+        },
+        "playable_class": {
+          "key": {
+            "href": "https://tw.api.blizzard.com/data/wow/playable-class/1?namespace=static-5.5.0_61496-classic-tw"
+          },
+          "name": null,
+          "id": 1
+        },
+        "playable_race": {
+          "key": {
+            "href": "https://tw.api.blizzard.com/data/wow/playable-race/2?namespace=static-5.5.0_61496-classic-tw"
+          },
+          "name": null,
+          "id": 2
         }
       },
       "faction": {
@@ -2665,6 +3925,20 @@
           },
           "id": 4487,
           "slug": "ivus"
+        },
+        "playable_class": {
+          "key": {
+            "href": "https://tw.api.blizzard.com/data/wow/playable-class/10?namespace=static-5.5.0_61496-classic-tw"
+          },
+          "name": null,
+          "id": 10
+        },
+        "playable_race": {
+          "key": {
+            "href": "https://tw.api.blizzard.com/data/wow/playable-race/1?namespace=static-5.5.0_61496-classic-tw"
+          },
+          "name": null,
+          "id": 1
         }
       },
       "faction": {
@@ -2694,6 +3968,20 @@
           },
           "id": 4487,
           "slug": "ivus"
+        },
+        "playable_class": {
+          "key": {
+            "href": "https://tw.api.blizzard.com/data/wow/playable-class/1?namespace=static-5.5.0_61496-classic-tw"
+          },
+          "name": null,
+          "id": 1
+        },
+        "playable_race": {
+          "key": {
+            "href": "https://tw.api.blizzard.com/data/wow/playable-race/1?namespace=static-5.5.0_61496-classic-tw"
+          },
+          "name": null,
+          "id": 1
         }
       },
       "faction": {
@@ -2723,6 +4011,20 @@
           },
           "id": 4485,
           "slug": "maraudon"
+        },
+        "playable_class": {
+          "key": {
+            "href": "https://tw.api.blizzard.com/data/wow/playable-class/11?namespace=static-5.5.0_61496-classic-tw"
+          },
+          "name": null,
+          "id": 11
+        },
+        "playable_race": {
+          "key": {
+            "href": "https://tw.api.blizzard.com/data/wow/playable-race/4?namespace=static-5.5.0_61496-classic-tw"
+          },
+          "name": null,
+          "id": 4
         }
       },
       "faction": {
@@ -2752,6 +4054,20 @@
           },
           "id": 4487,
           "slug": "ivus"
+        },
+        "playable_class": {
+          "key": {
+            "href": "https://tw.api.blizzard.com/data/wow/playable-class/7?namespace=static-5.5.0_61496-classic-tw"
+          },
+          "name": null,
+          "id": 7
+        },
+        "playable_race": {
+          "key": {
+            "href": "https://tw.api.blizzard.com/data/wow/playable-race/8?namespace=static-5.5.0_61496-classic-tw"
+          },
+          "name": null,
+          "id": 8
         }
       },
       "faction": {
@@ -2781,6 +4097,20 @@
           },
           "id": 4487,
           "slug": "ivus"
+        },
+        "playable_class": {
+          "key": {
+            "href": "https://tw.api.blizzard.com/data/wow/playable-class/2?namespace=static-5.5.0_61496-classic-tw"
+          },
+          "name": null,
+          "id": 2
+        },
+        "playable_race": {
+          "key": {
+            "href": "https://tw.api.blizzard.com/data/wow/playable-race/10?namespace=static-5.5.0_61496-classic-tw"
+          },
+          "name": null,
+          "id": 10
         }
       },
       "faction": {
@@ -2810,6 +4140,20 @@
           },
           "id": 4487,
           "slug": "ivus"
+        },
+        "playable_class": {
+          "key": {
+            "href": "https://tw.api.blizzard.com/data/wow/playable-class/10?namespace=static-5.5.0_61496-classic-tw"
+          },
+          "name": null,
+          "id": 10
+        },
+        "playable_race": {
+          "key": {
+            "href": "https://tw.api.blizzard.com/data/wow/playable-race/26?namespace=static-5.5.0_61496-classic-tw"
+          },
+          "name": null,
+          "id": 26
         }
       },
       "faction": {
@@ -2839,6 +4183,20 @@
           },
           "id": 4487,
           "slug": "ivus"
+        },
+        "playable_class": {
+          "key": {
+            "href": "https://tw.api.blizzard.com/data/wow/playable-class/6?namespace=static-5.5.0_61496-classic-tw"
+          },
+          "name": null,
+          "id": 6
+        },
+        "playable_race": {
+          "key": {
+            "href": "https://tw.api.blizzard.com/data/wow/playable-race/2?namespace=static-5.5.0_61496-classic-tw"
+          },
+          "name": null,
+          "id": 2
         }
       },
       "faction": {
@@ -2868,6 +4226,20 @@
           },
           "id": 4487,
           "slug": "ivus"
+        },
+        "playable_class": {
+          "key": {
+            "href": "https://tw.api.blizzard.com/data/wow/playable-class/6?namespace=static-5.5.0_61496-classic-tw"
+          },
+          "name": null,
+          "id": 6
+        },
+        "playable_race": {
+          "key": {
+            "href": "https://tw.api.blizzard.com/data/wow/playable-race/2?namespace=static-5.5.0_61496-classic-tw"
+          },
+          "name": null,
+          "id": 2
         }
       },
       "faction": {
@@ -2897,6 +4269,20 @@
           },
           "id": 4487,
           "slug": "ivus"
+        },
+        "playable_class": {
+          "key": {
+            "href": "https://tw.api.blizzard.com/data/wow/playable-class/1?namespace=static-5.5.0_61496-classic-tw"
+          },
+          "name": null,
+          "id": 1
+        },
+        "playable_race": {
+          "key": {
+            "href": "https://tw.api.blizzard.com/data/wow/playable-race/2?namespace=static-5.5.0_61496-classic-tw"
+          },
+          "name": null,
+          "id": 2
         }
       },
       "faction": {
@@ -2926,6 +4312,20 @@
           },
           "id": 4487,
           "slug": "ivus"
+        },
+        "playable_class": {
+          "key": {
+            "href": "https://tw.api.blizzard.com/data/wow/playable-class/10?namespace=static-5.5.0_61496-classic-tw"
+          },
+          "name": null,
+          "id": 10
+        },
+        "playable_race": {
+          "key": {
+            "href": "https://tw.api.blizzard.com/data/wow/playable-race/26?namespace=static-5.5.0_61496-classic-tw"
+          },
+          "name": null,
+          "id": 26
         }
       },
       "faction": {
@@ -2955,6 +4355,20 @@
           },
           "id": 4487,
           "slug": "ivus"
+        },
+        "playable_class": {
+          "key": {
+            "href": "https://tw.api.blizzard.com/data/wow/playable-class/10?namespace=static-5.5.0_61496-classic-tw"
+          },
+          "name": null,
+          "id": 10
+        },
+        "playable_race": {
+          "key": {
+            "href": "https://tw.api.blizzard.com/data/wow/playable-race/1?namespace=static-5.5.0_61496-classic-tw"
+          },
+          "name": null,
+          "id": 1
         }
       },
       "faction": {
@@ -2984,6 +4398,20 @@
           },
           "id": 4487,
           "slug": "ivus"
+        },
+        "playable_class": {
+          "key": {
+            "href": "https://tw.api.blizzard.com/data/wow/playable-class/11?namespace=static-5.5.0_61496-classic-tw"
+          },
+          "name": null,
+          "id": 11
+        },
+        "playable_race": {
+          "key": {
+            "href": "https://tw.api.blizzard.com/data/wow/playable-race/4?namespace=static-5.5.0_61496-classic-tw"
+          },
+          "name": null,
+          "id": 4
         }
       },
       "faction": {
@@ -3013,6 +4441,20 @@
           },
           "id": 4487,
           "slug": "ivus"
+        },
+        "playable_class": {
+          "key": {
+            "href": "https://tw.api.blizzard.com/data/wow/playable-class/5?namespace=static-5.5.0_61496-classic-tw"
+          },
+          "name": null,
+          "id": 5
+        },
+        "playable_race": {
+          "key": {
+            "href": "https://tw.api.blizzard.com/data/wow/playable-race/1?namespace=static-5.5.0_61496-classic-tw"
+          },
+          "name": null,
+          "id": 1
         }
       },
       "faction": {
@@ -3042,6 +4484,20 @@
           },
           "id": 4487,
           "slug": "ivus"
+        },
+        "playable_class": {
+          "key": {
+            "href": "https://tw.api.blizzard.com/data/wow/playable-class/1?namespace=static-5.5.0_61496-classic-tw"
+          },
+          "name": null,
+          "id": 1
+        },
+        "playable_race": {
+          "key": {
+            "href": "https://tw.api.blizzard.com/data/wow/playable-race/1?namespace=static-5.5.0_61496-classic-tw"
+          },
+          "name": null,
+          "id": 1
         }
       },
       "faction": {
@@ -3071,6 +4527,20 @@
           },
           "id": 4487,
           "slug": "ivus"
+        },
+        "playable_class": {
+          "key": {
+            "href": "https://tw.api.blizzard.com/data/wow/playable-class/2?namespace=static-5.5.0_61496-classic-tw"
+          },
+          "name": null,
+          "id": 2
+        },
+        "playable_race": {
+          "key": {
+            "href": "https://tw.api.blizzard.com/data/wow/playable-race/1?namespace=static-5.5.0_61496-classic-tw"
+          },
+          "name": null,
+          "id": 1
         }
       },
       "faction": {
@@ -3100,6 +4570,20 @@
           },
           "id": 4485,
           "slug": "maraudon"
+        },
+        "playable_class": {
+          "key": {
+            "href": "https://tw.api.blizzard.com/data/wow/playable-class/8?namespace=static-5.5.0_61496-classic-tw"
+          },
+          "name": null,
+          "id": 8
+        },
+        "playable_race": {
+          "key": {
+            "href": "https://tw.api.blizzard.com/data/wow/playable-race/1?namespace=static-5.5.0_61496-classic-tw"
+          },
+          "name": null,
+          "id": 1
         }
       },
       "faction": {
@@ -3129,6 +4613,20 @@
           },
           "id": 4485,
           "slug": "maraudon"
+        },
+        "playable_class": {
+          "key": {
+            "href": "https://tw.api.blizzard.com/data/wow/playable-class/5?namespace=static-5.5.0_61496-classic-tw"
+          },
+          "name": null,
+          "id": 5
+        },
+        "playable_race": {
+          "key": {
+            "href": "https://tw.api.blizzard.com/data/wow/playable-race/1?namespace=static-5.5.0_61496-classic-tw"
+          },
+          "name": null,
+          "id": 1
         }
       },
       "faction": {
@@ -3158,6 +4656,20 @@
           },
           "id": 4485,
           "slug": "maraudon"
+        },
+        "playable_class": {
+          "key": {
+            "href": "https://tw.api.blizzard.com/data/wow/playable-class/6?namespace=static-5.5.0_61496-classic-tw"
+          },
+          "name": null,
+          "id": 6
+        },
+        "playable_race": {
+          "key": {
+            "href": "https://tw.api.blizzard.com/data/wow/playable-race/1?namespace=static-5.5.0_61496-classic-tw"
+          },
+          "name": null,
+          "id": 1
         }
       },
       "faction": {
@@ -3187,6 +4699,20 @@
           },
           "id": 4485,
           "slug": "maraudon"
+        },
+        "playable_class": {
+          "key": {
+            "href": "https://tw.api.blizzard.com/data/wow/playable-class/10?namespace=static-5.5.0_61496-classic-tw"
+          },
+          "name": null,
+          "id": 10
+        },
+        "playable_race": {
+          "key": {
+            "href": "https://tw.api.blizzard.com/data/wow/playable-race/25?namespace=static-5.5.0_61496-classic-tw"
+          },
+          "name": null,
+          "id": 25
         }
       },
       "faction": {
@@ -3216,6 +4742,20 @@
           },
           "id": 4485,
           "slug": "maraudon"
+        },
+        "playable_class": {
+          "key": {
+            "href": "https://tw.api.blizzard.com/data/wow/playable-class/3?namespace=static-5.5.0_61496-classic-tw"
+          },
+          "name": null,
+          "id": 3
+        },
+        "playable_race": {
+          "key": {
+            "href": "https://tw.api.blizzard.com/data/wow/playable-race/11?namespace=static-5.5.0_61496-classic-tw"
+          },
+          "name": null,
+          "id": 11
         }
       },
       "faction": {
