@@ -51,7 +51,7 @@ export function renderTable(list) {
         raceHtml = '<span class="text-muted">未知</span>';
       }
     } else {
-      classHtml = '<span class="text-muted">隊伍</span>';
+      classHtml = '<span class="text-muted">-</span>';
       raceHtml = '<span class="text-muted">-</span>';
     }
     const tr = $(`<tr data-uid="${item.uid}">
