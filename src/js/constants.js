@@ -19,7 +19,8 @@ export const CLASS_ICON_MAP = {
 };
 export const RACE_MAP = {
   1:'Human',2:'Orc',3:'Dwarf',4:'Night Elf',5:'Undead',6:'Tauren',
-  7:'Gnome',8:'Troll',9:'Goblin',10:'Blood Elf',11:'Draenei'
+  7:'Gnome',8:'Troll',9:'Goblin',10:'Blood Elf',11:'Draenei',
+  24:'Pandaren',25:'Pandaren',26:'Pandaren'
 };
 export const RACE_ICON_MAP = {
   1:'https://wow.zamimg.com/images/wow/icons/medium/race_human_male.jpg',
@@ -32,5 +33,8 @@ export const RACE_ICON_MAP = {
   8:'https://wow.zamimg.com/images/wow/icons/medium/race_troll_male.jpg',
   9:'https://wow.zamimg.com/images/wow/icons/medium/race_goblin_male.jpg',
   10:'https://wow.zamimg.com/images/wow/icons/medium/race_bloodelf_male.jpg',
-  11:'https://wow.zamimg.com/images/wow/icons/medium/race_draenei_male.jpg'
+  11:'https://wow.zamimg.com/images/wow/icons/medium/race_draenei_male.jpg',
+  24:'https://wow.zamimg.com/images/wow/icons/medium/race_pandaren_male.jpg',   
+  25:'https://wow.zamimg.com/images/wow/icons/medium/race_pandaren_male.jpg',
+  26:'https://wow.zamimg.com/images/wow/icons/medium/race_pandaren_male.jpg'
 };
