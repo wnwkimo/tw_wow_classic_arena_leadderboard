@@ -134,8 +134,8 @@
     },
     {
       "character": {
-        "name": "阿爾提密斯",
-        "id": 353285,
+        "name": "成奇勛",
+        "id": 11162974,
         "realm": {
           "key": {
             "href": "https://tw.api.blizzard.com/data/wow/realm/4485?namespace=dynamic-classic-tw"
@@ -163,8 +163,8 @@
     },
     {
       "character": {
-        "name": "成奇勛",
-        "id": 11162974,
+        "name": "Jonsnowxy",
+        "id": 5690783,
         "realm": {
           "key": {
             "href": "https://tw.api.blizzard.com/data/wow/realm/4485?namespace=dynamic-classic-tw"
@@ -221,8 +221,8 @@
     },
     {
       "character": {
-        "name": "Jonsnowxy",
-        "id": 5690783,
+        "name": "阿爾提密斯",
+        "id": 353285,
         "realm": {
           "key": {
             "href": "https://tw.api.blizzard.com/data/wow/realm/4485?namespace=dynamic-classic-tw"
@@ -337,6 +337,93 @@
     },
     {
       "character": {
+        "name": "操引郎",
+        "id": 11190170,
+        "realm": {
+          "key": {
+            "href": "https://tw.api.blizzard.com/data/wow/realm/4487?namespace=dynamic-classic-tw"
+          },
+          "id": 4487,
+          "slug": "ivus"
+        }
+      },
+      "faction": {
+        "type": "ALLIANCE"
+      },
+      "rank": 12,
+      "rating": 288,
+      "season_match_statistics": {
+        "played": 4,
+        "won": 3,
+        "lost": 1
+      },
+      "tier": {
+        "key": {
+          "href": "https://tw.api.blizzard.com/data/wow/pvp-tier/0?namespace=static-5.5.0_61496-classic-tw"
+        },
+        "id": 0
+      }
+    },
+    {
+      "character": {
+        "name": "沒被我干過",
+        "id": 11187871,
+        "realm": {
+          "key": {
+            "href": "https://tw.api.blizzard.com/data/wow/realm/4487?namespace=dynamic-classic-tw"
+          },
+          "id": 4487,
+          "slug": "ivus"
+        }
+      },
+      "faction": {
+        "type": "ALLIANCE"
+      },
+      "rank": 12,
+      "rating": 288,
+      "season_match_statistics": {
+        "played": 4,
+        "won": 3,
+        "lost": 1
+      },
+      "tier": {
+        "key": {
+          "href": "https://tw.api.blizzard.com/data/wow/pvp-tier/0?namespace=static-5.5.0_61496-classic-tw"
+        },
+        "id": 0
+      }
+    },
+    {
+      "character": {
+        "name": "Héroe",
+        "id": 11185156,
+        "realm": {
+          "key": {
+            "href": "https://tw.api.blizzard.com/data/wow/realm/4487?namespace=dynamic-classic-tw"
+          },
+          "id": 4487,
+          "slug": "ivus"
+        }
+      },
+      "faction": {
+        "type": "ALLIANCE"
+      },
+      "rank": 12,
+      "rating": 288,
+      "season_match_statistics": {
+        "played": 4,
+        "won": 3,
+        "lost": 1
+      },
+      "tier": {
+        "key": {
+          "href": "https://tw.api.blizzard.com/data/wow/pvp-tier/0?namespace=static-5.5.0_61496-classic-tw"
+        },
+        "id": 0
+      }
+    },
+    {
+      "character": {
         "name": "弱电",
         "id": 11197855,
         "realm": {
@@ -395,93 +482,6 @@
     },
     {
       "character": {
-        "name": "操引郎",
-        "id": 11190170,
-        "realm": {
-          "key": {
-            "href": "https://tw.api.blizzard.com/data/wow/realm/4487?namespace=dynamic-classic-tw"
-          },
-          "id": 4487,
-          "slug": "ivus"
-        }
-      },
-      "faction": {
-        "type": "ALLIANCE"
-      },
-      "rank": 12,
-      "rating": 288,
-      "season_match_statistics": {
-        "played": 4,
-        "won": 3,
-        "lost": 1
-      },
-      "tier": {
-        "key": {
-          "href": "https://tw.api.blizzard.com/data/wow/pvp-tier/0?namespace=static-5.5.0_61496-classic-tw"
-        },
-        "id": 0
-      }
-    },
-    {
-      "character": {
-        "name": "Héroe",
-        "id": 11185156,
-        "realm": {
-          "key": {
-            "href": "https://tw.api.blizzard.com/data/wow/realm/4487?namespace=dynamic-classic-tw"
-          },
-          "id": 4487,
-          "slug": "ivus"
-        }
-      },
-      "faction": {
-        "type": "ALLIANCE"
-      },
-      "rank": 12,
-      "rating": 288,
-      "season_match_statistics": {
-        "played": 4,
-        "won": 3,
-        "lost": 1
-      },
-      "tier": {
-        "key": {
-          "href": "https://tw.api.blizzard.com/data/wow/pvp-tier/0?namespace=static-5.5.0_61496-classic-tw"
-        },
-        "id": 0
-      }
-    },
-    {
-      "character": {
-        "name": "沒被我干過",
-        "id": 11187871,
-        "realm": {
-          "key": {
-            "href": "https://tw.api.blizzard.com/data/wow/realm/4487?namespace=dynamic-classic-tw"
-          },
-          "id": 4487,
-          "slug": "ivus"
-        }
-      },
-      "faction": {
-        "type": "ALLIANCE"
-      },
-      "rank": 12,
-      "rating": 288,
-      "season_match_statistics": {
-        "played": 4,
-        "won": 3,
-        "lost": 1
-      },
-      "tier": {
-        "key": {
-          "href": "https://tw.api.blizzard.com/data/wow/pvp-tier/0?namespace=static-5.5.0_61496-classic-tw"
-        },
-        "id": 0
-      }
-    },
-    {
-      "character": {
         "name": "高雄發大財阿",
         "id": 764216,
         "realm": {
@@ -511,14 +511,14 @@
     },
     {
       "character": {
-        "name": "愛絲波波",
-        "id": 739729,
+        "name": "淼小安",
+        "id": 790774,
         "realm": {
           "key": {
-            "href": "https://tw.api.blizzard.com/data/wow/realm/4487?namespace=dynamic-classic-tw"
+            "href": "https://tw.api.blizzard.com/data/wow/realm/4485?namespace=dynamic-classic-tw"
           },
-          "id": 4487,
-          "slug": "ivus"
+          "id": 4485,
+          "slug": "maraudon"
         }
       },
       "faction": {
@@ -540,8 +540,8 @@
     },
     {
       "character": {
-        "name": "天使小祺",
-        "id": 180635,
+        "name": "愛絲波波",
+        "id": 739729,
         "realm": {
           "key": {
             "href": "https://tw.api.blizzard.com/data/wow/realm/4487?namespace=dynamic-classic-tw"
@@ -598,14 +598,14 @@
     },
     {
       "character": {
-        "name": "淼小安",
-        "id": 790774,
+        "name": "天使小祺",
+        "id": 180635,
         "realm": {
           "key": {
-            "href": "https://tw.api.blizzard.com/data/wow/realm/4485?namespace=dynamic-classic-tw"
+            "href": "https://tw.api.blizzard.com/data/wow/realm/4487?namespace=dynamic-classic-tw"
           },
-          "id": 4485,
-          "slug": "maraudon"
+          "id": 4487,
+          "slug": "ivus"
         }
       },
       "faction": {
@@ -656,95 +656,8 @@
     },
     {
       "character": {
-        "name": "蓼蓝",
+        "name": "青竹予我",
         "id": 11202440,
-        "realm": {
-          "key": {
-            "href": "https://tw.api.blizzard.com/data/wow/realm/4487?namespace=dynamic-classic-tw"
-          },
-          "id": 4487,
-          "slug": "ivus"
-        }
-      },
-      "faction": {
-        "type": "HORDE"
-      },
-      "rank": 22,
-      "rating": 192,
-      "season_match_statistics": {
-        "played": 2,
-        "won": 2,
-        "lost": 0
-      },
-      "tier": {
-        "key": {
-          "href": "https://tw.api.blizzard.com/data/wow/pvp-tier/0?namespace=static-5.5.0_61496-classic-tw"
-        },
-        "id": 0
-      }
-    },
-    {
-      "character": {
-        "name": "和纱的忧郁",
-        "id": 11197436,
-        "realm": {
-          "key": {
-            "href": "https://tw.api.blizzard.com/data/wow/realm/4485?namespace=dynamic-classic-tw"
-          },
-          "id": 4485,
-          "slug": "maraudon"
-        }
-      },
-      "faction": {
-        "type": "ALLIANCE"
-      },
-      "rank": 22,
-      "rating": 192,
-      "season_match_statistics": {
-        "played": 2,
-        "won": 2,
-        "lost": 0
-      },
-      "tier": {
-        "key": {
-          "href": "https://tw.api.blizzard.com/data/wow/pvp-tier/0?namespace=static-5.5.0_61496-classic-tw"
-        },
-        "id": 0
-      }
-    },
-    {
-      "character": {
-        "name": "葫芦小大",
-        "id": 11214198,
-        "realm": {
-          "key": {
-            "href": "https://tw.api.blizzard.com/data/wow/realm/4487?namespace=dynamic-classic-tw"
-          },
-          "id": 4487,
-          "slug": "ivus"
-        }
-      },
-      "faction": {
-        "type": "HORDE"
-      },
-      "rank": 22,
-      "rating": 192,
-      "season_match_statistics": {
-        "played": 2,
-        "won": 2,
-        "lost": 0
-      },
-      "tier": {
-        "key": {
-          "href": "https://tw.api.blizzard.com/data/wow/pvp-tier/0?namespace=static-5.5.0_61496-classic-tw"
-        },
-        "id": 0
-      }
-    },
-    {
-      "character": {
-        "name": "依然十八",
-        "id": 11211157,
         "realm": {
           "key": {
             "href": "https://tw.api.blizzard.com/data/wow/realm/4487?namespace=dynamic-classic-tw"
@@ -801,8 +714,95 @@
     },
     {
       "character": {
-        "name": "熊熊袂記",
-        "id": 11160260,
+        "name": "葫芦小大",
+        "id": 11214198,
+        "realm": {
+          "key": {
+            "href": "https://tw.api.blizzard.com/data/wow/realm/4487?namespace=dynamic-classic-tw"
+          },
+          "id": 4487,
+          "slug": "ivus"
+        }
+      },
+      "faction": {
+        "type": "HORDE"
+      },
+      "rank": 22,
+      "rating": 192,
+      "season_match_statistics": {
+        "played": 2,
+        "won": 2,
+        "lost": 0
+      },
+      "tier": {
+        "key": {
+          "href": "https://tw.api.blizzard.com/data/wow/pvp-tier/0?namespace=static-5.5.0_61496-classic-tw"
+        },
+        "id": 0
+      }
+    },
+    {
+      "character": {
+        "name": "和纱的忧郁",
+        "id": 11197436,
+        "realm": {
+          "key": {
+            "href": "https://tw.api.blizzard.com/data/wow/realm/4485?namespace=dynamic-classic-tw"
+          },
+          "id": 4485,
+          "slug": "maraudon"
+        }
+      },
+      "faction": {
+        "type": "ALLIANCE"
+      },
+      "rank": 22,
+      "rating": 192,
+      "season_match_statistics": {
+        "played": 2,
+        "won": 2,
+        "lost": 0
+      },
+      "tier": {
+        "key": {
+          "href": "https://tw.api.blizzard.com/data/wow/pvp-tier/0?namespace=static-5.5.0_61496-classic-tw"
+        },
+        "id": 0
+      }
+    },
+    {
+      "character": {
+        "name": "依然十八",
+        "id": 11211157,
+        "realm": {
+          "key": {
+            "href": "https://tw.api.blizzard.com/data/wow/realm/4487?namespace=dynamic-classic-tw"
+          },
+          "id": 4487,
+          "slug": "ivus"
+        }
+      },
+      "faction": {
+        "type": "HORDE"
+      },
+      "rank": 22,
+      "rating": 192,
+      "season_match_statistics": {
+        "played": 2,
+        "won": 2,
+        "lost": 0
+      },
+      "tier": {
+        "key": {
+          "href": "https://tw.api.blizzard.com/data/wow/pvp-tier/0?namespace=static-5.5.0_61496-classic-tw"
+        },
+        "id": 0
+      }
+    },
+    {
+      "character": {
+        "name": "敲骨吸髓",
+        "id": 11167330,
         "realm": {
           "key": {
             "href": "https://tw.api.blizzard.com/data/wow/realm/4487?namespace=dynamic-classic-tw"
@@ -832,35 +832,6 @@
       "character": {
         "name": "Rellana",
         "id": 11119853,
-        "realm": {
-          "key": {
-            "href": "https://tw.api.blizzard.com/data/wow/realm/4487?namespace=dynamic-classic-tw"
-          },
-          "id": 4487,
-          "slug": "ivus"
-        }
-      },
-      "faction": {
-        "type": "HORDE"
-      },
-      "rank": 22,
-      "rating": 192,
-      "season_match_statistics": {
-        "played": 3,
-        "won": 2,
-        "lost": 1
-      },
-      "tier": {
-        "key": {
-          "href": "https://tw.api.blizzard.com/data/wow/pvp-tier/0?namespace=static-5.5.0_61496-classic-tw"
-        },
-        "id": 0
-      }
-    },
-    {
-      "character": {
-        "name": "滾進你的心",
-        "id": 11157811,
         "realm": {
           "key": {
             "href": "https://tw.api.blizzard.com/data/wow/realm/4487?namespace=dynamic-classic-tw"
@@ -946,8 +917,8 @@
     },
     {
       "character": {
-        "name": "光光小僧",
-        "id": 11162032,
+        "name": "滾進你的心",
+        "id": 11157811,
         "realm": {
           "key": {
             "href": "https://tw.api.blizzard.com/data/wow/realm/4487?namespace=dynamic-classic-tw"
@@ -962,9 +933,96 @@
       "rank": 22,
       "rating": 192,
       "season_match_statistics": {
-        "played": 4,
+        "played": 3,
         "won": 2,
-        "lost": 2
+        "lost": 1
+      },
+      "tier": {
+        "key": {
+          "href": "https://tw.api.blizzard.com/data/wow/pvp-tier/0?namespace=static-5.5.0_61496-classic-tw"
+        },
+        "id": 0
+      }
+    },
+    {
+      "character": {
+        "name": "熊熊袂記",
+        "id": 11160260,
+        "realm": {
+          "key": {
+            "href": "https://tw.api.blizzard.com/data/wow/realm/4487?namespace=dynamic-classic-tw"
+          },
+          "id": 4487,
+          "slug": "ivus"
+        }
+      },
+      "faction": {
+        "type": "HORDE"
+      },
+      "rank": 22,
+      "rating": 192,
+      "season_match_statistics": {
+        "played": 3,
+        "won": 2,
+        "lost": 1
+      },
+      "tier": {
+        "key": {
+          "href": "https://tw.api.blizzard.com/data/wow/pvp-tier/0?namespace=static-5.5.0_61496-classic-tw"
+        },
+        "id": 0
+      }
+    },
+    {
+      "character": {
+        "name": "Goldpal",
+        "id": 11062250,
+        "realm": {
+          "key": {
+            "href": "https://tw.api.blizzard.com/data/wow/realm/4487?namespace=dynamic-classic-tw"
+          },
+          "id": 4487,
+          "slug": "ivus"
+        }
+      },
+      "faction": {
+        "type": "HORDE"
+      },
+      "rank": 22,
+      "rating": 192,
+      "season_match_statistics": {
+        "played": 3,
+        "won": 2,
+        "lost": 1
+      },
+      "tier": {
+        "key": {
+          "href": "https://tw.api.blizzard.com/data/wow/pvp-tier/0?namespace=static-5.5.0_61496-classic-tw"
+        },
+        "id": 0
+      }
+    },
+    {
+      "character": {
+        "name": "汪凝丨",
+        "id": 11129338,
+        "realm": {
+          "key": {
+            "href": "https://tw.api.blizzard.com/data/wow/realm/4487?namespace=dynamic-classic-tw"
+          },
+          "id": 4487,
+          "slug": "ivus"
+        }
+      },
+      "faction": {
+        "type": "HORDE"
+      },
+      "rank": 22,
+      "rating": 192,
+      "season_match_statistics": {
+        "played": 3,
+        "won": 2,
+        "lost": 1
       },
       "tier": {
         "key": {
@@ -1004,8 +1062,8 @@
     },
     {
       "character": {
-        "name": "楓雲",
-        "id": 348813,
+        "name": "光光小僧",
+        "id": 11162032,
         "realm": {
           "key": {
             "href": "https://tw.api.blizzard.com/data/wow/realm/4487?namespace=dynamic-classic-tw"
@@ -1091,8 +1149,8 @@
     },
     {
       "character": {
-        "name": "胸毛闪闪",
-        "id": 11174654,
+        "name": "楓雲",
+        "id": 348813,
         "realm": {
           "key": {
             "href": "https://tw.api.blizzard.com/data/wow/realm/4487?namespace=dynamic-classic-tw"
@@ -1107,38 +1165,9 @@
       "rank": 22,
       "rating": 192,
       "season_match_statistics": {
-        "played": 5,
+        "played": 4,
         "won": 2,
-        "lost": 3
-      },
-      "tier": {
-        "key": {
-          "href": "https://tw.api.blizzard.com/data/wow/pvp-tier/0?namespace=static-5.5.0_61496-classic-tw"
-        },
-        "id": 0
-      }
-    },
-    {
-      "character": {
-        "name": "纸川内酷",
-        "id": 11172723,
-        "realm": {
-          "key": {
-            "href": "https://tw.api.blizzard.com/data/wow/realm/4487?namespace=dynamic-classic-tw"
-          },
-          "id": 4487,
-          "slug": "ivus"
-        }
-      },
-      "faction": {
-        "type": "HORDE"
-      },
-      "rank": 22,
-      "rating": 192,
-      "season_match_statistics": {
-        "played": 5,
-        "won": 2,
-        "lost": 3
+        "lost": 2
       },
       "tier": {
         "key": {
@@ -1151,35 +1180,6 @@
       "character": {
         "name": "无敌圻圻睿睿",
         "id": 11159472,
-        "realm": {
-          "key": {
-            "href": "https://tw.api.blizzard.com/data/wow/realm/4487?namespace=dynamic-classic-tw"
-          },
-          "id": 4487,
-          "slug": "ivus"
-        }
-      },
-      "faction": {
-        "type": "HORDE"
-      },
-      "rank": 22,
-      "rating": 192,
-      "season_match_statistics": {
-        "played": 5,
-        "won": 2,
-        "lost": 3
-      },
-      "tier": {
-        "key": {
-          "href": "https://tw.api.blizzard.com/data/wow/pvp-tier/0?namespace=static-5.5.0_61496-classic-tw"
-        },
-        "id": 0
-      }
-    },
-    {
-      "character": {
-        "name": "Zixx",
-        "id": 11182787,
         "realm": {
           "key": {
             "href": "https://tw.api.blizzard.com/data/wow/realm/4487?namespace=dynamic-classic-tw"
@@ -1236,37 +1236,8 @@
     },
     {
       "character": {
-        "name": "Aiyouv",
-        "id": 10997806,
-        "realm": {
-          "key": {
-            "href": "https://tw.api.blizzard.com/data/wow/realm/4485?namespace=dynamic-classic-tw"
-          },
-          "id": 4485,
-          "slug": "maraudon"
-        }
-      },
-      "faction": {
-        "type": "ALLIANCE"
-      },
-      "rank": 43,
-      "rating": 96,
-      "season_match_statistics": {
-        "played": 1,
-        "won": 1,
-        "lost": 0
-      },
-      "tier": {
-        "key": {
-          "href": "https://tw.api.blizzard.com/data/wow/pvp-tier/0?namespace=static-5.5.0_61496-classic-tw"
-        },
-        "id": 0
-      }
-    },
-    {
-      "character": {
-        "name": "穩中帶點滑滑",
-        "id": 11168348,
+        "name": "胸毛闪闪",
+        "id": 11174654,
         "realm": {
           "key": {
             "href": "https://tw.api.blizzard.com/data/wow/realm/4487?namespace=dynamic-classic-tw"
@@ -1278,12 +1249,12 @@
       "faction": {
         "type": "HORDE"
       },
-      "rank": 43,
-      "rating": 96,
+      "rank": 22,
+      "rating": 192,
       "season_match_statistics": {
-        "played": 1,
-        "won": 1,
-        "lost": 0
+        "played": 5,
+        "won": 2,
+        "lost": 3
       },
       "tier": {
         "key": {
@@ -1294,20 +1265,78 @@
     },
     {
       "character": {
-        "name": "一生督妳一人",
-        "id": 7089357,
+        "name": "Zixx",
+        "id": 11182787,
         "realm": {
           "key": {
-            "href": "https://tw.api.blizzard.com/data/wow/realm/4485?namespace=dynamic-classic-tw"
+            "href": "https://tw.api.blizzard.com/data/wow/realm/4487?namespace=dynamic-classic-tw"
           },
-          "id": 4485,
-          "slug": "maraudon"
+          "id": 4487,
+          "slug": "ivus"
         }
       },
       "faction": {
-        "type": "ALLIANCE"
+        "type": "HORDE"
       },
-      "rank": 43,
+      "rank": 22,
+      "rating": 192,
+      "season_match_statistics": {
+        "played": 5,
+        "won": 2,
+        "lost": 3
+      },
+      "tier": {
+        "key": {
+          "href": "https://tw.api.blizzard.com/data/wow/pvp-tier/0?namespace=static-5.5.0_61496-classic-tw"
+        },
+        "id": 0
+      }
+    },
+    {
+      "character": {
+        "name": "纸川内酷",
+        "id": 11172723,
+        "realm": {
+          "key": {
+            "href": "https://tw.api.blizzard.com/data/wow/realm/4487?namespace=dynamic-classic-tw"
+          },
+          "id": 4487,
+          "slug": "ivus"
+        }
+      },
+      "faction": {
+        "type": "HORDE"
+      },
+      "rank": 22,
+      "rating": 192,
+      "season_match_statistics": {
+        "played": 5,
+        "won": 2,
+        "lost": 3
+      },
+      "tier": {
+        "key": {
+          "href": "https://tw.api.blizzard.com/data/wow/pvp-tier/0?namespace=static-5.5.0_61496-classic-tw"
+        },
+        "id": 0
+      }
+    },
+    {
+      "character": {
+        "name": "狄狄龍",
+        "id": 11168481,
+        "realm": {
+          "key": {
+            "href": "https://tw.api.blizzard.com/data/wow/realm/4487?namespace=dynamic-classic-tw"
+          },
+          "id": 4487,
+          "slug": "ivus"
+        }
+      },
+      "faction": {
+        "type": "HORDE"
+      },
+      "rank": 46,
       "rating": 96,
       "season_match_statistics": {
         "played": 1,
@@ -1336,7 +1365,7 @@
       "faction": {
         "type": "HORDE"
       },
-      "rank": 43,
+      "rank": 46,
       "rating": 96,
       "season_match_statistics": {
         "played": 1,
@@ -1352,8 +1381,8 @@
     },
     {
       "character": {
-        "name": "狄狄龍",
-        "id": 11168481,
+        "name": "穩中帶點滑滑",
+        "id": 11168348,
         "realm": {
           "key": {
             "href": "https://tw.api.blizzard.com/data/wow/realm/4487?namespace=dynamic-classic-tw"
@@ -1365,94 +1394,7 @@
       "faction": {
         "type": "HORDE"
       },
-      "rank": 43,
-      "rating": 96,
-      "season_match_statistics": {
-        "played": 1,
-        "won": 1,
-        "lost": 0
-      },
-      "tier": {
-        "key": {
-          "href": "https://tw.api.blizzard.com/data/wow/pvp-tier/0?namespace=static-5.5.0_61496-classic-tw"
-        },
-        "id": 0
-      }
-    },
-    {
-      "character": {
-        "name": "叉狀閃電",
-        "id": 3133906,
-        "realm": {
-          "key": {
-            "href": "https://tw.api.blizzard.com/data/wow/realm/4485?namespace=dynamic-classic-tw"
-          },
-          "id": 4485,
-          "slug": "maraudon"
-        }
-      },
-      "faction": {
-        "type": "ALLIANCE"
-      },
-      "rank": 43,
-      "rating": 96,
-      "season_match_statistics": {
-        "played": 1,
-        "won": 1,
-        "lost": 0
-      },
-      "tier": {
-        "key": {
-          "href": "https://tw.api.blizzard.com/data/wow/pvp-tier/0?namespace=static-5.5.0_61496-classic-tw"
-        },
-        "id": 0
-      }
-    },
-    {
-      "character": {
-        "name": "柳垂溪畔",
-        "id": 11161852,
-        "realm": {
-          "key": {
-            "href": "https://tw.api.blizzard.com/data/wow/realm/4487?namespace=dynamic-classic-tw"
-          },
-          "id": 4487,
-          "slug": "ivus"
-        }
-      },
-      "faction": {
-        "type": "HORDE"
-      },
-      "rank": 43,
-      "rating": 96,
-      "season_match_statistics": {
-        "played": 1,
-        "won": 1,
-        "lost": 0
-      },
-      "tier": {
-        "key": {
-          "href": "https://tw.api.blizzard.com/data/wow/pvp-tier/0?namespace=static-5.5.0_61496-classic-tw"
-        },
-        "id": 0
-      }
-    },
-    {
-      "character": {
-        "name": "圈圈書記",
-        "id": 9890169,
-        "realm": {
-          "key": {
-            "href": "https://tw.api.blizzard.com/data/wow/realm/4485?namespace=dynamic-classic-tw"
-          },
-          "id": 4485,
-          "slug": "maraudon"
-        }
-      },
-      "faction": {
-        "type": "ALLIANCE"
-      },
-      "rank": 43,
+      "rank": 46,
       "rating": 96,
       "season_match_statistics": {
         "played": 1,
@@ -1481,7 +1423,7 @@
       "faction": {
         "type": "ALLIANCE"
       },
-      "rank": 43,
+      "rank": 46,
       "rating": 96,
       "season_match_statistics": {
         "played": 1,
@@ -1497,66 +1439,8 @@
     },
     {
       "character": {
-        "name": "老波女耳东玲",
-        "id": 11132131,
-        "realm": {
-          "key": {
-            "href": "https://tw.api.blizzard.com/data/wow/realm/4487?namespace=dynamic-classic-tw"
-          },
-          "id": 4487,
-          "slug": "ivus"
-        }
-      },
-      "faction": {
-        "type": "HORDE"
-      },
-      "rank": 43,
-      "rating": 96,
-      "season_match_statistics": {
-        "played": 1,
-        "won": 1,
-        "lost": 0
-      },
-      "tier": {
-        "key": {
-          "href": "https://tw.api.blizzard.com/data/wow/pvp-tier/0?namespace=static-5.5.0_61496-classic-tw"
-        },
-        "id": 0
-      }
-    },
-    {
-      "character": {
-        "name": "Frostymage",
-        "id": 11164147,
-        "realm": {
-          "key": {
-            "href": "https://tw.api.blizzard.com/data/wow/realm/4487?namespace=dynamic-classic-tw"
-          },
-          "id": 4487,
-          "slug": "ivus"
-        }
-      },
-      "faction": {
-        "type": "HORDE"
-      },
-      "rank": 43,
-      "rating": 96,
-      "season_match_statistics": {
-        "played": 1,
-        "won": 1,
-        "lost": 0
-      },
-      "tier": {
-        "key": {
-          "href": "https://tw.api.blizzard.com/data/wow/pvp-tier/0?namespace=static-5.5.0_61496-classic-tw"
-        },
-        "id": 0
-      }
-    },
-    {
-      "character": {
-        "name": "新垣的结衣",
-        "id": 1646840,
+        "name": "叉狀閃電",
+        "id": 3133906,
         "realm": {
           "key": {
             "href": "https://tw.api.blizzard.com/data/wow/realm/4485?namespace=dynamic-classic-tw"
@@ -1568,36 +1452,7 @@
       "faction": {
         "type": "ALLIANCE"
       },
-      "rank": 43,
-      "rating": 96,
-      "season_match_statistics": {
-        "played": 1,
-        "won": 1,
-        "lost": 0
-      },
-      "tier": {
-        "key": {
-          "href": "https://tw.api.blizzard.com/data/wow/pvp-tier/0?namespace=static-5.5.0_61496-classic-tw"
-        },
-        "id": 0
-      }
-    },
-    {
-      "character": {
-        "name": "老郭相信光",
-        "id": 10681400,
-        "realm": {
-          "key": {
-            "href": "https://tw.api.blizzard.com/data/wow/realm/4485?namespace=dynamic-classic-tw"
-          },
-          "id": 4485,
-          "slug": "maraudon"
-        }
-      },
-      "faction": {
-        "type": "ALLIANCE"
-      },
-      "rank": 43,
+      "rank": 46,
       "rating": 96,
       "season_match_statistics": {
         "played": 1,
@@ -1626,7 +1481,7 @@
       "faction": {
         "type": "ALLIANCE"
       },
-      "rank": 43,
+      "rank": 46,
       "rating": 96,
       "season_match_statistics": {
         "played": 1,
@@ -1642,20 +1497,49 @@
     },
     {
       "character": {
-        "name": "鹤顶红丶",
-        "id": 11205910,
+        "name": "圈圈書記",
+        "id": 9890169,
         "realm": {
           "key": {
-            "href": "https://tw.api.blizzard.com/data/wow/realm/4487?namespace=dynamic-classic-tw"
+            "href": "https://tw.api.blizzard.com/data/wow/realm/4485?namespace=dynamic-classic-tw"
           },
-          "id": 4487,
-          "slug": "ivus"
+          "id": 4485,
+          "slug": "maraudon"
         }
       },
       "faction": {
-        "type": "HORDE"
+        "type": "ALLIANCE"
       },
-      "rank": 43,
+      "rank": 46,
+      "rating": 96,
+      "season_match_statistics": {
+        "played": 1,
+        "won": 1,
+        "lost": 0
+      },
+      "tier": {
+        "key": {
+          "href": "https://tw.api.blizzard.com/data/wow/pvp-tier/0?namespace=static-5.5.0_61496-classic-tw"
+        },
+        "id": 0
+      }
+    },
+    {
+      "character": {
+        "name": "老郭相信光",
+        "id": 10681400,
+        "realm": {
+          "key": {
+            "href": "https://tw.api.blizzard.com/data/wow/realm/4485?namespace=dynamic-classic-tw"
+          },
+          "id": 4485,
+          "slug": "maraudon"
+        }
+      },
+      "faction": {
+        "type": "ALLIANCE"
+      },
+      "rank": 46,
       "rating": 96,
       "season_match_statistics": {
         "played": 1,
@@ -1684,7 +1568,65 @@
       "faction": {
         "type": "ALLIANCE"
       },
-      "rank": 43,
+      "rank": 46,
+      "rating": 96,
+      "season_match_statistics": {
+        "played": 1,
+        "won": 1,
+        "lost": 0
+      },
+      "tier": {
+        "key": {
+          "href": "https://tw.api.blizzard.com/data/wow/pvp-tier/0?namespace=static-5.5.0_61496-classic-tw"
+        },
+        "id": 0
+      }
+    },
+    {
+      "character": {
+        "name": "純情小白兔",
+        "id": 6496615,
+        "realm": {
+          "key": {
+            "href": "https://tw.api.blizzard.com/data/wow/realm/4487?namespace=dynamic-classic-tw"
+          },
+          "id": 4487,
+          "slug": "ivus"
+        }
+      },
+      "faction": {
+        "type": "HORDE"
+      },
+      "rank": 46,
+      "rating": 96,
+      "season_match_statistics": {
+        "played": 1,
+        "won": 1,
+        "lost": 0
+      },
+      "tier": {
+        "key": {
+          "href": "https://tw.api.blizzard.com/data/wow/pvp-tier/0?namespace=static-5.5.0_61496-classic-tw"
+        },
+        "id": 0
+      }
+    },
+    {
+      "character": {
+        "name": "一生督妳一人",
+        "id": 7089357,
+        "realm": {
+          "key": {
+            "href": "https://tw.api.blizzard.com/data/wow/realm/4485?namespace=dynamic-classic-tw"
+          },
+          "id": 4485,
+          "slug": "maraudon"
+        }
+      },
+      "faction": {
+        "type": "ALLIANCE"
+      },
+      "rank": 46,
       "rating": 96,
       "season_match_statistics": {
         "played": 1,
@@ -1713,7 +1655,616 @@
       "faction": {
         "type": "ALLIANCE"
       },
-      "rank": 43,
+      "rank": 46,
+      "rating": 96,
+      "season_match_statistics": {
+        "played": 1,
+        "won": 1,
+        "lost": 0
+      },
+      "tier": {
+        "key": {
+          "href": "https://tw.api.blizzard.com/data/wow/pvp-tier/0?namespace=static-5.5.0_61496-classic-tw"
+        },
+        "id": 0
+      }
+    },
+    {
+      "character": {
+        "name": "Echoe",
+        "id": 1427287,
+        "realm": {
+          "key": {
+            "href": "https://tw.api.blizzard.com/data/wow/realm/4487?namespace=dynamic-classic-tw"
+          },
+          "id": 4487,
+          "slug": "ivus"
+        }
+      },
+      "faction": {
+        "type": "ALLIANCE"
+      },
+      "rank": 46,
+      "rating": 96,
+      "season_match_statistics": {
+        "played": 1,
+        "won": 1,
+        "lost": 0
+      },
+      "tier": {
+        "key": {
+          "href": "https://tw.api.blizzard.com/data/wow/pvp-tier/0?namespace=static-5.5.0_61496-classic-tw"
+        },
+        "id": 0
+      }
+    },
+    {
+      "character": {
+        "name": "Aiyouv",
+        "id": 10997806,
+        "realm": {
+          "key": {
+            "href": "https://tw.api.blizzard.com/data/wow/realm/4485?namespace=dynamic-classic-tw"
+          },
+          "id": 4485,
+          "slug": "maraudon"
+        }
+      },
+      "faction": {
+        "type": "ALLIANCE"
+      },
+      "rank": 46,
+      "rating": 96,
+      "season_match_statistics": {
+        "played": 1,
+        "won": 1,
+        "lost": 0
+      },
+      "tier": {
+        "key": {
+          "href": "https://tw.api.blizzard.com/data/wow/pvp-tier/0?namespace=static-5.5.0_61496-classic-tw"
+        },
+        "id": 0
+      }
+    },
+    {
+      "character": {
+        "name": "新垣的结衣",
+        "id": 1646840,
+        "realm": {
+          "key": {
+            "href": "https://tw.api.blizzard.com/data/wow/realm/4485?namespace=dynamic-classic-tw"
+          },
+          "id": 4485,
+          "slug": "maraudon"
+        }
+      },
+      "faction": {
+        "type": "ALLIANCE"
+      },
+      "rank": 46,
+      "rating": 96,
+      "season_match_statistics": {
+        "played": 1,
+        "won": 1,
+        "lost": 0
+      },
+      "tier": {
+        "key": {
+          "href": "https://tw.api.blizzard.com/data/wow/pvp-tier/0?namespace=static-5.5.0_61496-classic-tw"
+        },
+        "id": 0
+      }
+    },
+    {
+      "character": {
+        "name": "愛澤拉士",
+        "id": 798551,
+        "realm": {
+          "key": {
+            "href": "https://tw.api.blizzard.com/data/wow/realm/4487?namespace=dynamic-classic-tw"
+          },
+          "id": 4487,
+          "slug": "ivus"
+        }
+      },
+      "faction": {
+        "type": "ALLIANCE"
+      },
+      "rank": 46,
+      "rating": 96,
+      "season_match_statistics": {
+        "played": 1,
+        "won": 1,
+        "lost": 0
+      },
+      "tier": {
+        "key": {
+          "href": "https://tw.api.blizzard.com/data/wow/pvp-tier/0?namespace=static-5.5.0_61496-classic-tw"
+        },
+        "id": 0
+      }
+    },
+    {
+      "character": {
+        "name": "Frostymage",
+        "id": 11164147,
+        "realm": {
+          "key": {
+            "href": "https://tw.api.blizzard.com/data/wow/realm/4487?namespace=dynamic-classic-tw"
+          },
+          "id": 4487,
+          "slug": "ivus"
+        }
+      },
+      "faction": {
+        "type": "HORDE"
+      },
+      "rank": 46,
+      "rating": 96,
+      "season_match_statistics": {
+        "played": 1,
+        "won": 1,
+        "lost": 0
+      },
+      "tier": {
+        "key": {
+          "href": "https://tw.api.blizzard.com/data/wow/pvp-tier/0?namespace=static-5.5.0_61496-classic-tw"
+        },
+        "id": 0
+      }
+    },
+    {
+      "character": {
+        "name": "宸熙丶",
+        "id": 11208809,
+        "realm": {
+          "key": {
+            "href": "https://tw.api.blizzard.com/data/wow/realm/4487?namespace=dynamic-classic-tw"
+          },
+          "id": 4487,
+          "slug": "ivus"
+        }
+      },
+      "faction": {
+        "type": "HORDE"
+      },
+      "rank": 46,
+      "rating": 96,
+      "season_match_statistics": {
+        "played": 1,
+        "won": 1,
+        "lost": 0
+      },
+      "tier": {
+        "key": {
+          "href": "https://tw.api.blizzard.com/data/wow/pvp-tier/0?namespace=static-5.5.0_61496-classic-tw"
+        },
+        "id": 0
+      }
+    },
+    {
+      "character": {
+        "name": "Jceo",
+        "id": 1201744,
+        "realm": {
+          "key": {
+            "href": "https://tw.api.blizzard.com/data/wow/realm/4487?namespace=dynamic-classic-tw"
+          },
+          "id": 4487,
+          "slug": "ivus"
+        }
+      },
+      "faction": {
+        "type": "ALLIANCE"
+      },
+      "rank": 46,
+      "rating": 96,
+      "season_match_statistics": {
+        "played": 1,
+        "won": 1,
+        "lost": 0
+      },
+      "tier": {
+        "key": {
+          "href": "https://tw.api.blizzard.com/data/wow/pvp-tier/0?namespace=static-5.5.0_61496-classic-tw"
+        },
+        "id": 0
+      }
+    },
+    {
+      "character": {
+        "name": "老波女耳东玲",
+        "id": 11132131,
+        "realm": {
+          "key": {
+            "href": "https://tw.api.blizzard.com/data/wow/realm/4487?namespace=dynamic-classic-tw"
+          },
+          "id": 4487,
+          "slug": "ivus"
+        }
+      },
+      "faction": {
+        "type": "HORDE"
+      },
+      "rank": 46,
+      "rating": 96,
+      "season_match_statistics": {
+        "played": 1,
+        "won": 1,
+        "lost": 0
+      },
+      "tier": {
+        "key": {
+          "href": "https://tw.api.blizzard.com/data/wow/pvp-tier/0?namespace=static-5.5.0_61496-classic-tw"
+        },
+        "id": 0
+      }
+    },
+    {
+      "character": {
+        "name": "龙士奇",
+        "id": 11200441,
+        "realm": {
+          "key": {
+            "href": "https://tw.api.blizzard.com/data/wow/realm/4487?namespace=dynamic-classic-tw"
+          },
+          "id": 4487,
+          "slug": "ivus"
+        }
+      },
+      "faction": {
+        "type": "ALLIANCE"
+      },
+      "rank": 46,
+      "rating": 96,
+      "season_match_statistics": {
+        "played": 1,
+        "won": 1,
+        "lost": 0
+      },
+      "tier": {
+        "key": {
+          "href": "https://tw.api.blizzard.com/data/wow/pvp-tier/0?namespace=static-5.5.0_61496-classic-tw"
+        },
+        "id": 0
+      }
+    },
+    {
+      "character": {
+        "name": "锤子他哥",
+        "id": 11174501,
+        "realm": {
+          "key": {
+            "href": "https://tw.api.blizzard.com/data/wow/realm/4487?namespace=dynamic-classic-tw"
+          },
+          "id": 4487,
+          "slug": "ivus"
+        }
+      },
+      "faction": {
+        "type": "HORDE"
+      },
+      "rank": 46,
+      "rating": 96,
+      "season_match_statistics": {
+        "played": 1,
+        "won": 1,
+        "lost": 0
+      },
+      "tier": {
+        "key": {
+          "href": "https://tw.api.blizzard.com/data/wow/pvp-tier/0?namespace=static-5.5.0_61496-classic-tw"
+        },
+        "id": 0
+      }
+    },
+    {
+      "character": {
+        "name": "酱油哇",
+        "id": 11209259,
+        "realm": {
+          "key": {
+            "href": "https://tw.api.blizzard.com/data/wow/realm/4487?namespace=dynamic-classic-tw"
+          },
+          "id": 4487,
+          "slug": "ivus"
+        }
+      },
+      "faction": {
+        "type": "HORDE"
+      },
+      "rank": 46,
+      "rating": 96,
+      "season_match_statistics": {
+        "played": 1,
+        "won": 1,
+        "lost": 0
+      },
+      "tier": {
+        "key": {
+          "href": "https://tw.api.blizzard.com/data/wow/pvp-tier/0?namespace=static-5.5.0_61496-classic-tw"
+        },
+        "id": 0
+      }
+    },
+    {
+      "character": {
+        "name": "怒牛沖钅",
+        "id": 11210408,
+        "realm": {
+          "key": {
+            "href": "https://tw.api.blizzard.com/data/wow/realm/4487?namespace=dynamic-classic-tw"
+          },
+          "id": 4487,
+          "slug": "ivus"
+        }
+      },
+      "faction": {
+        "type": "HORDE"
+      },
+      "rank": 46,
+      "rating": 96,
+      "season_match_statistics": {
+        "played": 1,
+        "won": 1,
+        "lost": 0
+      },
+      "tier": {
+        "key": {
+          "href": "https://tw.api.blizzard.com/data/wow/pvp-tier/0?namespace=static-5.5.0_61496-classic-tw"
+        },
+        "id": 0
+      }
+    },
+    {
+      "character": {
+        "name": "立秋丶",
+        "id": 11185733,
+        "realm": {
+          "key": {
+            "href": "https://tw.api.blizzard.com/data/wow/realm/4487?namespace=dynamic-classic-tw"
+          },
+          "id": 4487,
+          "slug": "ivus"
+        }
+      },
+      "faction": {
+        "type": "HORDE"
+      },
+      "rank": 46,
+      "rating": 96,
+      "season_match_statistics": {
+        "played": 1,
+        "won": 1,
+        "lost": 0
+      },
+      "tier": {
+        "key": {
+          "href": "https://tw.api.blizzard.com/data/wow/pvp-tier/0?namespace=static-5.5.0_61496-classic-tw"
+        },
+        "id": 0
+      }
+    },
+    {
+      "character": {
+        "name": "小芳",
+        "id": 11137564,
+        "realm": {
+          "key": {
+            "href": "https://tw.api.blizzard.com/data/wow/realm/4487?namespace=dynamic-classic-tw"
+          },
+          "id": 4487,
+          "slug": "ivus"
+        }
+      },
+      "faction": {
+        "type": "ALLIANCE"
+      },
+      "rank": 46,
+      "rating": 96,
+      "season_match_statistics": {
+        "played": 1,
+        "won": 1,
+        "lost": 0
+      },
+      "tier": {
+        "key": {
+          "href": "https://tw.api.blizzard.com/data/wow/pvp-tier/0?namespace=static-5.5.0_61496-classic-tw"
+        },
+        "id": 0
+      }
+    },
+    {
+      "character": {
+        "name": "安吉莉拉",
+        "id": 11215201,
+        "realm": {
+          "key": {
+            "href": "https://tw.api.blizzard.com/data/wow/realm/4487?namespace=dynamic-classic-tw"
+          },
+          "id": 4487,
+          "slug": "ivus"
+        }
+      },
+      "faction": {
+        "type": "ALLIANCE"
+      },
+      "rank": 46,
+      "rating": 96,
+      "season_match_statistics": {
+        "played": 1,
+        "won": 1,
+        "lost": 0
+      },
+      "tier": {
+        "key": {
+          "href": "https://tw.api.blizzard.com/data/wow/pvp-tier/0?namespace=static-5.5.0_61496-classic-tw"
+        },
+        "id": 0
+      }
+    },
+    {
+      "character": {
+        "name": "摩摩凳",
+        "id": 11198820,
+        "realm": {
+          "key": {
+            "href": "https://tw.api.blizzard.com/data/wow/realm/4487?namespace=dynamic-classic-tw"
+          },
+          "id": 4487,
+          "slug": "ivus"
+        }
+      },
+      "faction": {
+        "type": "HORDE"
+      },
+      "rank": 46,
+      "rating": 96,
+      "season_match_statistics": {
+        "played": 1,
+        "won": 1,
+        "lost": 0
+      },
+      "tier": {
+        "key": {
+          "href": "https://tw.api.blizzard.com/data/wow/pvp-tier/0?namespace=static-5.5.0_61496-classic-tw"
+        },
+        "id": 0
+      }
+    },
+    {
+      "character": {
+        "name": "鹤顶红丶",
+        "id": 11205910,
+        "realm": {
+          "key": {
+            "href": "https://tw.api.blizzard.com/data/wow/realm/4487?namespace=dynamic-classic-tw"
+          },
+          "id": 4487,
+          "slug": "ivus"
+        }
+      },
+      "faction": {
+        "type": "HORDE"
+      },
+      "rank": 46,
+      "rating": 96,
+      "season_match_statistics": {
+        "played": 1,
+        "won": 1,
+        "lost": 0
+      },
+      "tier": {
+        "key": {
+          "href": "https://tw.api.blizzard.com/data/wow/pvp-tier/0?namespace=static-5.5.0_61496-classic-tw"
+        },
+        "id": 0
+      }
+    },
+    {
+      "character": {
+        "name": "柳垂溪畔",
+        "id": 11161852,
+        "realm": {
+          "key": {
+            "href": "https://tw.api.blizzard.com/data/wow/realm/4487?namespace=dynamic-classic-tw"
+          },
+          "id": 4487,
+          "slug": "ivus"
+        }
+      },
+      "faction": {
+        "type": "HORDE"
+      },
+      "rank": 46,
+      "rating": 96,
+      "season_match_statistics": {
+        "played": 1,
+        "won": 1,
+        "lost": 0
+      },
+      "tier": {
+        "key": {
+          "href": "https://tw.api.blizzard.com/data/wow/pvp-tier/0?namespace=static-5.5.0_61496-classic-tw"
+        },
+        "id": 0
+      }
+    },
+    {
+      "character": {
+        "name": "康康写作文",
+        "id": 11183406,
+        "realm": {
+          "key": {
+            "href": "https://tw.api.blizzard.com/data/wow/realm/4487?namespace=dynamic-classic-tw"
+          },
+          "id": 4487,
+          "slug": "ivus"
+        }
+      },
+      "faction": {
+        "type": "HORDE"
+      },
+      "rank": 46,
+      "rating": 96,
+      "season_match_statistics": {
+        "played": 1,
+        "won": 1,
+        "lost": 0
+      },
+      "tier": {
+        "key": {
+          "href": "https://tw.api.blizzard.com/data/wow/pvp-tier/0?namespace=static-5.5.0_61496-classic-tw"
+        },
+        "id": 0
+      }
+    },
+    {
+      "character": {
+        "name": "Lokktarr",
+        "id": 11197479,
+        "realm": {
+          "key": {
+            "href": "https://tw.api.blizzard.com/data/wow/realm/4487?namespace=dynamic-classic-tw"
+          },
+          "id": 4487,
+          "slug": "ivus"
+        }
+      },
+      "faction": {
+        "type": "HORDE"
+      },
+      "rank": 46,
+      "rating": 96,
+      "season_match_statistics": {
+        "played": 1,
+        "won": 1,
+        "lost": 0
+      },
+      "tier": {
+        "key": {
+          "href": "https://tw.api.blizzard.com/data/wow/pvp-tier/0?namespace=static-5.5.0_61496-classic-tw"
+        },
+        "id": 0
+      }
+    },
+    {
+      "character": {
+        "name": "献给死亡",
+        "id": 11179967,
+        "realm": {
+          "key": {
+            "href": "https://tw.api.blizzard.com/data/wow/realm/4487?namespace=dynamic-classic-tw"
+          },
+          "id": 4487,
+          "slug": "ivus"
+        }
+      },
+      "faction": {
+        "type": "HORDE"
+      },
+      "rank": 46,
       "rating": 96,
       "season_match_statistics": {
         "played": 1,
@@ -1742,94 +2293,7 @@
       "faction": {
         "type": "HORDE"
       },
-      "rank": 43,
-      "rating": 96,
-      "season_match_statistics": {
-        "played": 2,
-        "won": 1,
-        "lost": 1
-      },
-      "tier": {
-        "key": {
-          "href": "https://tw.api.blizzard.com/data/wow/pvp-tier/0?namespace=static-5.5.0_61496-classic-tw"
-        },
-        "id": 0
-      }
-    },
-    {
-      "character": {
-        "name": "鬼小燕",
-        "id": 11104141,
-        "realm": {
-          "key": {
-            "href": "https://tw.api.blizzard.com/data/wow/realm/4487?namespace=dynamic-classic-tw"
-          },
-          "id": 4487,
-          "slug": "ivus"
-        }
-      },
-      "faction": {
-        "type": "HORDE"
-      },
-      "rank": 43,
-      "rating": 96,
-      "season_match_statistics": {
-        "played": 2,
-        "won": 1,
-        "lost": 1
-      },
-      "tier": {
-        "key": {
-          "href": "https://tw.api.blizzard.com/data/wow/pvp-tier/0?namespace=static-5.5.0_61496-classic-tw"
-        },
-        "id": 0
-      }
-    },
-    {
-      "character": {
-        "name": "Moonkin",
-        "id": 4140179,
-        "realm": {
-          "key": {
-            "href": "https://tw.api.blizzard.com/data/wow/realm/4485?namespace=dynamic-classic-tw"
-          },
-          "id": 4485,
-          "slug": "maraudon"
-        }
-      },
-      "faction": {
-        "type": "ALLIANCE"
-      },
-      "rank": 43,
-      "rating": 96,
-      "season_match_statistics": {
-        "played": 2,
-        "won": 1,
-        "lost": 1
-      },
-      "tier": {
-        "key": {
-          "href": "https://tw.api.blizzard.com/data/wow/pvp-tier/0?namespace=static-5.5.0_61496-classic-tw"
-        },
-        "id": 0
-      }
-    },
-    {
-      "character": {
-        "name": "芙毛球",
-        "id": 402991,
-        "realm": {
-          "key": {
-            "href": "https://tw.api.blizzard.com/data/wow/realm/4487?namespace=dynamic-classic-tw"
-          },
-          "id": 4487,
-          "slug": "ivus"
-        }
-      },
-      "faction": {
-        "type": "HORDE"
-      },
-      "rank": 43,
+      "rank": 46,
       "rating": 96,
       "season_match_statistics": {
         "played": 2,
@@ -1858,7 +2322,7 @@
       "faction": {
         "type": "ALLIANCE"
       },
-      "rank": 43,
+      "rank": 46,
       "rating": 96,
       "season_match_statistics": {
         "played": 2,
@@ -1887,7 +2351,36 @@
       "faction": {
         "type": "HORDE"
       },
-      "rank": 43,
+      "rank": 46,
+      "rating": 96,
+      "season_match_statistics": {
+        "played": 2,
+        "won": 1,
+        "lost": 1
+      },
+      "tier": {
+        "key": {
+          "href": "https://tw.api.blizzard.com/data/wow/pvp-tier/0?namespace=static-5.5.0_61496-classic-tw"
+        },
+        "id": 0
+      }
+    },
+    {
+      "character": {
+        "name": "芙毛球",
+        "id": 402991,
+        "realm": {
+          "key": {
+            "href": "https://tw.api.blizzard.com/data/wow/realm/4487?namespace=dynamic-classic-tw"
+          },
+          "id": 4487,
+          "slug": "ivus"
+        }
+      },
+      "faction": {
+        "type": "HORDE"
+      },
+      "rank": 46,
       "rating": 96,
       "season_match_statistics": {
         "played": 2,
@@ -1916,7 +2409,7 @@
       "faction": {
         "type": "HORDE"
       },
-      "rank": 43,
+      "rank": 46,
       "rating": 96,
       "season_match_statistics": {
         "played": 2,
@@ -1932,8 +2425,8 @@
     },
     {
       "character": {
-        "name": "你術術看阿",
-        "id": 96400,
+        "name": "鬼小燕",
+        "id": 11104141,
         "realm": {
           "key": {
             "href": "https://tw.api.blizzard.com/data/wow/realm/4487?namespace=dynamic-classic-tw"
@@ -1945,7 +2438,7 @@
       "faction": {
         "type": "HORDE"
       },
-      "rank": 43,
+      "rank": 46,
       "rating": 96,
       "season_match_statistics": {
         "played": 2,
@@ -1961,66 +2454,8 @@
     },
     {
       "character": {
-        "name": "结梁子",
-        "id": 11162201,
-        "realm": {
-          "key": {
-            "href": "https://tw.api.blizzard.com/data/wow/realm/4485?namespace=dynamic-classic-tw"
-          },
-          "id": 4485,
-          "slug": "maraudon"
-        }
-      },
-      "faction": {
-        "type": "ALLIANCE"
-      },
-      "rank": 43,
-      "rating": 96,
-      "season_match_statistics": {
-        "played": 2,
-        "won": 1,
-        "lost": 1
-      },
-      "tier": {
-        "key": {
-          "href": "https://tw.api.blizzard.com/data/wow/pvp-tier/0?namespace=static-5.5.0_61496-classic-tw"
-        },
-        "id": 0
-      }
-    },
-    {
-      "character": {
-        "name": "Maoyuanyuan",
-        "id": 11148102,
-        "realm": {
-          "key": {
-            "href": "https://tw.api.blizzard.com/data/wow/realm/4485?namespace=dynamic-classic-tw"
-          },
-          "id": 4485,
-          "slug": "maraudon"
-        }
-      },
-      "faction": {
-        "type": "ALLIANCE"
-      },
-      "rank": 43,
-      "rating": 96,
-      "season_match_statistics": {
-        "played": 2,
-        "won": 1,
-        "lost": 1
-      },
-      "tier": {
-        "key": {
-          "href": "https://tw.api.blizzard.com/data/wow/pvp-tier/0?namespace=static-5.5.0_61496-classic-tw"
-        },
-        "id": 0
-      }
-    },
-    {
-      "character": {
-        "name": "苔丶原",
-        "id": 11203200,
+        "name": "帝王之子",
+        "id": 11114469,
         "realm": {
           "key": {
             "href": "https://tw.api.blizzard.com/data/wow/realm/4487?namespace=dynamic-classic-tw"
@@ -2030,9 +2465,9 @@
         }
       },
       "faction": {
-        "type": "HORDE"
+        "type": "ALLIANCE"
       },
-      "rank": 43,
+      "rank": 46,
       "rating": 96,
       "season_match_statistics": {
         "played": 2,
@@ -2061,12 +2496,447 @@
       "faction": {
         "type": "HORDE"
       },
-      "rank": 43,
+      "rank": 46,
       "rating": 96,
       "season_match_statistics": {
         "played": 2,
         "won": 1,
         "lost": 1
+      },
+      "tier": {
+        "key": {
+          "href": "https://tw.api.blizzard.com/data/wow/pvp-tier/0?namespace=static-5.5.0_61496-classic-tw"
+        },
+        "id": 0
+      }
+    },
+    {
+      "character": {
+        "name": "聽說射手很黏",
+        "id": 819213,
+        "realm": {
+          "key": {
+            "href": "https://tw.api.blizzard.com/data/wow/realm/4487?namespace=dynamic-classic-tw"
+          },
+          "id": 4487,
+          "slug": "ivus"
+        }
+      },
+      "faction": {
+        "type": "ALLIANCE"
+      },
+      "rank": 46,
+      "rating": 96,
+      "season_match_statistics": {
+        "played": 2,
+        "won": 1,
+        "lost": 1
+      },
+      "tier": {
+        "key": {
+          "href": "https://tw.api.blizzard.com/data/wow/pvp-tier/0?namespace=static-5.5.0_61496-classic-tw"
+        },
+        "id": 0
+      }
+    },
+    {
+      "character": {
+        "name": "你術術看阿",
+        "id": 96400,
+        "realm": {
+          "key": {
+            "href": "https://tw.api.blizzard.com/data/wow/realm/4487?namespace=dynamic-classic-tw"
+          },
+          "id": 4487,
+          "slug": "ivus"
+        }
+      },
+      "faction": {
+        "type": "HORDE"
+      },
+      "rank": 46,
+      "rating": 96,
+      "season_match_statistics": {
+        "played": 2,
+        "won": 1,
+        "lost": 1
+      },
+      "tier": {
+        "key": {
+          "href": "https://tw.api.blizzard.com/data/wow/pvp-tier/0?namespace=static-5.5.0_61496-classic-tw"
+        },
+        "id": 0
+      }
+    },
+    {
+      "character": {
+        "name": "结梁子",
+        "id": 11162201,
+        "realm": {
+          "key": {
+            "href": "https://tw.api.blizzard.com/data/wow/realm/4485?namespace=dynamic-classic-tw"
+          },
+          "id": 4485,
+          "slug": "maraudon"
+        }
+      },
+      "faction": {
+        "type": "ALLIANCE"
+      },
+      "rank": 46,
+      "rating": 96,
+      "season_match_statistics": {
+        "played": 2,
+        "won": 1,
+        "lost": 1
+      },
+      "tier": {
+        "key": {
+          "href": "https://tw.api.blizzard.com/data/wow/pvp-tier/0?namespace=static-5.5.0_61496-classic-tw"
+        },
+        "id": 0
+      }
+    },
+    {
+      "character": {
+        "name": "Maoyuanyuan",
+        "id": 11148102,
+        "realm": {
+          "key": {
+            "href": "https://tw.api.blizzard.com/data/wow/realm/4485?namespace=dynamic-classic-tw"
+          },
+          "id": 4485,
+          "slug": "maraudon"
+        }
+      },
+      "faction": {
+        "type": "ALLIANCE"
+      },
+      "rank": 46,
+      "rating": 96,
+      "season_match_statistics": {
+        "played": 2,
+        "won": 1,
+        "lost": 1
+      },
+      "tier": {
+        "key": {
+          "href": "https://tw.api.blizzard.com/data/wow/pvp-tier/0?namespace=static-5.5.0_61496-classic-tw"
+        },
+        "id": 0
+      }
+    },
+    {
+      "character": {
+        "name": "苔丶原",
+        "id": 11203200,
+        "realm": {
+          "key": {
+            "href": "https://tw.api.blizzard.com/data/wow/realm/4487?namespace=dynamic-classic-tw"
+          },
+          "id": 4487,
+          "slug": "ivus"
+        }
+      },
+      "faction": {
+        "type": "HORDE"
+      },
+      "rank": 46,
+      "rating": 96,
+      "season_match_statistics": {
+        "played": 2,
+        "won": 1,
+        "lost": 1
+      },
+      "tier": {
+        "key": {
+          "href": "https://tw.api.blizzard.com/data/wow/pvp-tier/0?namespace=static-5.5.0_61496-classic-tw"
+        },
+        "id": 0
+      }
+    },
+    {
+      "character": {
+        "name": "旁若无人",
+        "id": 11159506,
+        "realm": {
+          "key": {
+            "href": "https://tw.api.blizzard.com/data/wow/realm/4487?namespace=dynamic-classic-tw"
+          },
+          "id": 4487,
+          "slug": "ivus"
+        }
+      },
+      "faction": {
+        "type": "ALLIANCE"
+      },
+      "rank": 46,
+      "rating": 96,
+      "season_match_statistics": {
+        "played": 2,
+        "won": 1,
+        "lost": 1
+      },
+      "tier": {
+        "key": {
+          "href": "https://tw.api.blizzard.com/data/wow/pvp-tier/0?namespace=static-5.5.0_61496-classic-tw"
+        },
+        "id": 0
+      }
+    },
+    {
+      "character": {
+        "name": "无敌铁牛",
+        "id": 11184883,
+        "realm": {
+          "key": {
+            "href": "https://tw.api.blizzard.com/data/wow/realm/4487?namespace=dynamic-classic-tw"
+          },
+          "id": 4487,
+          "slug": "ivus"
+        }
+      },
+      "faction": {
+        "type": "ALLIANCE"
+      },
+      "rank": 46,
+      "rating": 96,
+      "season_match_statistics": {
+        "played": 2,
+        "won": 1,
+        "lost": 1
+      },
+      "tier": {
+        "key": {
+          "href": "https://tw.api.blizzard.com/data/wow/pvp-tier/0?namespace=static-5.5.0_61496-classic-tw"
+        },
+        "id": 0
+      }
+    },
+    {
+      "character": {
+        "name": "Moonkin",
+        "id": 4140179,
+        "realm": {
+          "key": {
+            "href": "https://tw.api.blizzard.com/data/wow/realm/4485?namespace=dynamic-classic-tw"
+          },
+          "id": 4485,
+          "slug": "maraudon"
+        }
+      },
+      "faction": {
+        "type": "ALLIANCE"
+      },
+      "rank": 46,
+      "rating": 96,
+      "season_match_statistics": {
+        "played": 2,
+        "won": 1,
+        "lost": 1
+      },
+      "tier": {
+        "key": {
+          "href": "https://tw.api.blizzard.com/data/wow/pvp-tier/0?namespace=static-5.5.0_61496-classic-tw"
+        },
+        "id": 0
+      }
+    },
+    {
+      "character": {
+        "name": "孙胜完",
+        "id": 11168400,
+        "realm": {
+          "key": {
+            "href": "https://tw.api.blizzard.com/data/wow/realm/4487?namespace=dynamic-classic-tw"
+          },
+          "id": 4487,
+          "slug": "ivus"
+        }
+      },
+      "faction": {
+        "type": "HORDE"
+      },
+      "rank": 46,
+      "rating": 96,
+      "season_match_statistics": {
+        "played": 3,
+        "won": 1,
+        "lost": 2
+      },
+      "tier": {
+        "key": {
+          "href": "https://tw.api.blizzard.com/data/wow/pvp-tier/0?namespace=static-5.5.0_61496-classic-tw"
+        },
+        "id": 0
+      }
+    },
+    {
+      "character": {
+        "name": "Cckhaleesi",
+        "id": 11065162,
+        "realm": {
+          "key": {
+            "href": "https://tw.api.blizzard.com/data/wow/realm/4487?namespace=dynamic-classic-tw"
+          },
+          "id": 4487,
+          "slug": "ivus"
+        }
+      },
+      "faction": {
+        "type": "HORDE"
+      },
+      "rank": 46,
+      "rating": 96,
+      "season_match_statistics": {
+        "played": 3,
+        "won": 1,
+        "lost": 2
+      },
+      "tier": {
+        "key": {
+          "href": "https://tw.api.blizzard.com/data/wow/pvp-tier/0?namespace=static-5.5.0_61496-classic-tw"
+        },
+        "id": 0
+      }
+    },
+    {
+      "character": {
+        "name": "索隐息衍",
+        "id": 11160294,
+        "realm": {
+          "key": {
+            "href": "https://tw.api.blizzard.com/data/wow/realm/4487?namespace=dynamic-classic-tw"
+          },
+          "id": 4487,
+          "slug": "ivus"
+        }
+      },
+      "faction": {
+        "type": "HORDE"
+      },
+      "rank": 46,
+      "rating": 96,
+      "season_match_statistics": {
+        "played": 3,
+        "won": 1,
+        "lost": 2
+      },
+      "tier": {
+        "key": {
+          "href": "https://tw.api.blizzard.com/data/wow/pvp-tier/0?namespace=static-5.5.0_61496-classic-tw"
+        },
+        "id": 0
+      }
+    },
+    {
+      "character": {
+        "name": "特工队",
+        "id": 11199416,
+        "realm": {
+          "key": {
+            "href": "https://tw.api.blizzard.com/data/wow/realm/4487?namespace=dynamic-classic-tw"
+          },
+          "id": 4487,
+          "slug": "ivus"
+        }
+      },
+      "faction": {
+        "type": "HORDE"
+      },
+      "rank": 46,
+      "rating": 96,
+      "season_match_statistics": {
+        "played": 3,
+        "won": 1,
+        "lost": 2
+      },
+      "tier": {
+        "key": {
+          "href": "https://tw.api.blizzard.com/data/wow/pvp-tier/0?namespace=static-5.5.0_61496-classic-tw"
+        },
+        "id": 0
+      }
+    },
+    {
+      "character": {
+        "name": "索隐无翳",
+        "id": 11062266,
+        "realm": {
+          "key": {
+            "href": "https://tw.api.blizzard.com/data/wow/realm/4487?namespace=dynamic-classic-tw"
+          },
+          "id": 4487,
+          "slug": "ivus"
+        }
+      },
+      "faction": {
+        "type": "HORDE"
+      },
+      "rank": 46,
+      "rating": 96,
+      "season_match_statistics": {
+        "played": 3,
+        "won": 1,
+        "lost": 2
+      },
+      "tier": {
+        "key": {
+          "href": "https://tw.api.blizzard.com/data/wow/pvp-tier/0?namespace=static-5.5.0_61496-classic-tw"
+        },
+        "id": 0
+      }
+    },
+    {
+      "character": {
+        "name": "東北雨姐",
+        "id": 11179591,
+        "realm": {
+          "key": {
+            "href": "https://tw.api.blizzard.com/data/wow/realm/4487?namespace=dynamic-classic-tw"
+          },
+          "id": 4487,
+          "slug": "ivus"
+        }
+      },
+      "faction": {
+        "type": "HORDE"
+      },
+      "rank": 46,
+      "rating": 96,
+      "season_match_statistics": {
+        "played": 3,
+        "won": 1,
+        "lost": 2
+      },
+      "tier": {
+        "key": {
+          "href": "https://tw.api.blizzard.com/data/wow/pvp-tier/0?namespace=static-5.5.0_61496-classic-tw"
+        },
+        "id": 0
+      }
+    },
+    {
+      "character": {
+        "name": "狂暴铁牛",
+        "id": 11216039,
+        "realm": {
+          "key": {
+            "href": "https://tw.api.blizzard.com/data/wow/realm/4487?namespace=dynamic-classic-tw"
+          },
+          "id": 4487,
+          "slug": "ivus"
+        }
+      },
+      "faction": {
+        "type": "HORDE"
+      },
+      "rank": 46,
+      "rating": 96,
+      "season_match_statistics": {
+        "played": 3,
+        "won": 1,
+        "lost": 2
       },
       "tier": {
         "key": {
@@ -2090,65 +2960,7 @@
       "faction": {
         "type": "ALLIANCE"
       },
-      "rank": 43,
-      "rating": 96,
-      "season_match_statistics": {
-        "played": 4,
-        "won": 1,
-        "lost": 3
-      },
-      "tier": {
-        "key": {
-          "href": "https://tw.api.blizzard.com/data/wow/pvp-tier/0?namespace=static-5.5.0_61496-classic-tw"
-        },
-        "id": 0
-      }
-    },
-    {
-      "character": {
-        "name": "南海牧師",
-        "id": 229512,
-        "realm": {
-          "key": {
-            "href": "https://tw.api.blizzard.com/data/wow/realm/4487?namespace=dynamic-classic-tw"
-          },
-          "id": 4487,
-          "slug": "ivus"
-        }
-      },
-      "faction": {
-        "type": "ALLIANCE"
-      },
-      "rank": 43,
-      "rating": 96,
-      "season_match_statistics": {
-        "played": 4,
-        "won": 1,
-        "lost": 3
-      },
-      "tier": {
-        "key": {
-          "href": "https://tw.api.blizzard.com/data/wow/pvp-tier/0?namespace=static-5.5.0_61496-classic-tw"
-        },
-        "id": 0
-      }
-    },
-    {
-      "character": {
-        "name": "永远忠于党",
-        "id": 11197077,
-        "realm": {
-          "key": {
-            "href": "https://tw.api.blizzard.com/data/wow/realm/4487?namespace=dynamic-classic-tw"
-          },
-          "id": 4487,
-          "slug": "ivus"
-        }
-      },
-      "faction": {
-        "type": "ALLIANCE"
-      },
-      "rank": 43,
+      "rank": 46,
       "rating": 96,
       "season_match_statistics": {
         "played": 4,
@@ -2177,7 +2989,36 @@
       "faction": {
         "type": "ALLIANCE"
       },
-      "rank": 43,
+      "rank": 46,
+      "rating": 96,
+      "season_match_statistics": {
+        "played": 4,
+        "won": 1,
+        "lost": 3
+      },
+      "tier": {
+        "key": {
+          "href": "https://tw.api.blizzard.com/data/wow/pvp-tier/0?namespace=static-5.5.0_61496-classic-tw"
+        },
+        "id": 0
+      }
+    },
+    {
+      "character": {
+        "name": "南海牧師",
+        "id": 229512,
+        "realm": {
+          "key": {
+            "href": "https://tw.api.blizzard.com/data/wow/realm/4487?namespace=dynamic-classic-tw"
+          },
+          "id": 4487,
+          "slug": "ivus"
+        }
+      },
+      "faction": {
+        "type": "ALLIANCE"
+      },
+      "rank": 46,
       "rating": 96,
       "season_match_statistics": {
         "played": 4,
@@ -2206,7 +3047,7 @@
       "faction": {
         "type": "ALLIANCE"
       },
-      "rank": 43,
+      "rank": 46,
       "rating": 96,
       "season_match_statistics": {
         "played": 4,
@@ -2222,25 +3063,25 @@
     },
     {
       "character": {
-        "name": "恩羽澄",
-        "id": 1877336,
+        "name": "永远忠于党",
+        "id": 11197077,
         "realm": {
           "key": {
-            "href": "https://tw.api.blizzard.com/data/wow/realm/4485?namespace=dynamic-classic-tw"
+            "href": "https://tw.api.blizzard.com/data/wow/realm/4487?namespace=dynamic-classic-tw"
           },
-          "id": 4485,
-          "slug": "maraudon"
+          "id": 4487,
+          "slug": "ivus"
         }
       },
       "faction": {
         "type": "ALLIANCE"
       },
-      "rank": 43,
+      "rank": 46,
       "rating": 96,
       "season_match_statistics": {
-        "played": 5,
+        "played": 4,
         "won": 1,
-        "lost": 4
+        "lost": 3
       },
       "tier": {
         "key": {
@@ -2264,36 +3105,7 @@
       "faction": {
         "type": "ALLIANCE"
       },
-      "rank": 43,
-      "rating": 96,
-      "season_match_statistics": {
-        "played": 5,
-        "won": 1,
-        "lost": 4
-      },
-      "tier": {
-        "key": {
-          "href": "https://tw.api.blizzard.com/data/wow/pvp-tier/0?namespace=static-5.5.0_61496-classic-tw"
-        },
-        "id": 0
-      }
-    },
-    {
-      "character": {
-        "name": "熊貓角力",
-        "id": 11160152,
-        "realm": {
-          "key": {
-            "href": "https://tw.api.blizzard.com/data/wow/realm/4485?namespace=dynamic-classic-tw"
-          },
-          "id": 4485,
-          "slug": "maraudon"
-        }
-      },
-      "faction": {
-        "type": "ALLIANCE"
-      },
-      "rank": 43,
+      "rank": 46,
       "rating": 96,
       "season_match_statistics": {
         "played": 5,
@@ -2322,7 +3134,65 @@
       "faction": {
         "type": "ALLIANCE"
       },
-      "rank": 43,
+      "rank": 46,
+      "rating": 96,
+      "season_match_statistics": {
+        "played": 5,
+        "won": 1,
+        "lost": 4
+      },
+      "tier": {
+        "key": {
+          "href": "https://tw.api.blizzard.com/data/wow/pvp-tier/0?namespace=static-5.5.0_61496-classic-tw"
+        },
+        "id": 0
+      }
+    },
+    {
+      "character": {
+        "name": "恩羽澄",
+        "id": 1877336,
+        "realm": {
+          "key": {
+            "href": "https://tw.api.blizzard.com/data/wow/realm/4485?namespace=dynamic-classic-tw"
+          },
+          "id": 4485,
+          "slug": "maraudon"
+        }
+      },
+      "faction": {
+        "type": "ALLIANCE"
+      },
+      "rank": 46,
+      "rating": 96,
+      "season_match_statistics": {
+        "played": 5,
+        "won": 1,
+        "lost": 4
+      },
+      "tier": {
+        "key": {
+          "href": "https://tw.api.blizzard.com/data/wow/pvp-tier/0?namespace=static-5.5.0_61496-classic-tw"
+        },
+        "id": 0
+      }
+    },
+    {
+      "character": {
+        "name": "熊貓角力",
+        "id": 11160152,
+        "realm": {
+          "key": {
+            "href": "https://tw.api.blizzard.com/data/wow/realm/4485?namespace=dynamic-classic-tw"
+          },
+          "id": 4485,
+          "slug": "maraudon"
+        }
+      },
+      "faction": {
+        "type": "ALLIANCE"
+      },
+      "rank": 46,
       "rating": 96,
       "season_match_statistics": {
         "played": 5,
@@ -2351,7 +3221,7 @@
       "faction": {
         "type": "ALLIANCE"
       },
-      "rank": 43,
+      "rank": 46,
       "rating": 96,
       "season_match_statistics": {
         "played": 6,
