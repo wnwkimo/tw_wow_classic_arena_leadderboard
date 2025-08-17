@@ -147,6 +147,13 @@ canvas {
 td:nth-child(2) {
   white-space: nowrap;
 }
+
+#memberTable tbody tr:hover {
+  background-color: rgba(0,123,255,0.2) !important;
+  transform: scale(1.01);
+  transition: all 0.2s ease-in-out;
+}
+
 .member-names-hidden { 
   display: none; 
 }
