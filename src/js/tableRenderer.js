@@ -19,19 +19,16 @@ export function renderTable(list, season = 0) {
     const name = item.isTeam ? (item.teamName || '-') : (item.charName || '-');
     const realm = item.isTeam ? (item.teamRealm || '-') : (item.charRealm || '-');
 
-    // color for character entries if class present
     let nameHtml = escapeHtml(name);
     const classId = !item.isTeam ? item.charClassId : null;
     if (classId && CLASS_COLOR_MAP[classId]){
-      nameHtml = `<a class="name-link text-decoration-none" data-uid="${item.uid}"><span style=\"color:${CLASS_COLOR_MAP[classId]}\">${escapeHtml(name)}</span></a>`;
+      nameHtml = `<a class="name-link text-decoration-none" data-uid="${item.uid}"><span style="color:${CLASS_COLOR_MAP[classId]}">${escapeHtml(name)}</span></a>`;
     } else {
       nameHtml = `<a class="name-link text-decoration-none" data-uid="${item.uid}">${escapeHtml(name)}</a>`;
     }
 
-    // 建立成員名稱字串供搜尋使用
     const memberNamesForSearch = item.memberNames.join(' ');
 
-    // 職業和種族顯示
     let classHtml = '-';
     let raceHtml = '-';
     if (!item.isTeam) {
@@ -54,6 +51,7 @@ export function renderTable(list, season = 0) {
       classHtml = '<span class="text-muted">-</span>';
       raceHtml = '<span class="text-muted">-</span>';
     }
+
     const tr = $(`<tr data-uid="${item.uid}">
       <td>${item.rank??''}</td>
       <td>${nameHtml}</td>
@@ -71,42 +69,35 @@ export function renderTable(list, season = 0) {
     tbody.append(tr);
   });
 
-  // initialize DataTable
+  // initialize DataTable with initComplete callback
   try{
     dataTable = $('#leaderboard').DataTable({
       pageLength: 15,
-      order:[[5,'desc']], 
-      columnDefs: [
-        {
-          targets: 10, // member name column index
-          visible: false, 
-          searchable: true,
-        },
-      ],
-      search: { smart: false }
-    });
-  }catch(e){ console.warn('DataTable init failed', e); }
+      order:[[5,'desc']],
+      columnDefs: [{ targets: 10, visible: false, searchable: true }],
+      search: { smart: false },
+      initComplete: function() {
+        // 🔹 新增職業篩選 (S5+)
+        if (season >= 5) {
+          $('#classFilter').remove(); // 避免重複
+          let classFilter = $('<select id="classFilter" class="form-select form-select-sm ms-2 w-auto"><option value="">全部職業</option></select>');
+          $('#leaderboard_filter').append(classFilter);
 
-  // 🔹 新增職業篩選 (S5+)
-  if (season >= 5) {
-    $('#classFilter').remove(); // 避免重複
+          this.api().column(3).data().unique().sort().each(function(d){
+            let tmp = $('<div>').html(d).text().trim();
+            if (tmp && classFilter.find(`option[value="${tmp}"]`).length === 0) {
+              classFilter.append(`<option value="${tmp}">${tmp}</option>`);
+            }
+          });
 
-    let classFilter = $('<select id="classFilter" class="form-select form-select-sm ms-2 w-auto"><option value="">全部職業</option></select>');
-    $('#leaderboard_filter').append(classFilter);
-
-    // 從職業欄位抓文字（去掉 HTML）
-    dataTable.column(3).data().unique().sort().each(function (d) {
-      let tmp = $('<div>').html(d).text().trim();
-      if (tmp && classFilter.find(`option[value="${tmp}"]`).length === 0) {
-        classFilter.append(`<option value="${tmp}">${tmp}</option>`);
+          classFilter.on('change', function(){
+            let val = $.fn.dataTable.util.escapeRegex($(this).val());
+            dataTable.column(3).search(val ? val : '', true, false).draw();
+          });
+        }
       }
     });
-
-    classFilter.on('change', function () {
-      let val = $.fn.dataTable.util.escapeRegex($(this).val());
-      dataTable.column(3).search(val ? val : '', true, false).draw();
-    });
-  }
+  } catch(e){ console.warn('DataTable init failed', e); }
 
   // bind click (use delegation)
   $('#leaderboard tbody').off('click', '.name-link').on('click', '.name-link', function(ev){
