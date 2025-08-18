@@ -17,10 +17,22 @@ export const CLASS_ICON_MAP = {
   12:'https://wow.zamimg.com/images/wow/icons/medium/classicon_demonhunter.jpg',
   13:'https://wow.zamimg.com/images/wow/icons/medium/classicon_evoker.jpg'
 };
+
 export const RACE_MAP = {
-  1:'Human',2:'Orc',3:'Dwarf',4:'Night Elf',5:'Undead',6:'Tauren',
-  7:'Gnome',8:'Troll',9:'Goblin',10:'Blood Elf',11:'Draenei',
-  24:'Pandaren',25:'Pandaren',26:'Pandaren'
+  1: '人類',
+  2: '獸人',
+  3: '矮人',
+  4: '夜精靈',
+  5: '不死族',
+  6: '牛頭人',
+  7: '地精',
+  8: '食人妖',
+  9: '哥布林',
+  10: '血精靈',
+  11: '德萊尼',
+  24: '熊貓人',
+  25: '熊貓人',
+  26: '熊貓人'
 };
 export const RACE_ICON_MAP = {
   1:'https://wow.zamimg.com/images/wow/icons/medium/race_human_male.jpg',
