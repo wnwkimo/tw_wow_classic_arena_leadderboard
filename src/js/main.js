@@ -20,7 +20,8 @@ async function onFileSelected(file){
   try {
     const list = await loadFromFile(file);
     currentVisible = list;
-    renderTable(list);
+    // 檔案匯入時沒有季節選擇，預設傳 0
+    renderTable(list, 0);
     renderChart(list);
     renderSummary(list);
   } catch (err) { console.error(err); alert('Failed to load file: ' + err.message); }
@@ -33,7 +34,7 @@ async function onLoadFromGithub(){
   try {
     const list = await loadFromUrl(url);
     currentVisible = list;
-    renderTable(list);
+    renderTable(list, parseInt(season, 10)); // 🔹 傳 season 給 tableRenderer
     renderChart(list);
     renderSummary(list);
   } catch (err){ console.error(err); alert('Failed to fetch JSON: ' + err.message); }

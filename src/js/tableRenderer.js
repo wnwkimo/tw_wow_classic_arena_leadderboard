@@ -5,7 +5,7 @@ import { CLASS_MAP, CLASS_COLOR_MAP, CLASS_ICON_MAP, RACE_MAP, RACE_ICON_MAP } f
 let dataTable = null;
 let currentVisible = [];
 
-export function renderTable(list) {
+export function renderTable(list, season = 0) {
   // Store the list for the modal function
   currentVisible = list;
 
@@ -31,7 +31,7 @@ export function renderTable(list) {
     // 建立成員名稱字串供搜尋使用
     const memberNamesForSearch = item.memberNames.join(' ');
 
-    // 職業和種族顯示 (for S5+ individual entries or team)
+    // 職業和種族顯示
     let classHtml = '-';
     let raceHtml = '-';
     if (!item.isTeam) {
@@ -75,19 +75,38 @@ export function renderTable(list) {
   try{
     dataTable = $('#leaderboard').DataTable({
       pageLength: 15,
-      order:[[5,'desc']], // Updated to the 6th column (Rating)
+      order:[[5,'desc']], 
       columnDefs: [
         {
-          targets: 10, // Updated member name column index
-          visible: false, // Hidden but searchable
+          targets: 10, // member name column index
+          visible: false, 
           searchable: true,
         },
       ],
-      search: {
-        smart: false,
-      }
+      search: { smart: false }
     });
   }catch(e){ console.warn('DataTable init failed', e); }
+
+  // 🔹 新增職業篩選 (S5+)
+  if (season >= 5) {
+    $('#classFilter').remove(); // 避免重複
+
+    let classFilter = $('<select id="classFilter" class="form-select form-select-sm ms-2 w-auto"><option value="">全部職業</option></select>');
+    $('#leaderboard_filter').append(classFilter);
+
+    // 從職業欄位抓文字（去掉 HTML）
+    dataTable.column(3).data().unique().sort().each(function (d) {
+      let tmp = $('<div>').html(d).text().trim();
+      if (tmp && classFilter.find(`option[value="${tmp}"]`).length === 0) {
+        classFilter.append(`<option value="${tmp}">${tmp}</option>`);
+      }
+    });
+
+    classFilter.on('change', function () {
+      let val = $.fn.dataTable.util.escapeRegex($(this).val());
+      dataTable.column(3).search(val ? val : '', true, false).draw();
+    });
+  }
 
   // bind click (use delegation)
   $('#leaderboard tbody').off('click', '.name-link').on('click', '.name-link', function(ev){
@@ -103,6 +122,7 @@ export function clearTable() {
   }
   $('#leaderboard tbody').empty();
 }
+
 
 function openModalFor(entry) {
   $('#modalTitle').text(entry.isTeam? (entry.teamName || '隊伍') : (entry.charName || '角色'));
