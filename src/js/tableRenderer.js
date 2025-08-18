@@ -70,34 +70,50 @@ export function renderTable(list, season = 0) {
   });
 
   // initialize DataTable with initComplete callback
-  try{
+  try {
     dataTable = $('#leaderboard').DataTable({
       pageLength: 15,
-      order:[[5,'desc']],
+      order: [[5, 'desc']],
       columnDefs: [{ targets: 10, visible: false, searchable: true }],
       search: { smart: false },
-      initComplete: function() {
+      initComplete: function () {
         // 🔹 新增職業篩選 (S5+)
         if (season >= 5) {
           $('#classFilter').remove(); // 避免重複
-          let classFilter = $('<select id="classFilter" class="form-select form-select-sm ms-2 w-auto"><option value="">全部職業</option></select>');
-          $('#leaderboard_filter').append(classFilter);
-
-          this.api().column(3).data().unique().sort().each(function(d){
-            let tmp = $('<div>').html(d).text().trim();
-            if (tmp && classFilter.find(`option[value="${tmp}"]`).length === 0) {
-              classFilter.append(`<option value="${tmp}">${tmp}</option>`);
-            }
+          let classFilter = $(`
+            <select id="classFilter" class="form-select form-select-sm ms-2 w-auto">
+              <option value="">全部職業</option>             
+            </select>
+          `);
+          
+          // 加入職業選項（帶顏色）
+          Object.entries(CLASS_MAP).forEach(([id, name]) => {
+            const color = CLASS_COLOR_MAP[id] || '#FFFFFF';
+            classFilter.append(
+              `<option value="${name}" style="color:${color};">${name}</option>`
+              
+            );
           });
-
-          classFilter.on('change', function(){
+          classFilter.append('<option value="未知">未知</option>');
+        
+          // 把下拉放到 DataTables filter 區塊
+          $('#leaderboard_filter')
+            .append(
+              $('<div class="filter-controls d-flex flex-column align-items-end gap-2"></div>')
+                .append(classFilter)
+            );
+          
+          // 篩選事件
+          classFilter.on('change', function () {
             let val = $.fn.dataTable.util.escapeRegex($(this).val());
             dataTable.column(3).search(val ? val : '', true, false).draw();
           });
         }
       }
     });
-  } catch(e){ console.warn('DataTable init failed', e); }
+  } catch (e) {
+    console.warn('DataTable init failed', e);
+  }
 
   // bind click (use delegation)
   $('#leaderboard tbody').off('click', '.name-link').on('click', '.name-link', function(ev){
