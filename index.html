@@ -31,7 +31,7 @@
         <option value="9">S9 浩劫與重生 兇殘 Vicious</option>
         <option value="10">S10 浩劫與重生 冷酷 Ruthless</option>
         <option value="11">S11 浩劫與重生 災變 Cataclysmic</option>
-        <option value="12">S12 熊貓人之謎 惡毒 Malevolent</option>
+        <option value="12" selected>S12 熊貓人之謎 惡毒 Malevolent</option>
       </select>
       <select id="bracketSelect" class="form-select w-auto">
         <option value="2v2">2v2</option><option value="3v3">3v3</option><option value="5v5">5v5</option>
@@ -43,6 +43,9 @@
       <span class="summary-text me-4" id="summaryRating">平均 Rating: -</span>
       <span class="summary-text me-4" id="summaryMatches">總場次: -</span>
       <span class="summary-text" id="summaryMax">最高 Rating: -</span>
+    </div>
+    <div id="loadingIndicator" class="text-light bg-dark p-2 mb-3" style="display:none;">
+  ⏳ Loading leaderboard...
     </div>
     <table id="leaderboard" class="table table-striped table-dark" style="width:100%">
       <thead>

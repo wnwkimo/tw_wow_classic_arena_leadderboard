@@ -158,6 +158,16 @@ td:nth-child(2) {
   display: none; 
 }
 
+#loadingIndicator {
+  background-color: var(--table-row-bg-even); /* 跟表格偶數列背景一致 */
+  color: var(--text-color);                   /* 跟文字一致 */
+  padding: 8px 12px;
+  border-radius: 6px;
+  font-weight: 600;
+  margin-bottom: 12px;
+  text-align: center;
+  box-shadow: 0 2px 6px rgba(0,123,255,0.2);
+}
 /* Table Styles */
 .table-striped > tbody > tr:nth-of-type(odd) {
   background-color: var(--table-row-bg-odd) !important;

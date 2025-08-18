@@ -31,13 +31,21 @@ async function onLoadFromGithub(){
   const season = document.getElementById('seasonSelect').value;
   const bracket = document.getElementById('bracketSelect').value;
   const url = `https://wnwkimo.github.io/tw_wow_classic_arena_leadderboard/data/season_${season}_${bracket}_tw_arena.json`;
+
+  showLoading(`⏳ Loading Season ${season} ${bracket}...`);  // ✅ 顯示 loading
+
   try {
     const list = await loadFromUrl(url);
     currentVisible = list;
-    renderTable(list, parseInt(season, 10)); // 🔹 傳 season 給 tableRenderer
+    renderTable(list, parseInt(season, 10));
     renderChart(list);
     renderSummary(list);
-  } catch (err){ console.error(err); alert('Failed to fetch JSON: ' + err.message); }
+  } catch (err){
+    console.error(err);
+    alert('Failed to fetch JSON: ' + err.message);
+  } finally {
+    hideLoading();  // ✅ 載入完成或失敗隱藏 loading
+  }
 }
 
 function clearAll(){
@@ -50,6 +58,16 @@ function clearAll(){
   currentVisible = [];
 }
 
+
+function showLoading(message = 'Loading...'){
+  const loadingDiv = document.getElementById('loadingIndicator');
+  loadingDiv.textContent = message;
+  loadingDiv.style.display = 'block';
+}
+
+function hideLoading(){
+  document.getElementById('loadingIndicator').style.display = 'none';
+}
 document.getElementById('fileInput').addEventListener('change', ev => {
   const f = ev.target.files[0];
   if (f) onFileSelected(f);
@@ -58,3 +76,8 @@ document.getElementById('fileInput').addEventListener('change', ev => {
 
 document.getElementById('clearBtn').addEventListener('click', clearAll);
 document.getElementById('loadGithubBtn').addEventListener('click', onLoadFromGithub);
+document.addEventListener('DOMContentLoaded', () => {
+  const seasonSelect = document.getElementById('seasonSelect');
+  seasonSelect.value = "12";       // 設定 season 選擇 S12
+  onLoadFromGithub();              // 自動載入資料
+});
