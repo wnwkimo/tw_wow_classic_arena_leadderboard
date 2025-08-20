@@ -1484,10 +1484,10 @@
         },
         "playable_race": {
           "key": {
-            "href": "https://tw.api.blizzard.com/data/wow/playable-race/8?namespace=static-5.5.0_61496-classic-tw"
+            "href": "https://tw.api.blizzard.com/data/wow/playable-race/5?namespace=static-5.5.0_61496-classic-tw"
           },
           "name": null,
-          "id": 8
+          "id": 5
         }
       },
       "faction": {
