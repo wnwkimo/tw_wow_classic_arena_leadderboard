@@ -1,19 +1,30 @@
-/* Arena Leaderboard - Main Stylesheet */
+/* ===============================
+   Arena Leaderboard - Main Stylesheet
+   =============================== */
 
-/* CSS Custom Properties */
+/* ===============================
+   1. CSS Variables
+   =============================== */
 :root {
   --background-color: #0c1a2f;
   --text-color: #e6eef6;
   --primary-color: #007bff;
   --secondary-color: #6c757d;
   --highlight-color: #a9d1ff;
+
   --table-header-bg: #1a2a40;
   --table-row-bg-odd: #101c2e;
   --table-row-bg-even: #142136;
 }
 
-/* Base Layout & Typography */
-html {
+/* ===============================
+   2. Reset & Base Layout
+   =============================== */
+* {
+  box-sizing: border-box;
+}
+
+html, body {
   background-color: var(--background-color) !important;
   margin: 0;
   padding: 0;
@@ -21,19 +32,12 @@ html {
 }
 
 body {
-  background-color: var(--background-color) !important;
   color: var(--text-color);
   font-family: 'Inter', system-ui, Arial, sans-serif;
-  min-height: 100vh;
-  margin: 0;
-  padding: 0;
-}
-
-* {
-  box-sizing: border-box;
 }
 
 /* Background overlay fallbacks */
+html::before,
 body::before {
   content: '';
   position: fixed;
@@ -42,54 +46,20 @@ body::before {
   width: 100vw;
   height: 100vh;
   background-color: var(--background-color);
-  z-index: -999;
 }
 
-html::before {
-  content: '';
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100vw;
-  height: 100vh;
-  background-color: var(--background-color);
-  z-index: -1000;
-}
+body::before { z-index: -999; }
+html::before { z-index: -1000; }
 
-/* Container Styles */
-.container { 
-  background-color: var(--background-color) !important;
-  margin-top: 28px;
-  width: 100%;
-  max-width: 100%;
-  padding-left: 15px;
-  padding-right: 15px;
-  white-space: nowrap;
-}
-
-.container-fluid, 
-.container,
-.container-sm,
-.container-md,
-.container-lg,
-.container-xl,
-.container-xxl {
-  background-color: var(--background-color) !important;
-  white-space: nowrap;
-}
-
-#app {
-  background-color: var(--background-color) !important;
-  min-height: 100vh;
-  width: 100%;
-}
-
-/* Reset background colors for layout elements */
-div, section, main, article, aside, header, footer, nav {
+/* Reset backgrounds for layout elements */
+div, section, main, article, aside,
+header, footer, nav {
   background-color: transparent;
 }
 
-/* Typography */
+/* ===============================
+   3. Typography
+   =============================== */
 h1, h2, h3, h4, h5, h6 {
   color: #ffffff !important;
   background-color: transparent !important;
@@ -98,7 +68,6 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 h1 {
-  color: #ffffff !important;
   font-weight: 700;
   text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
 }
@@ -108,73 +77,71 @@ h1 {
   font-weight: 600; 
 }
 
-.text-muted { 
-  opacity: 0.8; 
+.text-muted { opacity: 0.8; }
+
+/* ===============================
+   4. Layout Containers
+   =============================== */
+#app {
+  background-color: var(--background-color) !important;
+  min-height: 100vh;
+  width: 100%;
 }
 
-/* Component Styles */
-.class-race-container { 
-  white-space: nowrap; 
-  display: flex; 
-  align-items: center; 
-  gap: 6px; 
-}
-
-.class-race-container img { 
-  width: 20px; 
-  height: 20px; 
-  border-radius: 3px; 
-}
-
-a.name-link { 
-  cursor: pointer; 
-  color: var(--highlight-color); 
-  text-decoration: none; 
-}
-
-a.name-link:hover { 
-  text-decoration: underline; 
-}
-
-/* Chart container maintains white background for readability */
-canvas { 
-  background: #ffffff; 
-  border-radius: 8px; 
-  padding: 8px; 
-}
-
-#memberTable 
-td:nth-child(2) {
+.container { 
+  background-color: var(--background-color) !important;
+  margin-top: 28px;
+  width: 100%;
+  max-width: 100%;
+  padding: 0 15px;
   white-space: nowrap;
 }
 
-#memberTable tbody tr:hover {
-  background-color: rgba(0,123,255,0.2) !important;
-  transform: scale(1.01);
-  transition: all 0.2s ease-in-out;
+.container-fluid, 
+.container, .container-sm, .container-md, .container-lg,
+.container-xl, .container-xxl {
+  background-color: var(--background-color) !important;
+  white-space: nowrap;
 }
 
-.member-names-hidden { 
-  display: none; 
+/* Bootstrap Grid background reset */
+.row, .col, .col-auto, .col-1, .col-2, .col-3, .col-4, .col-5, .col-6,
+.col-7, .col-8, .col-9, .col-10, .col-11, .col-12,
+.col-sm, .col-sm-auto, .col-sm-1, .col-sm-2, .col-sm-3, .col-sm-4,
+.col-sm-5, .col-sm-6, .col-sm-7, .col-sm-8, .col-sm-9, .col-sm-10,
+.col-sm-11, .col-sm-12, .col-md, .col-md-auto, .col-md-1, .col-md-2,
+.col-md-3, .col-md-4, .col-md-5, .col-md-6, .col-md-7, .col-md-8,
+.col-md-9, .col-md-10, .col-md-11, .col-md-12, .col-lg, .col-lg-auto,
+.col-lg-1, .col-lg-2, .col-lg-3, .col-lg-4, .col-lg-5, .col-lg-6,
+.col-lg-7, .col-lg-8, .col-lg-9, .col-lg-10, .col-lg-11, .col-lg-12,
+.col-xl, .col-xl-auto, .col-xl-1, .col-xl-2, .col-xl-3, .col-xl-4,
+.col-xl-5, .col-xl-6, .col-xl-7, .col-xl-8, .col-xl-9, .col-xl-10,
+.col-xl-11, .col-xl-12, .col-xxl, .col-xxl-auto, .col-xxl-1, .col-xxl-2,
+.col-xxl-3, .col-xxl-4, .col-xxl-5, .col-xxl-6, .col-xxl-7, .col-xxl-8,
+.col-xxl-9, .col-xxl-10, .col-xxl-11, .col-xxl-12 {
+  background-color: transparent !important;
 }
 
-#loadingIndicator {
-  background-color: var(--table-row-bg-even); /* 跟表格偶數列背景一致 */
-  color: var(--text-color);                   /* 跟文字一致 */
-  padding: 8px 12px;
-  border-radius: 6px;
-  font-weight: 600;
-  margin-bottom: 12px;
-  text-align: center;
-  box-shadow: 0 2px 6px rgba(0,123,255,0.2);
+/* ===============================
+   5. Tables
+   =============================== */
+.table {
+  background-color: transparent !important;
 }
-/* Table Styles */
+
 .table-striped > tbody > tr:nth-of-type(odd) {
   background-color: var(--table-row-bg-odd) !important;
 }
 
 .table-striped > tbody > tr:nth-of-type(even) {
   background-color: var(--table-row-bg-even) !important;
+}
+
+.table-striped tbody tr:hover,
+#memberTable tbody tr:hover {
+  background-color: rgba(0,123,255,0.2) !important;
+  transform: scale(1.01);
+  transition: all 0.2s ease-in-out;
 }
 
 .table-dark {
@@ -195,33 +162,25 @@ td:nth-child(2) {
   background-color: transparent !important;
 }
 
-.table {
-  background-color: transparent !important;
+#memberTable td:nth-child(2) {
+  white-space: nowrap;
 }
 
-/* DataTables Styling */
+/* ===============================
+   6. DataTables Plugin
+   =============================== */
 .dataTables_wrapper {
   color: var(--text-color);
   background-color: transparent !important;
   margin-top: 20px;
 }
 
-.dataTables_wrapper .dataTables_length {
-  margin-bottom: 15px;
-}
-
-.dataTables_wrapper .dataTables_length label {
-  color: #f8f9fa !important;
-  font-weight: 500;
-  display: flex;
-  align-items: center;
-  gap: 8px;
-}
-
+.dataTables_wrapper .dataTables_length,
 .dataTables_wrapper .dataTables_filter {
   margin-bottom: 15px;
 }
 
+.dataTables_wrapper .dataTables_length label,
 .dataTables_wrapper .dataTables_filter label {
   color: #f8f9fa !important;
   font-weight: 500;
@@ -230,7 +189,7 @@ td:nth-child(2) {
   gap: 8px;
 }
 
-/* Form Controls */
+/* Search box */
 .dataTables_wrapper .dataTables_filter input {
   background-color: #2a3f5a !important;
   color: #f8f9fa !important;
@@ -242,11 +201,12 @@ td:nth-child(2) {
 
 .dataTables_wrapper .dataTables_filter input:focus {
   background-color: #345a7a !important;
-  border-color: #007bff !important;
-  box-shadow: 0 0 0 0.2rem rgba(0, 123, 255, 0.3);
+  border-color: var(--primary-color) !important;
+  box-shadow: 0 0 0 0.2rem rgba(0,123,255,0.3);
   outline: none;
 }
 
+/* Length dropdown */
 .dataTables_wrapper .dataTables_length select {
   background-color: #2a3f5a !important;
   color: #f8f9fa !important;
@@ -258,20 +218,12 @@ td:nth-child(2) {
 
 .dataTables_wrapper .dataTables_length select:focus {
   background-color: #345a7a !important;
-  border-color: #007bff !important;
-  box-shadow: 0 0 0 0.2rem rgba(0, 123, 255, 0.3);
+  border-color: var(--primary-color) !important;
+  box-shadow: 0 0 0 0.2rem rgba(0,123,255,0.3);
   outline: none;
 }
 
 /* Pagination */
-.dataTables_wrapper .dataTables_paginate .paginate_button.current, 
-.dataTables_wrapper .dataTables_paginate .paginate_button.current:hover {
-  background: linear-gradient(135deg, #007bff, #0056b3) !important;
-  border-color: #007bff !important;
-  border-radius: 6px;
-  color: #ffffff !important;
-}
-
 .dataTables_wrapper .dataTables_paginate .paginate_button {
   color: #f8f9fa !important;
   background: #2a3f5a !important;
@@ -287,6 +239,15 @@ td:nth-child(2) {
   color: #ffffff !important;
 }
 
+.dataTables_wrapper .dataTables_paginate .paginate_button.current,
+.dataTables_wrapper .dataTables_paginate .paginate_button.current:hover {
+  background: linear-gradient(135deg, #007bff, #0056b3) !important;
+  border-color: #007bff !important;
+  border-radius: 6px;
+  color: #ffffff !important;
+}
+
+/* Info text */
 .dataTables_wrapper .dataTables_info {
   color: #c8d3e0;
   font-weight: 500;
@@ -299,48 +260,10 @@ td:nth-child(2) {
   background-color: transparent !important;
 }
 
-/* Modal Styles */
-.modal-content {
-  background-color: #1a2a40 !important;
-  color: var(--text-color);
-}
-
-.modal-header {
-  border-bottom: 1px solid #333;
-  background-color: transparent !important;
-}
-
-.modal-footer {
-  border-top: 1px solid #333;
-  background-color: transparent !important;
-}
-
-.modal-body {
-  background-color: transparent !important;
-}
-
-/* Bootstrap Form Components */
-.form-control {
-  background-color: #2a3f5a !important;
-  border: 2px solid #4a6582 !important;
-  color: #f8f9fa !important;
-  border-radius: 6px;
-  transition: all 0.3s ease;
-}
-
-.form-control:focus {
-  background-color: #345a7a !important;
-  border-color: #007bff !important;
-  color: #ffffff !important;
-  box-shadow: 0 0 0 0.2rem rgba(0, 123, 255, 0.3);
-  outline: none;
-}
-
-.form-control:hover {
-  background-color: #2e4459 !important;
-  border-color: #5a7a95 !important;
-}
-
+/* ===============================
+   7. Forms
+   =============================== */
+.form-control,
 .form-select {
   background-color: #2a3f5a !important;
   border: 2px solid #4a6582 !important;
@@ -349,34 +272,39 @@ td:nth-child(2) {
   transition: all 0.3s ease;
 }
 
+.form-control:focus,
 .form-select:focus {
   background-color: #345a7a !important;
-  border-color: #007bff !important;
+  border-color: var(--primary-color) !important;
   color: #ffffff !important;
-  box-shadow: 0 0 0 0.2rem rgba(0, 123, 255, 0.3);
+  box-shadow: 0 0 0 0.2rem rgba(0,123,255,0.3);
   outline: none;
 }
 
+.form-control:hover,
 .form-select:hover {
   background-color: #2e4459 !important;
   border-color: #5a7a95 !important;
 }
 
-/* Button Styles */
+/* ===============================
+   8. Buttons
+   =============================== */
 .btn {
   border: none;
   border-radius: 8px;
   font-weight: 500;
   padding: 8px 16px;
   transition: all 0.3s ease;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+  box-shadow: 0 2px 4px rgba(0,0,0,0.2);
 }
 
 .btn:hover {
   transform: translateY(-1px);
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+  box-shadow: 0 4px 8px rgba(0,0,0,0.3);
 }
 
+/* Primary */
 .btn-primary {
   animation: pulseGlow 2s infinite;
 }
@@ -390,6 +318,7 @@ td:nth-child(2) {
   border-color: #0056b3 !important;
 }
 
+/* Secondary */
 .btn-secondary {
   background: linear-gradient(135deg, #6c757d, #545b62) !important;
   border-color: #6c757d !important;
@@ -401,6 +330,7 @@ td:nth-child(2) {
   border-color: #545b62 !important;
 }
 
+/* File upload */
 .file-upload-btn {
   position: fixed;
   top: 10px;
@@ -409,40 +339,77 @@ td:nth-child(2) {
   font-size: 12px;
   padding: 6px 12px;
 }
-.file-upload-btn input[type="file"] {
-  display: none;
-}
-.table-striped tbody tr:hover {
-  background-color: rgba(0,123,255,0.2) !important;
-  transform: scale(1.01);
-  transition: all 0.2s ease-in-out;
+.file-upload-btn input[type="file"] { display: none; }
+
+/* ===============================
+   9. Modals
+   =============================== */
+.modal-content {
+  background-color: #1a2a40 !important;
+  color: var(--text-color);
 }
 
+.modal-header,
+.modal-footer,
+.modal-body {
+  background-color: transparent !important;
+}
+
+.modal-header { border-bottom: 1px solid #333; }
+.modal-footer { border-top: 1px solid #333; }
+
+/* ===============================
+   10. Components
+   =============================== */
+/* Class & Race container */
+.class-race-container { 
+  white-space: nowrap; 
+  display: flex; 
+  align-items: center; 
+  gap: 6px; 
+}
+.class-race-container img { 
+  width: 20px; 
+  height: 20px; 
+  border-radius: 3px; 
+}
+
+/* Links */
+a.name-link { 
+  cursor: pointer; 
+  color: var(--highlight-color); 
+  text-decoration: none; 
+}
+a.name-link:hover { text-decoration: underline; }
+
+/* Charts */
+canvas { 
+  background: #ffffff; 
+  border-radius: 8px; 
+  padding: 8px; 
+}
+
+/* Loading indicator */
+#loadingIndicator {
+  background-color: var(--table-row-bg-even);
+  color: var(--text-color);
+  padding: 8px 12px;
+  border-radius: 6px;
+  font-weight: 600;
+  margin-bottom: 12px;
+  text-align: center;
+  box-shadow: 0 2px 6px rgba(0,123,255,0.2);
+}
+
+.member-names-hidden { display: none; }
+
+/* Leaderboard filter */
 #leaderboard_filter {
   display: flex;
   flex-direction: column;
-  align-items: flex-end; /* 靠右 */
-  gap: 8px; /* 上下間距 */
+  align-items: flex-end;
+  gap: 8px;
 }
 #leaderboard_filter label {
-  margin-bottom: 0; /* 避免原生 DataTables 留多餘間距 */
-}
-
-
-/* Bootstrap Grid System Background Reset */
-.row, .col, .col-auto, .col-1, .col-2, .col-3, .col-4, .col-5, .col-6,
-.col-7, .col-8, .col-9, .col-10, .col-11, .col-12,
-.col-sm, .col-sm-auto, .col-sm-1, .col-sm-2, .col-sm-3, .col-sm-4,
-.col-sm-5, .col-sm-6, .col-sm-7, .col-sm-8, .col-sm-9, .col-sm-10,
-.col-sm-11, .col-sm-12, .col-md, .col-md-auto, .col-md-1, .col-md-2,
-.col-md-3, .col-md-4, .col-md-5, .col-md-6, .col-md-7, .col-md-8,
-.col-md-9, .col-md-10, .col-md-11, .col-md-12, .col-lg, .col-lg-auto,
-.col-lg-1, .col-lg-2, .col-lg-3, .col-lg-4, .col-lg-5, .col-lg-6,
-.col-lg-7, .col-lg-8, .col-lg-9, .col-lg-10, .col-lg-11, .col-lg-12,
-.col-xl, .col-xl-auto, .col-xl-1, .col-xl-2, .col-xl-3, .col-xl-4,
-.col-xl-5, .col-xl-6, .col-xl-7, .col-xl-8, .col-xl-9, .col-xl-10,
-.col-xl-11, .col-xl-12, .col-xxl, .col-xxl-auto, .col-xxl-1, .col-xxl-2,
-.col-xxl-3, .col-xxl-4, .col-xxl-5, .col-xxl-6, .col-xxl-7, .col-xxl-8,
-.col-xxl-9, .col-xxl-10, .col-xxl-11, .col-xxl-12 {
-  background-color: transparent !important;
+  margin-bottom: 0;
 }

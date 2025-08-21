@@ -5,9 +5,7 @@ import { renderChart, clearChart } from './chartRenderer.js';
 
 let currentVisible = [];
 
-// ---------------------
-// Loading 控制
-// ---------------------
+// Loading indicator
 function showLoading(message = '⏳ Loading...') {
   const loadingDiv = document.getElementById('loadingIndicator');
   if (loadingDiv) {
@@ -15,15 +13,12 @@ function showLoading(message = '⏳ Loading...') {
     loadingDiv.style.display = 'block';
   }
 }
-
 function hideLoading() {
   const loadingDiv = document.getElementById('loadingIndicator');
   if (loadingDiv) loadingDiv.style.display = 'none';
 }
 
-// ---------------------
-// Summary 更新
-// ---------------------
+// Summary panel
 function renderSummary(list) {
   const count = list.length;
   const totalRating = list.reduce((s, i) => s + i.rating, 0);
@@ -36,9 +31,7 @@ function renderSummary(list) {
   document.getElementById('summaryMax').textContent = `最高 Rating: ${maxRating}`;
 }
 
-// ---------------------
-// File Input
-// ---------------------
+// Load from file
 async function onFileSelected(file) {
   try {
     showLoading('📂 Loading file...');
@@ -55,9 +48,7 @@ async function onFileSelected(file) {
   }
 }
 
-// ---------------------
-// Github JSON Load
-// ---------------------
+// Load from GitHub
 async function onLoadFromGithub() {
   const season = document.getElementById('seasonSelect').value;
   const bracket = document.getElementById('bracketSelect').value;
@@ -79,9 +70,7 @@ async function onLoadFromGithub() {
   }
 }
 
-// ---------------------
-// 清除表格/圖表
-// ---------------------
+// Clear all views
 function clearAll() {
   clearTable();
   clearChart();
@@ -92,23 +81,18 @@ function clearAll() {
   currentVisible = [];
 }
 
-// ---------------------
-// Event Listeners
-// ---------------------
+// Event bindings
 document.getElementById('fileInput').addEventListener('change', ev => {
   const f = ev.target.files[0];
   if (f) onFileSelected(f);
   ev.target.value = '';
 });
-
 document.getElementById('clearBtn').addEventListener('click', clearAll);
 document.getElementById('loadGithubBtn').addEventListener('click', onLoadFromGithub);
 
-// ---------------------
-// 自動載入 S12
-// ---------------------
+// Auto-load Season 12
 document.addEventListener('DOMContentLoaded', () => {
   const seasonSelect = document.getElementById('seasonSelect');
-  seasonSelect.value = "12";       // 選 S12
-  onLoadFromGithub();              // 自動載入資料
+  seasonSelect.value = "12";
+  onLoadFromGithub();
 });
