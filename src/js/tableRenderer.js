@@ -174,7 +174,17 @@ function openModalFor(entry) {
         ${raceIcon ? `<img src="${raceIcon}" alt="${raceName}" style="width:20px;height:20px;margin-left:5px;" onerror="this.style.display='none'">` : ''}
       </div>`;
       
-      const row = `<tr><td>${idx+1}</td><td>${escapeHtml(name)}</td><td>${clsHtml}</td><td>${raceHtml}</td><td>${rating}</td><td>${played}</td><td>${won}</td><td>${lost}</td><td>${winp}</td></tr>`;
+       const row = `<tr>
+        <td>${idx+1}</td>
+        <td><span style="color:${classColor}; font-weight:bold;">${escapeHtml(name)}</span></td>
+        <td>${clsHtml}</td>
+        <td>${raceHtml}</td>
+        <td>${rating}</td>
+        <td>${played}</td>
+        <td>${won}</td>
+        <td>${lost}</td>
+        <td>${winp}</td>
+      </tr>`;
       tbody.append(row);
     });
   } else {
@@ -198,7 +208,17 @@ function openModalFor(entry) {
       ${raceIcon ? `<img src="${raceIcon}" alt="${raceName}" style="width:20px;height:20px;margin-left:5px;" onerror="this.style.display='none'">` : ''}
     </div>`;
     
-    const row = `<tr><td>1</td><td>${escapeHtml(name)}</td><td>${clsHtml}</td><td>${raceHtml}</td><td>${entry.rating}</td><td>${entry.played}</td><td>${entry.won}</td><td>${entry.lost}</td><td>${entry.winRate.toFixed(1)}</td></tr>`;
+    const row = `<tr>
+      <td>1</td>
+      <td><span style="color:${classColor}; font-weight:bold;">${escapeHtml(name)}</span></td>
+      <td>${clsHtml}</td>
+      <td>${raceHtml}</td>
+      <td>${entry.rating}</td>
+      <td>${entry.played}</td>
+      <td>${entry.won}</td>
+      <td>${entry.lost}</td>
+      <td>${entry.winRate.toFixed(1)}</td>
+    </tr>`;
     tbody.append(row);
   }
 
