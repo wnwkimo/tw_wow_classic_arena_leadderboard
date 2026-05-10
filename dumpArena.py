@@ -304,16 +304,76 @@ def get_season_input(wow_client: WoWPvPLeaderboard) -> List[int]:
         else:
             print("請輸入正確選項")
 
+def read_windows_credential(target_name: str) -> Optional[str]:
+    if os.name != "nt":
+        return None
+
+    try:
+        import ctypes
+        from ctypes import wintypes
+
+        class CREDENTIAL(ctypes.Structure):
+            _fields_ = [
+                ("Flags", wintypes.DWORD),
+                ("Type", wintypes.DWORD),
+                ("TargetName", wintypes.LPWSTR),
+                ("Comment", wintypes.LPWSTR),
+                ("LastWritten", wintypes.FILETIME),
+                ("CredentialBlobSize", wintypes.DWORD),
+                ("CredentialBlob", ctypes.c_void_p),
+                ("Persist", wintypes.DWORD),
+                ("AttributeCount", wintypes.DWORD),
+                ("Attributes", ctypes.c_void_p),
+                ("TargetAlias", wintypes.LPWSTR),
+                ("UserName", wintypes.LPWSTR),
+            ]
+
+        credential_ptr = ctypes.POINTER(CREDENTIAL)()
+        ok = ctypes.windll.advapi32.CredReadW(
+            target_name,
+            1,  # CRED_TYPE_GENERIC
+            0,
+            ctypes.byref(credential_ptr),
+        )
+        if not ok:
+            return None
+
+        try:
+            credential = credential_ptr.contents
+            if not credential.CredentialBlob or not credential.CredentialBlobSize:
+                return None
+            blob = ctypes.string_at(credential.CredentialBlob, credential.CredentialBlobSize)
+            for encoding in ("utf-16-le", "utf-8"):
+                try:
+                    value = blob.decode(encoding).rstrip("\x00")
+                    if value:
+                        return value
+                except UnicodeDecodeError:
+                    continue
+            return None
+        finally:
+            ctypes.windll.advapi32.CredFree(credential_ptr)
+    except Exception:
+        return None
+
 def read_blizzard_credentials() -> Optional[Dict[str, str]]:
-    client_id = os.getenv("BLIZZARD_CLIENT_ID") or os.getenv("BNET_CLIENT_ID")
-    client_secret = os.getenv("BLIZZARD_CLIENT_SECRET") or os.getenv("BNET_CLIENT_SECRET")
+    client_id = (
+        read_windows_credential("BLIZZARD_CLIENT_ID")
+        or os.getenv("BLIZZARD_CLIENT_ID")
+        or os.getenv("BNET_CLIENT_ID")
+    )
+    client_secret = (
+        read_windows_credential("BLIZZARD_CLIENT_SECRET")
+        or os.getenv("BLIZZARD_CLIENT_SECRET")
+        or os.getenv("BNET_CLIENT_SECRET")
+    )
     region = os.getenv("BLIZZARD_REGION") or os.getenv("BNET_REGION") or "us"
 
     if client_id and client_secret:
         return {"client_id": client_id, "client_secret": client_secret, "region": region}
 
-    print("未偵測到 Blizzard API 環境變數。")
-    print("建議設定 BLIZZARD_CLIENT_ID 與 BLIZZARD_CLIENT_SECRET，避免把 token 寫進程式。")
+    print("未偵測到 Windows Credential Manager 或環境變數中的 Blizzard API 憑證。")
+    print("建議用 Windows Credential Manager 保存 BLIZZARD_CLIENT_ID 與 BLIZZARD_CLIENT_SECRET。")
     client_id = client_id or input("請輸入 Blizzard Client ID: ").strip()
     client_secret = client_secret or getpass.getpass("請輸入 Blizzard Client Secret: ").strip()
 
