@@ -1,0 +1,450 @@
+{
+  "_links": {
+    "self": {
+      "href": "https://tw.api.blizzard.com/data/wow/pvp-season/13/pvp-leaderboard/5v5?namespace=dynamic-classic-tw"
+    }
+  },
+  "season": {
+    "key": {
+      "href": "https://tw.api.blizzard.com/data/wow/pvp-season/13?namespace=dynamic-classic-tw"
+    },
+    "id": 13
+  },
+  "name": "5v5",
+  "bracket": {
+    "id": 2,
+    "type": "ARENA_5v5"
+  },
+  "entries": [
+    {
+      "character": {
+        "name": "小美仁",
+        "id": 11025987,
+        "realm": {
+          "key": {
+            "href": "https://tw.api.blizzard.com/data/wow/realm/4487?namespace=dynamic-classic-tw"
+          },
+          "id": 4487,
+          "slug": "ivus"
+        },
+        "playable_class": {
+          "key": {
+            "href": "https://tw.api.blizzard.com/data/wow/playable-class/3?namespace=static-5.5.3_64530-classic-tw"
+          },
+          "name": null,
+          "id": 3
+        },
+        "playable_race": {
+          "key": {
+            "href": "https://tw.api.blizzard.com/data/wow/playable-race/8?namespace=static-5.5.3_64530-classic-tw"
+          },
+          "name": null,
+          "id": 8
+        }
+      },
+      "faction": {
+        "type": "HORDE"
+      },
+      "rank": 1,
+      "rating": 1943,
+      "season_match_statistics": {
+        "played": 86,
+        "won": 43,
+        "lost": 43
+      },
+      "tier": {
+        "key": {
+          "href": "https://tw.api.blizzard.com/data/wow/pvp-tier/0?namespace=static-5.5.3_64530-classic-tw"
+        },
+        "id": 0
+      }
+    },
+    {
+      "character": {
+        "name": "攸呔",
+        "id": 737068,
+        "realm": {
+          "key": {
+            "href": "https://tw.api.blizzard.com/data/wow/realm/4487?namespace=dynamic-classic-tw"
+          },
+          "id": 4487,
+          "slug": "ivus"
+        },
+        "playable_class": {
+          "key": {
+            "href": "https://tw.api.blizzard.com/data/wow/playable-class/8?namespace=static-5.5.3_64530-classic-tw"
+          },
+          "name": null,
+          "id": 8
+        },
+        "playable_race": {
+          "key": {
+            "href": "https://tw.api.blizzard.com/data/wow/playable-race/8?namespace=static-5.5.3_64530-classic-tw"
+          },
+          "name": null,
+          "id": 8
+        }
+      },
+      "faction": {
+        "type": "HORDE"
+      },
+      "rank": 1,
+      "rating": 1943,
+      "season_match_statistics": {
+        "played": 86,
+        "won": 43,
+        "lost": 43
+      },
+      "tier": {
+        "key": {
+          "href": "https://tw.api.blizzard.com/data/wow/pvp-tier/0?namespace=static-5.5.3_64530-classic-tw"
+        },
+        "id": 0
+      }
+    },
+    {
+      "character": {
+        "name": "小垂垂",
+        "id": 1108226,
+        "realm": {
+          "key": {
+            "href": "https://tw.api.blizzard.com/data/wow/realm/4487?namespace=dynamic-classic-tw"
+          },
+          "id": 4487,
+          "slug": "ivus"
+        },
+        "playable_class": {
+          "key": {
+            "href": "https://tw.api.blizzard.com/data/wow/playable-class/3?namespace=static-5.5.3_64530-classic-tw"
+          },
+          "name": null,
+          "id": 3
+        },
+        "playable_race": {
+          "key": {
+            "href": "https://tw.api.blizzard.com/data/wow/playable-race/2?namespace=static-5.5.3_64530-classic-tw"
+          },
+          "name": null,
+          "id": 2
+        }
+      },
+      "faction": {
+        "type": "HORDE"
+      },
+      "rank": 1,
+      "rating": 1943,
+      "season_match_statistics": {
+        "played": 86,
+        "won": 43,
+        "lost": 43
+      },
+      "tier": {
+        "key": {
+          "href": "https://tw.api.blizzard.com/data/wow/pvp-tier/0?namespace=static-5.5.3_64530-classic-tw"
+        },
+        "id": 0
+      }
+    },
+    {
+      "character": {
+        "name": "小河馬武僧",
+        "id": 11373806,
+        "realm": {
+          "key": {
+            "href": "https://tw.api.blizzard.com/data/wow/realm/4487?namespace=dynamic-classic-tw"
+          },
+          "id": 4487,
+          "slug": "ivus"
+        },
+        "playable_class": {
+          "key": {
+            "href": "https://tw.api.blizzard.com/data/wow/playable-class/10?namespace=static-5.5.3_64530-classic-tw"
+          },
+          "name": null,
+          "id": 10
+        },
+        "playable_race": {
+          "key": {
+            "href": "https://tw.api.blizzard.com/data/wow/playable-race/6?namespace=static-5.5.3_64530-classic-tw"
+          },
+          "name": null,
+          "id": 6
+        }
+      },
+      "faction": {
+        "type": "HORDE"
+      },
+      "rank": 1,
+      "rating": 1943,
+      "season_match_statistics": {
+        "played": 86,
+        "won": 43,
+        "lost": 43
+      },
+      "tier": {
+        "key": {
+          "href": "https://tw.api.blizzard.com/data/wow/pvp-tier/0?namespace=static-5.5.3_64530-classic-tw"
+        },
+        "id": 0
+      }
+    },
+    {
+      "character": {
+        "name": "Cresselia",
+        "id": 11361068,
+        "realm": {
+          "key": {
+            "href": "https://tw.api.blizzard.com/data/wow/realm/4487?namespace=dynamic-classic-tw"
+          },
+          "id": 4487,
+          "slug": "ivus"
+        },
+        "playable_class": {
+          "key": {
+            "href": "https://tw.api.blizzard.com/data/wow/playable-class/2?namespace=static-5.5.3_64530-classic-tw"
+          },
+          "name": null,
+          "id": 2
+        },
+        "playable_race": {
+          "key": {
+            "href": "https://tw.api.blizzard.com/data/wow/playable-race/10?namespace=static-5.5.3_64530-classic-tw"
+          },
+          "name": null,
+          "id": 10
+        }
+      },
+      "faction": {
+        "type": "HORDE"
+      },
+      "rank": 1,
+      "rating": 1943,
+      "season_match_statistics": {
+        "played": 86,
+        "won": 43,
+        "lost": 43
+      },
+      "tier": {
+        "key": {
+          "href": "https://tw.api.blizzard.com/data/wow/pvp-tier/0?namespace=static-5.5.3_64530-classic-tw"
+        },
+        "id": 0
+      }
+    },
+    {
+      "character": {
+        "name": "Lyandrinlol",
+        "id": 5333355,
+        "realm": {
+          "key": {
+            "href": "https://tw.api.blizzard.com/data/wow/realm/4487?namespace=dynamic-classic-tw"
+          },
+          "id": 4487,
+          "slug": "ivus"
+        },
+        "playable_class": {
+          "key": {
+            "href": "https://tw.api.blizzard.com/data/wow/playable-class/2?namespace=static-5.5.3_64530-classic-tw"
+          },
+          "name": null,
+          "id": 2
+        },
+        "playable_race": {
+          "key": {
+            "href": "https://tw.api.blizzard.com/data/wow/playable-race/10?namespace=static-5.5.3_64530-classic-tw"
+          },
+          "name": null,
+          "id": 10
+        }
+      },
+      "faction": {
+        "type": "HORDE"
+      },
+      "rank": 6,
+      "rating": 1932,
+      "season_match_statistics": {
+        "played": 86,
+        "won": 43,
+        "lost": 43
+      },
+      "tier": {
+        "key": {
+          "href": "https://tw.api.blizzard.com/data/wow/pvp-tier/0?namespace=static-5.5.3_64530-classic-tw"
+        },
+        "id": 0
+      }
+    },
+    {
+      "character": {
+        "name": "食頭仁",
+        "id": 211625,
+        "realm": {
+          "key": {
+            "href": "https://tw.api.blizzard.com/data/wow/realm/4487?namespace=dynamic-classic-tw"
+          },
+          "id": 4487,
+          "slug": "ivus"
+        },
+        "playable_class": {
+          "key": {
+            "href": "https://tw.api.blizzard.com/data/wow/playable-class/11?namespace=static-5.5.3_64530-classic-tw"
+          },
+          "name": null,
+          "id": 11
+        },
+        "playable_race": {
+          "key": {
+            "href": "https://tw.api.blizzard.com/data/wow/playable-race/8?namespace=static-5.5.3_64530-classic-tw"
+          },
+          "name": null,
+          "id": 8
+        }
+      },
+      "faction": {
+        "type": "HORDE"
+      },
+      "rank": 6,
+      "rating": 1932,
+      "season_match_statistics": {
+        "played": 86,
+        "won": 43,
+        "lost": 43
+      },
+      "tier": {
+        "key": {
+          "href": "https://tw.api.blizzard.com/data/wow/pvp-tier/0?namespace=static-5.5.3_64530-classic-tw"
+        },
+        "id": 0
+      }
+    },
+    {
+      "character": {
+        "name": "攸汰",
+        "id": 324773,
+        "realm": {
+          "key": {
+            "href": "https://tw.api.blizzard.com/data/wow/realm/4487?namespace=dynamic-classic-tw"
+          },
+          "id": 4487,
+          "slug": "ivus"
+        },
+        "playable_class": {
+          "key": {
+            "href": "https://tw.api.blizzard.com/data/wow/playable-class/8?namespace=static-5.5.3_64530-classic-tw"
+          },
+          "name": null,
+          "id": 8
+        },
+        "playable_race": {
+          "key": {
+            "href": "https://tw.api.blizzard.com/data/wow/playable-race/8?namespace=static-5.5.3_64530-classic-tw"
+          },
+          "name": null,
+          "id": 8
+        }
+      },
+      "faction": {
+        "type": "HORDE"
+      },
+      "rank": 6,
+      "rating": 1932,
+      "season_match_statistics": {
+        "played": 86,
+        "won": 43,
+        "lost": 43
+      },
+      "tier": {
+        "key": {
+          "href": "https://tw.api.blizzard.com/data/wow/pvp-tier/0?namespace=static-5.5.3_64530-classic-tw"
+        },
+        "id": 0
+      }
+    },
+    {
+      "character": {
+        "name": "重士",
+        "id": 1135768,
+        "realm": {
+          "key": {
+            "href": "https://tw.api.blizzard.com/data/wow/realm/4487?namespace=dynamic-classic-tw"
+          },
+          "id": 4487,
+          "slug": "ivus"
+        },
+        "playable_class": {
+          "key": {
+            "href": "https://tw.api.blizzard.com/data/wow/playable-class/2?namespace=static-5.5.3_64530-classic-tw"
+          },
+          "name": null,
+          "id": 2
+        },
+        "playable_race": {
+          "key": {
+            "href": "https://tw.api.blizzard.com/data/wow/playable-race/10?namespace=static-5.5.3_64530-classic-tw"
+          },
+          "name": null,
+          "id": 10
+        }
+      },
+      "faction": {
+        "type": "HORDE"
+      },
+      "rank": 6,
+      "rating": 1932,
+      "season_match_statistics": {
+        "played": 86,
+        "won": 43,
+        "lost": 43
+      },
+      "tier": {
+        "key": {
+          "href": "https://tw.api.blizzard.com/data/wow/pvp-tier/0?namespace=static-5.5.3_64530-classic-tw"
+        },
+        "id": 0
+      }
+    },
+    {
+      "character": {
+        "name": "樺達奶茶",
+        "id": 1348859,
+        "realm": {
+          "key": {
+            "href": "https://tw.api.blizzard.com/data/wow/realm/4487?namespace=dynamic-classic-tw"
+          },
+          "id": 4487,
+          "slug": "ivus"
+        },
+        "playable_class": {
+          "key": {
+            "href": "https://tw.api.blizzard.com/data/wow/playable-class/2?namespace=static-5.5.3_64530-classic-tw"
+          },
+          "name": null,
+          "id": 2
+        },
+        "playable_race": {
+          "key": {
+            "href": "https://tw.api.blizzard.com/data/wow/playable-race/10?namespace=static-5.5.3_64530-classic-tw"
+          },
+          "name": null,
+          "id": 10
+        }
+      },
+      "faction": {
+        "type": "HORDE"
+      },
+      "rank": 10,
+      "rating": 1928,
+      "season_match_statistics": {
+        "played": 86,
+        "won": 42,
+        "lost": 44
+      },
+      "tier": {
+        "key": {
+          "href": "https://tw.api.blizzard.com/data/wow/pvp-tier/0?namespace=static-5.5.3_64530-classic-tw"
+        },
+        "id": 0
+      }
+    }
+  ]
+}
