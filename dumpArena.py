@@ -3,6 +3,7 @@ import json
 import time
 import os
 import getpass
+import subprocess
 from typing import Dict, List, Optional
 
 # ====== Race & Class Maps ======
@@ -356,14 +357,46 @@ def read_windows_credential(target_name: str) -> Optional[str]:
     except Exception:
         return None
 
+def read_macos_keychain_credential(service_name: str) -> Optional[str]:
+    if os.name != "posix" or os.uname().sysname != "Darwin":
+        return None
+
+    account_name = os.getenv("USER") or getpass.getuser()
+    try:
+        result = subprocess.run(
+            [
+                "security",
+                "find-generic-password",
+                "-a",
+                account_name,
+                "-s",
+                service_name,
+                "-w",
+            ],
+            check=False,
+            capture_output=True,
+            text=True,
+            timeout=10,
+        )
+    except Exception:
+        return None
+
+    if result.returncode != 0:
+        return None
+
+    value = result.stdout.strip()
+    return value or None
+
 def read_blizzard_credentials() -> Optional[Dict[str, str]]:
     client_id = (
         read_windows_credential("BLIZZARD_CLIENT_ID")
+        or read_macos_keychain_credential("BLIZZARD_CLIENT_ID")
         or os.getenv("BLIZZARD_CLIENT_ID")
         or os.getenv("BNET_CLIENT_ID")
     )
     client_secret = (
         read_windows_credential("BLIZZARD_CLIENT_SECRET")
+        or read_macos_keychain_credential("BLIZZARD_CLIENT_SECRET")
         or os.getenv("BLIZZARD_CLIENT_SECRET")
         or os.getenv("BNET_CLIENT_SECRET")
     )
@@ -373,7 +406,7 @@ def read_blizzard_credentials() -> Optional[Dict[str, str]]:
         return {"client_id": client_id, "client_secret": client_secret, "region": region}
 
     print("未偵測到 Windows Credential Manager 或環境變數中的 Blizzard API 憑證。")
-    print("建議用 Windows Credential Manager 保存 BLIZZARD_CLIENT_ID 與 BLIZZARD_CLIENT_SECRET。")
+    print("建議用 Windows Credential Manager 或 macOS Keychain 保存 BLIZZARD_CLIENT_ID 與 BLIZZARD_CLIENT_SECRET。")
     client_id = client_id or input("請輸入 Blizzard Client ID: ").strip()
     client_secret = client_secret or getpass.getpass("請輸入 Blizzard Client Secret: ").strip()
 
@@ -434,5 +467,4 @@ def main():
 
 if __name__ == "__main__":
     main()
-
 
