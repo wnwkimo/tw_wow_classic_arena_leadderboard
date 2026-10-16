@@ -119,7 +119,7 @@ async function load() {
   try {
     const [data, rewards] = await Promise.all([loadBracket(season, bracket), seasonRewards(season)]);
     if (token !== state.token) return;
-    setData(data, rewards?.brackets?.[bracket] || [], rewards?.final);
+    setData(data, rewards?.brackets?.[bracket] || [], rewards);
   } catch (err) {
     if (token !== state.token) return;
     console.error(err);
@@ -147,7 +147,7 @@ function seasonRewards(season) {
 const MIN_CUTOFF = 2;
 const MIN_WINS = 50;
 
-function setData({ rows, isTeam }, tiers = [], final = false) {
+function setData({ rows, isTeam }, tiers = [], rewards = null) {
   state.tiers = tiers.filter(t => t.rating_cutoff >= MIN_CUTOFF);
   for (const row of rows) {
     row.title = row.won >= MIN_WINS ? state.tiers.find(t => row.rating >= t.rating_cutoff) || null : null;
@@ -156,7 +156,7 @@ function setData({ rows, isTeam }, tiers = [], final = false) {
   state.isTeam = isTeam;
   fillClassFilter();
   renderStats(el.stats, rows, isTeam);
-  renderTitles(el.titles, state.tiers, rows, final);
+  renderTitles(el.titles, state.tiers, rows, rewards);
   renderPodium(el.podium, rows);
   if (rows.length) {
     renderClassChart(el.classChart, rows);

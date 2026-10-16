@@ -1,0 +1,103 @@
+{
+  "season": 3,
+  "final": true,
+  "estimated": true,
+  "brackets": {
+    "2v2": [
+      {
+        "tier": "elite",
+        "title": "仇恨鬥士",
+        "rating_cutoff": 2140,
+        "achievement_id": 419
+      },
+      {
+        "tier": "gladiator",
+        "title": "鬥士",
+        "rating_cutoff": 2140,
+        "achievement_id": 15204
+      },
+      {
+        "tier": "duelist",
+        "title": "決鬥者",
+        "rating_cutoff": 1910,
+        "achievement_id": 15205
+      },
+      {
+        "tier": "rival",
+        "title": "競爭者",
+        "rating_cutoff": 1748,
+        "achievement_id": 15206
+      },
+      {
+        "tier": "challenger",
+        "title": "挑戰者",
+        "rating_cutoff": 1514,
+        "achievement_id": 15207
+      }
+    ],
+    "3v3": [
+      {
+        "tier": "elite",
+        "title": "仇恨鬥士",
+        "rating_cutoff": 1971,
+        "achievement_id": 419
+      },
+      {
+        "tier": "gladiator",
+        "title": "鬥士",
+        "rating_cutoff": 1971,
+        "achievement_id": 15204
+      },
+      {
+        "tier": "duelist",
+        "title": "決鬥者",
+        "rating_cutoff": 1876,
+        "achievement_id": 15205
+      },
+      {
+        "tier": "rival",
+        "title": "競爭者",
+        "rating_cutoff": 1706,
+        "achievement_id": 15206
+      },
+      {
+        "tier": "challenger",
+        "title": "挑戰者",
+        "rating_cutoff": 1557,
+        "achievement_id": 15207
+      }
+    ],
+    "5v5": [
+      {
+        "tier": "elite",
+        "title": "仇恨鬥士",
+        "rating_cutoff": 2135,
+        "achievement_id": 419
+      },
+      {
+        "tier": "gladiator",
+        "title": "鬥士",
+        "rating_cutoff": 2135,
+        "achievement_id": 15204
+      },
+      {
+        "tier": "duelist",
+        "title": "決鬥者",
+        "rating_cutoff": 1882,
+        "achievement_id": 15205
+      },
+      {
+        "tier": "rival",
+        "title": "競爭者",
+        "rating_cutoff": 1692,
+        "achievement_id": 15206
+      },
+      {
+        "tier": "challenger",
+        "title": "挑戰者",
+        "rating_cutoff": 1450,
+        "achievement_id": 15207
+      }
+    ]
+  }
+}

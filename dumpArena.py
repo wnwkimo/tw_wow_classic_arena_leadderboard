@@ -20,6 +20,7 @@ import copy
 import getpass
 import json
 import logging
+import math
 import os
 import re
 import subprocess
@@ -49,6 +50,14 @@ MIN_KEEP_RATIO = 0.5
 REWARD_BRACKETS = {"ARENA_2v2": "2v2", "ARENA_3v3": "3v3", "ARENA_5v5": "5v5", "BATTLEGROUNDS": "rbg"}
 # 頭銜級距由高到低：elite 是「XX鬥士」（如暴虐鬥士、煉獄鬥士），其餘依序為前 0.5% / 3% / 10% / 35%
 TITLE_TIERS = ["elite", "gladiator", "duelist", "rival", "challenger"]
+# API 沒有門檻的 S2–S4：用各頭銜成就取名稱，門檻依 S1 驗證過的規則推估
+ESTIMATED_TITLE_ACHIEVEMENTS = {
+    2: {"elite": 418, "gladiator": 15199, "duelist": 15208, "rival": 15209, "challenger": 15210},
+    3: {"elite": 419, "gladiator": 15204, "duelist": 15205, "rival": 15206, "challenger": 15207},
+    4: {"elite": 420, "gladiator": 15200, "duelist": 15201, "rival": 15202, "challenger": 15203},
+}
+TITLE_SHARES = {"gladiator": 0.005, "duelist": 0.03, "rival": 0.10, "challenger": 0.35}
+ESTIMATE_MIN_PLAYED = 30
 
 RACE_MAP = {
     1: "人類", 2: "獸人", 3: "矮人", 4: "夜精靈", 5: "不死族",
@@ -587,6 +596,8 @@ def update_rewards(client: BlizzardClient, season: int, current_season: Optional
 
     data = client.season_rewards(season)
     if data is None:
+        if season in ESTIMATED_TITLE_ACHIEVEMENTS:
+            return write_estimated_rewards(client, season)
         log.info("  S%s 沒有頭銜門檻資料", season)
         return False
 
@@ -617,6 +628,60 @@ def update_rewards(client: BlizzardClient, season: int, current_season: Optional
         },
     })
     log.info("  已寫入頭銜門檻 %s", path.name)
+    return True
+
+
+def estimate_cutoffs(entries: list[dict]) -> dict[str, int]:
+    """依 S1 實際門檻反推的規則：
+
+    - 母數 N：本季打滿 30 場的隊伍數
+    - 名額：⌈N × 比例⌉（鬥士 0.5%、決鬥者 3%、競爭者 10%、挑戰者 35%）
+    - 門檻：依隊伍分數排序後第「名額」名的分數，同分的隊伍都算達標
+    - 最高一級（XX鬥士）：S1 台服的煉獄鬥士門檻與鬥士相同，比照辦理
+    """
+    ratings = sorted((e.get("rating") or 0 for e in entries), reverse=True)
+    n = sum(1 for e in entries if e.get("season_match_statistics", {}).get("played", 0) >= ESTIMATE_MIN_PLAYED)
+    if not n:
+        return {}
+    cutoffs = {
+        tier: ratings[min(max(1, math.ceil(n * share)), len(ratings)) - 1]
+        for tier, share in TITLE_SHARES.items()
+    }
+    cutoffs["elite"] = cutoffs["gladiator"]
+    return cutoffs
+
+
+def write_estimated_rewards(client: BlizzardClient, season: int) -> bool:
+    titles = {
+        tier: achievement_title(client, achievement_id)
+        for tier, achievement_id in ESTIMATED_TITLE_ACHIEVEMENTS[season].items()
+    }
+    brackets = {}
+    for bracket in ALL_BRACKETS:
+        entries = (load_json(output_path(season, bracket)) or {}).get("entries", [])
+        cutoffs = estimate_cutoffs(entries)
+        if not cutoffs:
+            continue
+        brackets[bracket] = [
+            {
+                "tier": tier,
+                "title": titles[tier],
+                "rating_cutoff": cutoffs[tier],
+                "achievement_id": ESTIMATED_TITLE_ACHIEVEMENTS[season][tier],
+            }
+            for tier in TITLE_TIERS
+            if titles.get(tier)
+        ]
+    if not brackets:
+        log.info("  S%s 沒有存檔可以推估頭銜門檻", season)
+        return False
+    write_json(rewards_path(season), {
+        "season": season,
+        "final": True,
+        "estimated": True,
+        "brackets": brackets,
+    })
+    log.info("  已寫入推估的頭銜門檻 %s", rewards_path(season).name)
     return True
 
 

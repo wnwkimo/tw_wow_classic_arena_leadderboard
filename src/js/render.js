@@ -65,14 +65,19 @@ export function renderStats(el, rows, isTeam) {
 }
 
 // ---- 頭銜門檻 ----
-export function renderTitles(el, tiers, rows, final) {
+function titlesNote(rewards) {
+  if (rewards?.estimated) return 'API 沒有這季的門檻，依 S1 實際門檻反推的規則估算：打滿 30 場的隊伍為母數，依隊伍分數排名';
+  return rewards?.final ? '賽季結算門檻' : '進行中，門檻會隨天梯變動';
+}
+
+export function renderTitles(el, tiers, rows, rewards) {
   if (!tiers.length) { el.hidden = true; el.innerHTML = ''; return; }
   el.hidden = false;
   const count = tier => rows.filter(r => r.title?.tier === tier).length;
   el.innerHTML = `
     <div class="titles-head">
-      <h3 class="card-title">頭銜門檻</h3>
-      <p class="card-sub">${final ? '賽季結算門檻' : '進行中，門檻會隨天梯變動'} · 需在本季贏得 50 場</p>
+      <h3 class="card-title">頭銜門檻${rewards?.estimated ? '<span class="estimate-tag">推估</span>' : ''}</h3>
+      <p class="card-sub">${titlesNote(rewards)} · 需在本季贏得 50 場</p>
     </div>
     <ul class="titles-list">${tiers.map(t => `
       <li class="titles-item">
