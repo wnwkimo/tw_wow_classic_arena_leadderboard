@@ -1,0 +1,98 @@
+{
+  "season": 11,
+  "final": true,
+  "brackets": {
+    "2v2": [
+      {
+        "tier": "duelist",
+        "title": "決鬥者",
+        "rating_cutoff": 1742,
+        "achievement_id": 42774
+      },
+      {
+        "tier": "rival",
+        "title": "競爭者",
+        "rating_cutoff": 1710,
+        "achievement_id": 42772
+      },
+      {
+        "tier": "challenger",
+        "title": "挑戰者",
+        "rating_cutoff": 1544,
+        "achievement_id": 42775
+      }
+    ],
+    "3v3": [
+      {
+        "tier": "elite",
+        "title": "絕命鬥士",
+        "rating_cutoff": 2640,
+        "achievement_id": 6938
+      },
+      {
+        "tier": "gladiator",
+        "title": "鬥士",
+        "rating_cutoff": 2401,
+        "achievement_id": 42777
+      },
+      {
+        "tier": "duelist",
+        "title": "決鬥者",
+        "rating_cutoff": 2255,
+        "achievement_id": 42774
+      },
+      {
+        "tier": "rival",
+        "title": "競爭者",
+        "rating_cutoff": 1881,
+        "achievement_id": 42772
+      },
+      {
+        "tier": "challenger",
+        "title": "挑戰者",
+        "rating_cutoff": 1525,
+        "achievement_id": 42775
+      }
+    ],
+    "5v5": [
+      {
+        "tier": "duelist",
+        "title": "決鬥者",
+        "rating_cutoff": 1,
+        "achievement_id": 42774
+      },
+      {
+        "tier": "rival",
+        "title": "競爭者",
+        "rating_cutoff": 1,
+        "achievement_id": 42772
+      },
+      {
+        "tier": "challenger",
+        "title": "挑戰者",
+        "rating_cutoff": 1,
+        "achievement_id": 42775
+      }
+    ],
+    "rbg": [
+      {
+        "tier": "duelist",
+        "title": "決鬥者",
+        "rating_cutoff": 956,
+        "achievement_id": 42774
+      },
+      {
+        "tier": "rival",
+        "title": "競爭者",
+        "rating_cutoff": 956,
+        "achievement_id": 42772
+      },
+      {
+        "tier": "challenger",
+        "title": "挑戰者",
+        "rating_cutoff": 947,
+        "achievement_id": 42775
+      }
+    ]
+  }
+}
