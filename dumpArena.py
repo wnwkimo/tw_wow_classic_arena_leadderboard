@@ -4,7 +4,8 @@
 輸出成網頁讀取的 data/season_{賽季}_{賽制}_tw_arena.json，並更新 data/manifest.json。
 
 用法範例：
-    python dumpArena.py                      # 目前賽季，2v2/3v3/5v5
+    python dumpArena.py                      # 互動選單（↑↓ 選擇、Enter 確認）
+    python dumpArena.py -s 14                # 指定賽季，不進選單
     python dumpArena.py -s 13 -b 2v2,3v3     # 指定賽季與賽制
     python dumpArena.py -s 10-13             # 賽季範圍
     python dumpArena.py --all-seasons        # API 上所有賽季
@@ -14,6 +15,7 @@
 from __future__ import annotations
 
 import argparse
+import copy
 import getpass
 import json
 import logging
@@ -22,6 +24,7 @@ import subprocess
 import sys
 import threading
 import time
+import unicodedata
 from concurrent.futures import ThreadPoolExecutor
 from dataclasses import dataclass, field
 from pathlib import Path
@@ -236,6 +239,20 @@ def character_key(character: dict) -> str:
     return f"{realm}:{character.get('id', '')}:{character.get('name', '').lower()}"
 
 
+def entry_characters(entry: dict) -> list[dict]:
+    """S5 以後每筆是單一角色；S1–S4 是隊伍，角色在 team.members 裡。"""
+    if "character" in entry:
+        return [entry["character"]]
+    return [m["character"] for m in entry.get("team", {}).get("members", []) if "character" in m]
+
+
+def entry_key(entry: dict) -> str:
+    if "character" in entry:
+        return character_key(entry["character"])
+    team = entry.get("team", {})
+    return f"team:{team.get('realm', {}).get('slug', '')}:{team.get('name', '')}"
+
+
 def has_details(character: dict) -> bool:
     return bool(character.get("playable_class", {}).get("id") and character.get("playable_race", {}).get("id"))
 
@@ -283,8 +300,8 @@ class CharacterIndex:
         paths = sorted(DATA_DIR.glob("season_*_*_tw_arena.json"), key=lambda p: int(p.stem.split("_")[1]))
         for path in paths:  # 由舊到新，較新的資料會覆蓋（例如種族變更）
             for entry in (load_json(path) or {}).get("entries", []):
-                if "character" in entry:
-                    index.add(entry["character"])
+                for character in entry_characters(entry):
+                    index.add(character)
         return index
 
     def add(self, character: dict) -> None:
@@ -314,6 +331,72 @@ class BracketResult:
     failed: list[str] = field(default_factory=list)
     written: bool = False
     skipped_reason: Optional[str] = None
+    # 試跑時暫存結果，之後可直接寫入不必重抓
+    path: Optional[Path] = field(default=None, repr=False)
+    data: Optional[dict] = field(default=None, repr=False)
+
+    @property
+    def pending(self) -> bool:
+        return self.data is not None and not self.written
+
+
+FACTION_MAP = {"HORDE": "部落", "ALLIANCE": "聯盟"}
+
+
+def display_width(text: str) -> int:
+    return sum(2 if unicodedata.east_asian_width(c) in "WF" else 1 for c in text)
+
+
+def pad(text: str, width: int) -> str:
+    return text + " " * max(width - display_width(text), 0)
+
+
+def diff_summary(old_entries: list[dict], new_entries: list[dict]) -> str:
+    """跟存檔比較：新上榜、掉出、分數變動、補上職業。"""
+    old = {entry_key(e): e for e in old_entries}
+    new = {entry_key(e): e for e in new_entries}
+    common = old.keys() & new.keys()
+    rating_changed = sum(1 for k in common if old[k].get("rating") != new[k].get("rating"))
+    missing = lambda e: sum(not has_details(c) for c in entry_characters(e))
+    filled = sum(max(missing(old[k]) - missing(new[k]), 0) for k in common)
+    return (
+        f"筆數 {len(old_entries)} → {len(new_entries)}｜新上榜 {len(new.keys() - old.keys())}｜"
+        f"掉出 {len(old.keys() - new.keys())}｜分數變動 {rating_changed}｜補上職業 {filled}"
+    )
+
+
+def print_preview(entries: list[dict], limit: int) -> None:
+    rows = sorted(entries, key=lambda e: e.get("rank") or 0)[:limit]
+    is_team = bool(rows) and "team" in rows[0]
+    who = "隊伍" if is_team else "角色"
+    detail = "成員" if is_team else f"{pad('職業', 9)}種族"
+    log.info("    %s%s%s%s%s%s", pad("排名", 5), pad(who, 20), pad("陣營", 5), pad("分數", 6), pad("勝-敗", 10), detail)
+    for e in rows:
+        stats = e.get("season_match_statistics", {})
+        if is_team:
+            name = e.get("team", {}).get("name", "?")
+            detail = "、".join(
+                f"{c.get('name')}({CLASS_MAP.get(c.get('playable_class', {}).get('id'), '-')})"
+                for c in entry_characters(e)
+            )
+        else:
+            character = e.get("character", {})
+            name = character.get("name", "?")
+            detail = (
+                pad(CLASS_MAP.get(character.get("playable_class", {}).get("id"), "-"), 9)
+                + RACE_MAP.get(character.get("playable_race", {}).get("id"), "-")
+            )
+        log.info(
+            "    %s%s%s%s%s%s",
+            pad(str(e.get("rank", "?")), 5),
+            pad(name, 20),
+            pad(FACTION_MAP.get(e.get("faction", {}).get("type"), "-"), 5),
+            pad(str(e.get("rating", "?")), 6),
+            pad(f"{stats.get('won', 0)}-{stats.get('lost', 0)}", 10),
+            detail,
+        )
+    if len(entries) > limit:
+        log.info("    …共 %d 筆", len(entries))
 
 
 def enrich_entries(
@@ -336,6 +419,8 @@ def enrich_entries(
                 index.add(character)
                 result.fetched += 1
                 log.debug("  API 取得 %s", describe(character))
+            elif has_details(character) or index.fill(character):
+                result.reused += 1  # 查詢失敗，保留已知資料
             else:
                 result.failed.append(f"{character.get('name')}-{character.get('realm', {}).get('slug')}({error})")
 
@@ -348,16 +433,17 @@ def process_bracket(
     current_season: Optional[int],
     args: argparse.Namespace,
 ) -> BracketResult:
-    result = BracketResult(season, bracket)
     path = output_path(season, bracket)
+    result = BracketResult(season, bracket, path=path)
     old_data = load_json(path)
-    old_entries = (old_data or {}).get("entries", [])
+    old_entries = copy.deepcopy((old_data or {}).get("entries", []))
 
     # 已結束的賽季，API 會隨時間移除刪除 / 轉服的角色，重抓會讓歷史資料變少。
     # 所以已有存檔時只補職業 / 種族，不重新下載排行榜。
-    archived = old_data is not None and current_season is not None and season < current_season and not args.force
+    finished = current_season is not None and season < current_season
+    archived = old_data is not None and not args.force and (finished or args.fill_only)
     if archived:
-        log.info("▶ Season %s %s（已結束，只補角色資料）", season, bracket)
+        log.info("▶ Season %s %s（%s，只補角色資料）", season, bracket, "已結束" if finished else "使用存檔")
         data = old_data
     else:
         log.info("▶ Season %s %s", season, bracket)
@@ -372,34 +458,52 @@ def process_bracket(
         return result
 
     to_fetch = []
-    for entry in entries:
-        character = entry.get("character")
-        if not character or (archived and has_details(character)):
+    for character in (c for entry in entries for c in entry_characters(entry)):
+        # 已有職業 / 種族的不動（S1–S4 的 API 本身就有，且要保留當季的原始資料）
+        if has_details(character) and not args.refresh_characters:
             continue
-        if index.fill(character):
+        if args.refresh_characters and not args.no_enrich:
+            to_fetch.append(character)
+        elif index.fill(character):
             result.reused += 1
         elif not args.no_enrich:
             to_fetch.append(character)
 
     if to_fetch:
         log.info("  %d 筆，補入已知 %d 個角色，查詢 %d 個角色…", len(entries), result.reused, len(to_fetch))
+        result.reused = 0 if args.refresh_characters else result.reused
         enrich_entries(client, to_fetch, index, args.workers, result)
 
     if result.failed:
         log.warning("  %d 個角色查不到職業 / 種族：%s", len(result.failed), "、".join(result.failed))
 
-    if archived and not (result.reused or result.fetched):
-        log.info("  沒有可補的角色資料，不需更新")
-    elif args.dry_run:
-        log.info("  [dry-run] 不寫入 %s", path.name)
+    log.info("  與存檔比較：%s", diff_summary(old_entries, entries) if old_data else "尚無存檔，將建立新檔")
+    if args.dry_run:
+        print_preview(entries, args.preview)
+
+    if archived and entries == old_entries:
+        log.info("  資料沒有變化，不需更新")
     else:
-        write_json(path, data)
-        result.written = True
+        result.data = data
+        if args.dry_run:
+            log.info("  [試跑] 尚未寫入 %s", path.name)
+        else:
+            write_json(path, data)
+            result.written = True
     log.info(
         "  ✔ %d 筆｜補入已知 %d｜API %d｜失敗 %d",
         result.entries, result.reused, result.fetched, len(result.failed),
     )
     return result
+
+
+def write_pending(results: list[BracketResult], current_season: Optional[int]) -> None:
+    for r in results:
+        if r.pending:
+            write_json(r.path, r.data)
+            r.written = True
+            log.info("  已寫入 %s", r.path.name)
+    update_manifest(current_season)
 
 
 def update_manifest(current_season: Optional[int]) -> None:
@@ -455,13 +559,203 @@ def build_parser() -> argparse.ArgumentParser:
     parser.add_argument("-b", "--bracket", type=parse_brackets, default=DEFAULT_BRACKETS,
                         help="賽制，逗號分隔或 all（預設：2v2,3v3,5v5）")
     parser.add_argument("--no-enrich", action="store_true", help="不查詢新角色的職業 / 種族")
-    parser.add_argument("--refresh-characters", action="store_true", help="不沿用已知資料，重新查詢所有角色")
+    parser.add_argument("--refresh-characters", action="store_true", help="所有角色都重新查詢 API（查不到時保留已知資料）")
     parser.add_argument("--force", action="store_true", help="重新下載已結束的賽季，且資料大幅減少時仍然覆寫")
+    parser.add_argument("--fill-only", action="store_true", help="不重新下載排行榜，只補現有存檔的角色資料")
     parser.add_argument("--dry-run", action="store_true", help="只抓資料不寫檔")
+    parser.add_argument("--preview", type=int, default=10, help="試跑時預覽前幾名（預設 10）")
     parser.add_argument("--workers", type=int, default=8, help="查詢角色的平行數（預設 8）")
     parser.add_argument("-v", "--verbose", action="store_true", help="顯示每個角色的詳細紀錄")
     return parser
 
+
+def has_any_file(season: int) -> list[str]:
+    return [b for b in ALL_BRACKETS if output_path(season, b).exists()]
+
+
+def run_job(
+    client: BlizzardClient, seasons: list[int], current: Optional[int], args: argparse.Namespace
+) -> list[BracketResult]:
+    index = CharacterIndex.from_data_dir()
+    log.info("已知角色資料 %d 筆", len(index))
+
+    start = time.time()
+    results: list[BracketResult] = []
+    errors: list[str] = []
+    for season in seasons:
+        for bracket in args.bracket:
+            if bracket == "rbg" and season < RBG_FIRST_SEASON:
+                continue
+            if args.fill_only and not output_path(season, bracket).exists():
+                continue
+            try:
+                results.append(process_bracket(client, index, season, bracket, current, args))
+            except (BlizzardAPIError, requests.RequestException) as e:
+                errors.append(f"Season {season} {bracket}: {e}")
+                log.error("  ✖ %s", e)
+
+    if not args.dry_run and any(r.written for r in results):
+        update_manifest(current)
+
+    written = sum(r.written for r in results)
+    failed_chars = sum(len(r.failed) for r in results)
+    pending = sum(r.pending for r in results)
+    log.info("\n完成：寫入 %d 個檔案%s，略過 %d，錯誤 %d，角色查詢失敗 %d（%.1f 秒）",
+             written, f"（試跑，{pending} 個待寫入）" if args.dry_run else "",
+             sum(bool(r.skipped_reason) for r in results), len(errors), failed_chars, time.time() - start)
+    return results if not errors else results + [BracketResult(0, "error", skipped_reason="error")]
+
+
+# ====== 互動選單用的操作 ======
+
+def count_missing(entries: list[dict]) -> int:
+    return sum(not has_details(c) for e in entries for c in entry_characters(e))
+
+
+def fetch_bracket(
+    client: BlizzardClient, index: CharacterIndex, season: int, bracket: str, workers: int, limit: Optional[int] = None
+) -> tuple[dict, BracketResult]:
+    """從 API 下載排行榜並補上職業 / 種族（先用已知資料，查不到再呼叫 API）。"""
+    result = BracketResult(season, bracket)
+    data = client.leaderboard(season, bracket)
+    if limit:
+        data["entries"] = sorted(data.get("entries", []), key=lambda e: e.get("rank") or 0)[:limit]
+    entries = data.get("entries", [])
+    result.entries = len(entries)
+
+    to_fetch = []
+    for character in (c for e in entries for c in entry_characters(e)):
+        if has_details(character):
+            continue  # API 已提供（S1–S4），保留原始資料
+        if index.fill(character):
+            result.reused += 1
+        else:
+            to_fetch.append(character)
+    if to_fetch:
+        enrich_entries(client, to_fetch, index, workers, result)
+    return data, result
+
+
+def show_cache(season: int, bracket: str, limit: int) -> None:
+    path = output_path(season, bracket)
+    data = load_json(path)
+    if data is None:
+        log.info("▶ Season %s %s：尚無存檔", season, bracket)
+        return
+    entries = data.get("entries", [])
+    log.info("▶ Season %s %s：%s｜%d 筆｜缺職業 %d", season, bracket, path.name, len(entries), count_missing(entries))
+    if entries:
+        print_preview(entries, limit)
+
+
+# ====== 互動選單 ======
+
+def interactive(client: BlizzardClient, available: list[int], current: Optional[int]) -> int:
+    import questionary
+    from questionary import Choice
+
+    def season_choices(default: list[int]) -> list[Choice]:
+        choices = []
+        for season in sorted(available, reverse=True):
+            saved = has_any_file(season)
+            if season == current:
+                note = "目前賽季"
+            elif saved:
+                note = f"已結束，存檔 {'/'.join(saved)}"
+            else:
+                note = "已結束，尚無存檔"
+            choices.append(Choice(f"S{season:<3} {note}", value=season, checked=season in default))
+        return choices
+
+    def ask_seasons() -> Optional[list[int]]:
+        return questionary.checkbox(
+            "選擇賽季（空白鍵勾選，Enter 確認）",
+            choices=season_choices([current] if current else []),
+            validate=lambda picked: bool(picked) or "至少選一個賽季",
+        ).ask()
+
+    def ask_brackets() -> Optional[list[str]]:
+        return questionary.checkbox(
+            "選擇賽制（可複選）",
+            choices=[Choice(b, value=b, checked=b in DEFAULT_BRACKETS) for b in ALL_BRACKETS],
+            validate=lambda picked: bool(picked) or "至少選一個賽制",
+        ).ask()
+
+    def targets(seasons: list[int], brackets: list[str]) -> list[tuple[int, str]]:
+        return [(s, b) for s in seasons for b in brackets if not (b == "rbg" and s < RBG_FIRST_SEASON)]
+
+    def update_from_server(pairs: list[tuple[int, str]]) -> None:
+        index = CharacterIndex.from_data_dir()
+        written = False
+        for season, bracket in pairs:
+            log.info("下載 Season %s %s…", season, bracket)
+            try:
+                data, result = fetch_bracket(client, index, season, bracket, workers=8)
+            except (BlizzardAPIError, requests.RequestException) as e:
+                log.error("  ✖ %s", e)
+                continue
+            path = output_path(season, bracket)
+            write_json(path, data)
+            written = True
+            log.info(
+                "  ✔ 已寫入 %s｜%d 筆｜補入已知 %d｜API %d｜失敗 %d",
+                path.name, result.entries, result.reused, result.fetched, len(result.failed),
+            )
+        if written:
+            update_manifest(current)
+
+    def season_status() -> None:
+        for season in sorted(available, reverse=True):
+            note = "目前賽季" if season == current else "已結束"
+            parts = []
+            for bracket in ALL_BRACKETS:
+                if bracket == "rbg" and season < RBG_FIRST_SEASON:
+                    continue
+                data = load_json(output_path(season, bracket))
+                if data is None:
+                    parts.append(f"{bracket} -")
+                else:
+                    entries = data.get("entries", [])
+                    missing = count_missing(entries)
+                    parts.append(f"{bracket} {len(entries)}" + (f"(缺{missing})" if missing else ""))
+            print(f"  S{season:<3} {note}｜{'｜'.join(parts)}")
+
+    while True:
+        print()
+        action = questionary.select(
+            "要做什麼？",
+            choices=[
+                Choice(f"1. Check current season   查看目前賽季 (S{current}) 存檔", value="check"),
+                Choice("2. Update season/bracket  選擇賽季 / 賽制，重新下載並直接覆蓋存檔", value="update"),
+                Choice("3. List season status     列出各賽季存檔狀態", value="status"),
+                Choice("離開", value="exit"),
+            ],
+        ).ask()
+        if action in (None, "exit"):
+            return 0
+
+        if action == "check":
+            for bracket in ALL_BRACKETS:
+                if bracket == "rbg" and current < RBG_FIRST_SEASON:
+                    continue
+                show_cache(current, bracket, 10)
+        elif action == "status":
+            season_status()
+        elif action == "update":
+            seasons = ask_seasons()
+            if not seasons:
+                continue
+            brackets = ask_brackets()
+            if not brackets:
+                continue
+            pairs = targets(seasons, brackets)
+            if not pairs:
+                log.info("S%s 之前沒有 rbg", RBG_FIRST_SEASON)
+                continue
+            update_from_server(pairs)
+
+
+# ====== 進入點 ======
 
 def main() -> int:
     args = build_parser().parse_args()
@@ -478,6 +772,13 @@ def main() -> int:
 
     available = sorted(int(s["id"]) for s in index.get("seasons", []) if s.get("id") is not None)
     current = index.get("current_season", {}).get("id") or (max(available) if available else None)
+
+    # 沒有任何參數且在終端機執行時，進入互動選單
+    if len(sys.argv) == 1 and sys.stdin.isatty():
+        try:
+            return interactive(client, available, current)
+        except KeyboardInterrupt:
+            return 130
 
     if args.list_seasons:
         print(f"可用賽季: {', '.join(map(str, available))}（目前賽季: {current}）")
@@ -497,30 +798,8 @@ def main() -> int:
         log.error("✖ 無法取得目前賽季，請用 -s 指定")
         return 1
 
-    index = CharacterIndex() if args.refresh_characters else CharacterIndex.from_data_dir()
-    log.info("已知角色資料 %d 筆", len(index))
-
-    start = time.time()
-    results: list[BracketResult] = []
-    errors: list[str] = []
-    for season in seasons:
-        for bracket in args.bracket:
-            if bracket == "rbg" and season < RBG_FIRST_SEASON:
-                continue
-            try:
-                results.append(process_bracket(client, index, season, bracket, current, args))
-            except (BlizzardAPIError, requests.RequestException) as e:
-                errors.append(f"Season {season} {bracket}: {e}")
-                log.error("  ✖ %s", e)
-
-    if not args.dry_run and any(r.written for r in results):
-        update_manifest(current)
-
-    written = sum(r.written for r in results)
-    failed_chars = sum(len(r.failed) for r in results)
-    log.info("\n完成：寫入 %d 個檔案，略過 %d，錯誤 %d，角色查詢失敗 %d（%.1f 秒）",
-             written, sum(bool(r.skipped_reason) for r in results), len(errors), failed_chars, time.time() - start)
-    return 1 if errors else 0
+    results = run_job(client, seasons, current, args)
+    return 1 if any(r.bracket == "error" for r in results) else 0
 
 
 if __name__ == "__main__":
