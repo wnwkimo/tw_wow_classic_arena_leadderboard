@@ -1962,6 +1962,18 @@
           },
           "id": 4487,
           "slug": "ivus"
+        },
+        "playable_class": {
+          "key": {
+            "href": "https://tw.api.blizzard.com/data/wow/playable-class/4?namespace=static-2.5.3_41812-classic-tw"
+          },
+          "id": 4
+        },
+        "playable_race": {
+          "key": {
+            "href": "https://tw.api.blizzard.com/data/wow/playable-race/2?namespace=static-2.5.3_41812-classic-tw"
+          },
+          "id": 2
         }
       },
       "faction": {
