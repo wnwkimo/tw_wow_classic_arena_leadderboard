@@ -800,6 +800,20 @@
           },
           "id": 4487,
           "slug": "ivus"
+        },
+        "playable_class": {
+          "key": {
+            "href": "https://tw.api.blizzard.com/data/wow/playable-class/2?namespace=static-5.5.3_64530-classic-tw"
+          },
+          "name": null,
+          "id": 2
+        },
+        "playable_race": {
+          "key": {
+            "href": "https://tw.api.blizzard.com/data/wow/playable-race/10?namespace=static-5.5.3_64530-classic-tw"
+          },
+          "name": null,
+          "id": 10
         }
       },
       "faction": {
@@ -3022,6 +3036,20 @@
           },
           "id": 4487,
           "slug": "ivus"
+        },
+        "playable_class": {
+          "key": {
+            "href": "https://tw.api.blizzard.com/data/wow/playable-class/2?namespace=static-5.5.0_61496-classic-tw"
+          },
+          "name": null,
+          "id": 2
+        },
+        "playable_race": {
+          "key": {
+            "href": "https://tw.api.blizzard.com/data/wow/playable-race/11?namespace=static-5.5.0_61496-classic-tw"
+          },
+          "name": null,
+          "id": 11
         }
       },
       "faction": {
