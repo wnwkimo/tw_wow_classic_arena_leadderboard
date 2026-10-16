@@ -1,4 +1,4 @@
-// render.js - 統計、前三名、排行榜列表
+// render.js - 統計、排行榜列表
 import { CLASSES, RACES, FACTIONS, iconUrl, realmName } from './constants.js';
 import { escapeHtml, fmt, pct } from './utils.js';
 
@@ -32,11 +32,6 @@ function metaParts(row) {
   return parts.map(escapeHtml).join('<i class="sep">·</i>');
 }
 
-export function titleBadge(title) {
-  if (!title) return '';
-  return `<span class="title-badge title-${title.tier}">${escapeHtml(title.title)}</span>`;
-}
-
 function factionBadge(faction) {
   if (!FACTIONS[faction]) return '';
   return `<span class="faction faction-${faction.toLowerCase()}" title="${FACTIONS[faction].name}">${FACTIONS[faction].name}</span>`;
@@ -64,49 +59,6 @@ export function renderStats(el, rows, isTeam) {
     </div>`;
 }
 
-// ---- 頭銜門檻 ----
-function titlesNote(rewards) {
-  if (rewards?.estimated) return 'API 沒有這季的門檻，依 S1 實際門檻反推的規則估算：打滿 30 場的隊伍為母數，依隊伍分數排名';
-  return rewards?.final ? '賽季結算門檻' : '進行中，門檻會隨天梯變動';
-}
-
-export function renderTitles(el, tiers, rows, rewards) {
-  if (!tiers.length) { el.hidden = true; el.innerHTML = ''; return; }
-  el.hidden = false;
-  const count = tier => rows.filter(r => r.title?.tier === tier).length;
-  el.innerHTML = `
-    <div class="titles-head">
-      <h3 class="card-title">頭銜門檻${rewards?.estimated ? '<span class="estimate-tag">推估</span>' : ''}</h3>
-      <p class="card-sub">${titlesNote(rewards)} · 需在本季贏得 50 場</p>
-    </div>
-    <ul class="titles-list">${tiers.map(t => `
-      <li class="titles-item">
-        ${titleBadge(t)}
-        <span class="titles-cutoff">${fmt(t.rating_cutoff)}<small>分以上</small></span>
-        <span class="titles-count">${fmt(count(t.tier))} ${rows.some(r => r.isTeam) ? '隊' : '人'}</span>
-      </li>`).join('')}
-    </ul>`;
-}
-
-// ---- 前三名 ----
-export function renderPodium(el, rows) {
-  const top = rows.slice(0, 3);
-  if (!top.length) { el.innerHTML = ''; return; }
-  el.innerHTML = top.map((row, i) => `
-    <article class="podium-card place-${i + 1} tier-${Math.min(row.rank ?? i + 1, 3)}">
-      <span class="podium-rank">#${row.rank ?? i + 1}</span>
-      ${avatar(row, 'avatar-lg')}
-      <div class="podium-who">
-        <h3 class="podium-name"><span class="name-text"${nameStyle(row)}>${escapeHtml(row.name)}</span>${titleBadge(row.title)}</h3>
-        <p class="podium-meta">${metaParts(row)}</p>
-      </div>
-      <div class="podium-score">
-        <span class="podium-rating">${fmt(row.rating)}</span>
-        <span class="podium-record">${row.won}勝 ${row.lost}敗 · ${row.winRate.toFixed(0)}%</span>
-      </div>
-    </article>`).join('');
-}
-
 // ---- 排行榜 ----
 function memberList(row) {
   if (!row.members.length) return '<p class="members-empty">這支隊伍沒有成員資料</p>';
@@ -132,7 +84,7 @@ function rowHtml(row) {
     <span class="cell-who">
       ${avatar(row)}
       <span class="who-text">
-        <span class="who-line"><span class="who-name"${nameStyle(row)}>${escapeHtml(row.name)}</span>${titleBadge(row.title)}</span>
+        <span class="who-name"${nameStyle(row)}>${escapeHtml(row.name)}</span>
         <span class="who-meta">${factionBadge(row.faction)}${metaParts(row)}</span>
       </span>
     </span>

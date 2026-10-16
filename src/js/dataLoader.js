@@ -14,12 +14,6 @@ export async function loadBracket(season, bracket) {
   return parseLeaderboard(await res.json());
 }
 
-export async function loadRewards(season) {
-  const res = await fetch(`data/season_${season}_rewards.json`, { cache: 'no-cache' });
-  if (!res.ok) throw new Error(`HTTP ${res.status}`);
-  return res.json();
-}
-
 export async function loadFile(file) {
   return parseLeaderboard(JSON.parse(await file.text()));
 }

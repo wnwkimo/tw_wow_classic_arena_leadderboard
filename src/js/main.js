@@ -1,6 +1,6 @@
 // main.js - 狀態管理與事件
-import { loadManifest, loadBracket, loadRewards, loadFile } from './dataLoader.js';
-import { renderStats, renderTitles, renderPodium, renderRows } from './render.js';
+import { loadManifest, loadBracket, loadFile } from './dataLoader.js';
+import { renderStats, renderRows } from './render.js';
 import { renderClassChart, renderRatingChart, clearChart } from './charts.js';
 import { SEASONS, BRACKETS, CLASSES } from './constants.js';
 import { escapeHtml, fmt } from './utils.js';
@@ -14,8 +14,6 @@ const el = {
   heading: $('boardHeading'),
   status: $('seasonStatus'),
   stats: $('stats'),
-  titles: $('titles'),
-  podium: $('podium'),
   search: $('searchInput'),
   faction: $('factionFilter'),
   classFilter: $('classFilter'),
@@ -39,8 +37,6 @@ const state = {
   filtered: [],
   shown: 0,
   token: 0,
-  tiers: [],
-  rewards: new Map(),
 };
 
 // ---- 賽季 / 賽制選擇 ----
@@ -117,9 +113,9 @@ async function load() {
   setLoading(true);
   showMessage('');
   try {
-    const [data, rewards] = await Promise.all([loadBracket(season, bracket), seasonRewards(season)]);
+    const data = await loadBracket(season, bracket);
     if (token !== state.token) return;
-    setData(data, rewards?.brackets?.[bracket] || [], rewards);
+    setData(data);
   } catch (err) {
     if (token !== state.token) return;
     console.error(err);
@@ -130,34 +126,11 @@ async function load() {
   }
 }
 
-// 頭銜門檻檔（每季一個，失敗時當作沒有門檻，不影響排行榜）
-function seasonRewards(season) {
-  if (!state.manifest.rewards?.includes(season)) return Promise.resolve(null);
-  if (!state.rewards.has(season)) {
-    state.rewards.set(season, loadRewards(season).catch(err => {
-      console.warn('頭銜門檻讀取失敗', err);
-      state.rewards.delete(season);
-      return null;
-    }));
-  }
-  return state.rewards.get(season);
-}
-
-// 門檻為 1 之類的是 API 的佔位值，不當成真的門檻
-const MIN_CUTOFF = 2;
-const MIN_WINS = 50;
-
-function setData({ rows, isTeam }, tiers = [], rewards = null) {
-  state.tiers = tiers.filter(t => t.rating_cutoff >= MIN_CUTOFF);
-  for (const row of rows) {
-    row.title = row.won >= MIN_WINS ? state.tiers.find(t => row.rating >= t.rating_cutoff) || null : null;
-  }
+function setData({ rows, isTeam }) {
   state.rows = rows;
   state.isTeam = isTeam;
   fillClassFilter();
   renderStats(el.stats, rows, isTeam);
-  renderTitles(el.titles, state.tiers, rows, rewards);
-  renderPodium(el.podium, rows);
   if (rows.length) {
     renderClassChart(el.classChart, rows);
     renderRatingChart(el.ratingChart, rows);

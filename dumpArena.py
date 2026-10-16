@@ -2,7 +2,6 @@
 
 從 Blizzard API 抓取排行榜，補上每個角色的職業 / 種族，
 輸出成網頁讀取的 data/season_{賽季}_{賽制}_tw_arena.json，並更新 data/manifest.json。
-同時抓取各賽季的頭銜分數門檻，存成 data/season_{賽季}_rewards.json。
 
 用法範例：
     python dumpArena.py                      # 互動選單（↑↓ 選擇、Enter 確認）
@@ -20,9 +19,7 @@ import copy
 import getpass
 import json
 import logging
-import math
 import os
-import re
 import subprocess
 import sys
 import threading
@@ -46,18 +43,6 @@ ALL_BRACKETS = ["2v2", "3v3", "5v5", "rbg"]
 RBG_FIRST_SEASON = 9
 # 新資料筆數低於舊檔的這個比例時拒絕覆寫（避免賽季結束 API 清空時蓋掉歷史資料）
 MIN_KEEP_RATIO = 0.5
-# pvp-reward API 的賽制代號 → 檔名用的賽制
-REWARD_BRACKETS = {"ARENA_2v2": "2v2", "ARENA_3v3": "3v3", "ARENA_5v5": "5v5", "BATTLEGROUNDS": "rbg"}
-# 頭銜級距由高到低：elite 是「XX鬥士」（如暴虐鬥士、煉獄鬥士），其餘依序為前 0.5% / 3% / 10% / 35%
-TITLE_TIERS = ["elite", "gladiator", "duelist", "rival", "challenger"]
-# API 沒有門檻的 S2–S4：用各頭銜成就取名稱，門檻依 S1 驗證過的規則推估
-ESTIMATED_TITLE_ACHIEVEMENTS = {
-    2: {"elite": 418, "gladiator": 15199, "duelist": 15208, "rival": 15209, "challenger": 15210},
-    3: {"elite": 419, "gladiator": 15204, "duelist": 15205, "rival": 15206, "challenger": 15207},
-    4: {"elite": 420, "gladiator": 15200, "duelist": 15201, "rival": 15202, "challenger": 15203},
-}
-TITLE_SHARES = {"gladiator": 0.005, "duelist": 0.03, "rival": 0.10, "challenger": 0.35}
-ESTIMATE_MIN_PLAYED = 30
 
 RACE_MAP = {
     1: "人類", 2: "獸人", 3: "矮人", 4: "夜精靈", 5: "不死族",
@@ -181,7 +166,6 @@ class BlizzardClient:
         self.api_host = os.getenv("WOW_API_HOST", "tw.api.blizzard.com")
         self.data_namespace = os.getenv("WOW_DATA_NAMESPACE", "dynamic-classic-tw")
         self.profile_namespace = os.getenv("WOW_PROFILE_NAMESPACE", "profile-classic-tw")
-        self.static_namespace = os.getenv("WOW_STATIC_NAMESPACE", "static-classic-tw")
         self.locale = os.getenv("WOW_LOCALE", "en_TW")
         self.access_token: Optional[str] = None
         self._local = threading.local()
@@ -212,13 +196,11 @@ class BlizzardClient:
             raise BlizzardAPIError(f"取得 token 失敗 HTTP {response.status_code}: {response.text}")
         self.access_token = response.json()["access_token"]
 
-    def _get(
-        self, path: str, namespace: str, timeout: int = 30, locale: Optional[str] = None
-    ) -> requests.Response:
+    def _get(self, path: str, namespace: str, timeout: int = 30) -> requests.Response:
         return self.session.get(
             f"https://{self.api_host}{path}",
             headers={"Authorization": f"Bearer {self.access_token}"},
-            params={"namespace": namespace, "locale": locale or self.locale},
+            params={"namespace": namespace, "locale": self.locale},
             timeout=timeout,
         )
 
@@ -237,24 +219,6 @@ class BlizzardClient:
         else:
             path = f"/data/wow/pvp-region/0/pvp-season/{season}/pvp-leaderboard/{bracket}"
         return self._get_json(path, self.data_namespace)
-
-    def season_rewards(self, season: int) -> Optional[dict]:
-        """賽季頭銜門檻；API 沒有這季的資料（S2–S8）時回傳 None。"""
-        response = self._get(f"/data/wow/pvp-season/{season}/pvp-reward/index", self.data_namespace)
-        if response.status_code == 404:
-            return None
-        if response.status_code != 200:
-            raise BlizzardAPIError(f"頭銜門檻 HTTP {response.status_code}")
-        return response.json()
-
-    def achievement(self, achievement_id: int) -> Optional[dict]:
-        """成就資料（繁中），用來取得頭銜名稱。"""
-        response = self._get(f"/data/wow/achievement/{achievement_id}", self.static_namespace, locale="zh_TW")
-        if response.status_code == 404:
-            return None
-        if response.status_code != 200:
-            raise BlizzardAPIError(f"成就 {achievement_id} HTTP {response.status_code}")
-        return response.json()
 
     def character_profile(self, realm_slug: str, name: str) -> Optional[dict]:
         """回傳角色資料；角色不存在（改名、轉服、刪除）時回傳 None。"""
@@ -301,10 +265,6 @@ def describe(character: dict) -> str:
 
 def output_path(season: int, bracket: str) -> Path:
     return DATA_DIR / f"season_{season}_{bracket}_tw_arena.json"
-
-
-def rewards_path(season: int) -> Path:
-    return DATA_DIR / f"season_{season}_rewards.json"
 
 
 def load_json(path: Path) -> Optional[dict]:
@@ -555,134 +515,11 @@ def update_manifest(current_season: Optional[int]) -> None:
         seasons.setdefault(season, {})[bracket] = {
             "entries": len(data.get("entries", [])),
         }
-    rewards = sorted(int(p.stem.split("_")[1]) for p in DATA_DIR.glob("season_*_rewards.json"))
     manifest = {
         "current_season": current_season,
         "seasons": dict(sorted(seasons.items(), key=lambda kv: int(kv[0]))),
-        "rewards": rewards,
     }
     write_json(DATA_DIR / "manifest.json", manifest)
-
-
-# ====== 頭銜門檻 ======
-
-_achievement_titles: dict[int, Optional[str]] = {}
-
-
-def achievement_title(client: BlizzardClient, achievement_id: int) -> Optional[str]:
-    """從成就的獎勵說明（如「頭銜獎勵：暴虐鬥士」）取出頭銜名稱。"""
-    if achievement_id not in _achievement_titles:
-        data = client.achievement(achievement_id) or {}
-        reward = data.get("reward_description") or ""
-        title = re.split(r"[:：]", reward, maxsplit=1)[-1].strip() if "頭銜" in reward else ""
-        _achievement_titles[achievement_id] = title or None
-    return _achievement_titles[achievement_id]
-
-
-def title_tier(title: str) -> Optional[str]:
-    if title == "鬥士":
-        return "gladiator"
-    if title.endswith("鬥士"):
-        return "elite"
-    return {"決鬥者": "duelist", "競爭者": "rival", "挑戰者": "challenger"}.get(title)
-
-
-def update_rewards(client: BlizzardClient, season: int, current_season: Optional[int], force: bool = False) -> bool:
-    """抓取賽季的頭銜門檻並寫檔，回傳是否有寫入。已結束且已有存檔的賽季不重抓。"""
-    path = rewards_path(season)
-    finished = current_season is not None and season < current_season
-    if path.exists() and finished and not force:
-        return False
-
-    data = client.season_rewards(season)
-    if data is None:
-        if season in ESTIMATED_TITLE_ACHIEVEMENTS:
-            return write_estimated_rewards(client, season)
-        log.info("  S%s 沒有頭銜門檻資料", season)
-        return False
-
-    brackets: dict[str, dict[str, dict]] = {}
-    for reward in data.get("rewards", []):
-        bracket = REWARD_BRACKETS.get(reward.get("bracket", {}).get("type"))
-        achievement_id = reward.get("achievement", {}).get("id")
-        cutoff = reward.get("rating_cutoff")
-        if not bracket or not achievement_id or cutoff is None:
-            continue
-        title = achievement_title(client, achievement_id)
-        tier = title_tier(title) if title else None
-        if not tier:
-            continue  # 查不到名稱的成就（例如積分戰場專屬頭銜）略過
-        brackets.setdefault(bracket, {}).setdefault(tier, {
-            "tier": tier,
-            "title": title,
-            "rating_cutoff": cutoff,
-            "achievement_id": achievement_id,
-        })
-
-    write_json(path, {
-        "season": season,
-        "final": finished,
-        "brackets": {
-            b: sorted(tiers.values(), key=lambda t: TITLE_TIERS.index(t["tier"]))
-            for b, tiers in sorted(brackets.items(), key=lambda kv: ALL_BRACKETS.index(kv[0]))
-        },
-    })
-    log.info("  已寫入頭銜門檻 %s", path.name)
-    return True
-
-
-def estimate_cutoffs(entries: list[dict]) -> dict[str, int]:
-    """依 S1 實際門檻反推的規則：
-
-    - 母數 N：本季打滿 30 場的隊伍數
-    - 名額：⌈N × 比例⌉（鬥士 0.5%、決鬥者 3%、競爭者 10%、挑戰者 35%）
-    - 門檻：依隊伍分數排序後第「名額」名的分數，同分的隊伍都算達標
-    - 最高一級（XX鬥士）：S1 台服的煉獄鬥士門檻與鬥士相同，比照辦理
-    """
-    ratings = sorted((e.get("rating") or 0 for e in entries), reverse=True)
-    n = sum(1 for e in entries if e.get("season_match_statistics", {}).get("played", 0) >= ESTIMATE_MIN_PLAYED)
-    if not n:
-        return {}
-    cutoffs = {
-        tier: ratings[min(max(1, math.ceil(n * share)), len(ratings)) - 1]
-        for tier, share in TITLE_SHARES.items()
-    }
-    cutoffs["elite"] = cutoffs["gladiator"]
-    return cutoffs
-
-
-def write_estimated_rewards(client: BlizzardClient, season: int) -> bool:
-    titles = {
-        tier: achievement_title(client, achievement_id)
-        for tier, achievement_id in ESTIMATED_TITLE_ACHIEVEMENTS[season].items()
-    }
-    brackets = {}
-    for bracket in ALL_BRACKETS:
-        entries = (load_json(output_path(season, bracket)) or {}).get("entries", [])
-        cutoffs = estimate_cutoffs(entries)
-        if not cutoffs:
-            continue
-        brackets[bracket] = [
-            {
-                "tier": tier,
-                "title": titles[tier],
-                "rating_cutoff": cutoffs[tier],
-                "achievement_id": ESTIMATED_TITLE_ACHIEVEMENTS[season][tier],
-            }
-            for tier in TITLE_TIERS
-            if titles.get(tier)
-        ]
-    if not brackets:
-        log.info("  S%s 沒有存檔可以推估頭銜門檻", season)
-        return False
-    write_json(rewards_path(season), {
-        "season": season,
-        "final": True,
-        "estimated": True,
-        "brackets": brackets,
-    })
-    log.info("  已寫入推估的頭銜門檻 %s", rewards_path(season).name)
-    return True
 
 
 # ====== CLI ======
@@ -745,7 +582,6 @@ def run_job(
     start = time.time()
     results: list[BracketResult] = []
     errors: list[str] = []
-    rewards_written = False
     for season in seasons:
         for bracket in args.bracket:
             if bracket == "rbg" and season < RBG_FIRST_SEASON:
@@ -757,14 +593,8 @@ def run_job(
             except (BlizzardAPIError, requests.RequestException) as e:
                 errors.append(f"Season {season} {bracket}: {e}")
                 log.error("  ✖ %s", e)
-        if not args.dry_run:
-            try:
-                rewards_written |= update_rewards(client, season, current, force=args.force)
-            except (BlizzardAPIError, requests.RequestException) as e:
-                errors.append(f"Season {season} 頭銜門檻: {e}")
-                log.error("  ✖ 頭銜門檻：%s", e)
 
-    if not args.dry_run and (rewards_written or any(r.written for r in results)):
+    if not args.dry_run and any(r.written for r in results):
         update_manifest(current)
 
     written = sum(r.written for r in results)
@@ -871,11 +701,6 @@ def interactive(client: BlizzardClient, available: list[int], current: Optional[
                 "  ✔ 已寫入 %s｜%d 筆｜補入已知 %d｜API %d｜失敗 %d",
                 path.name, result.entries, result.reused, result.fetched, len(result.failed),
             )
-        for season in sorted({s for s, _ in pairs}):
-            try:
-                written |= update_rewards(client, season, current, force=True)
-            except (BlizzardAPIError, requests.RequestException) as e:
-                log.error("  ✖ S%s 頭銜門檻：%s", season, e)
         if written:
             update_manifest(current)
 

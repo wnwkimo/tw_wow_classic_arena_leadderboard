@@ -25,13 +25,6 @@
   --win: #7ccf8a;
   --loss: #e47b72;
 
-  /* 頭銜顏色沿用遊戲物品品質色 */
-  --title-elite: #ff9a2e;
-  --title-gladiator: #b86cf5;
-  --title-duelist: #4fa3ff;
-  --title-rival: #5fd26c;
-  --title-challenger: #b4bcc8;
-
   --radius: 14px;
   --radius-sm: 10px;
   --gutter: 16px;
@@ -266,74 +259,6 @@ button, input, select { font: inherit; color: inherit; }
 .horde { background: var(--horde); }
 .alliance { background: var(--alliance); }
 
-/* ---------- Titles ---------- */
-
-.title-elite { --title: var(--title-elite); }
-.title-gladiator { --title: var(--title-gladiator); }
-.title-duelist { --title: var(--title-duelist); }
-.title-rival { --title: var(--title-rival); }
-.title-challenger { --title: var(--title-challenger); }
-
-.title-badge {
-  flex: none;
-  padding: 0 7px;
-  border-radius: 5px;
-  border: 1px solid color-mix(in srgb, var(--title) 45%, transparent);
-  background: color-mix(in srgb, var(--title) 14%, transparent);
-  color: var(--title);
-  font-size: 11.5px;
-  font-weight: 600;
-  line-height: 19px;
-  white-space: nowrap;
-}
-
-.titles { margin-top: 12px; }
-.titles[hidden] { display: none; }
-.titles-head .card-sub { margin-bottom: 14px; }
-
-.estimate-tag {
-  margin-left: 8px;
-  padding: 0 6px;
-  border-radius: 4px;
-  border: 1px dashed var(--border-strong);
-  color: var(--text-2);
-  font-size: 11px;
-  font-weight: 600;
-  line-height: 18px;
-  vertical-align: 2px;
-}
-
-.titles-list {
-  list-style: none;
-  margin: 0;
-  padding: 0;
-  display: grid;
-  grid-template-columns: repeat(5, minmax(0, 1fr));
-  gap: 8px;
-}
-
-.titles-item {
-  display: flex;
-  flex-direction: column;
-  align-items: flex-start;
-  gap: 6px;
-  padding: 12px;
-  border-radius: var(--radius-sm);
-  background: var(--surface-2);
-  border: 1px solid var(--border);
-  min-width: 0;
-}
-
-.titles-cutoff {
-  font-size: 20px;
-  font-weight: 700;
-  line-height: 1.1;
-  font-variant-numeric: tabular-nums;
-}
-
-.titles-cutoff small { margin-left: 4px; font-size: 12px; font-weight: 400; color: var(--muted); }
-.titles-count { font-size: 12.5px; color: var(--text-2); font-variant-numeric: tabular-nums; }
-
 /* ---------- Avatars ---------- */
 
 .avatar {
@@ -346,7 +271,6 @@ button, input, select { font: inherit; color: inherit; }
 }
 
 .avatar-sm { width: 28px; height: 28px; border-radius: 7px; }
-.avatar-lg { width: 52px; height: 52px; border-radius: 12px; }
 
 .avatar-team, .avatar-unknown {
   display: grid;
@@ -364,95 +288,6 @@ button, input, select { font: inherit; color: inherit; }
 }
 
 .avatar-unknown { color: var(--muted); text-shadow: none; }
-.avatar-lg.avatar-team, .avatar-lg.avatar-unknown { font-size: 22px; }
-
-/* ---------- Podium ---------- */
-
-.podium {
-  display: grid;
-  grid-template-columns: repeat(3, minmax(0, 1fr));
-  gap: 12px;
-  margin-top: 20px;
-}
-
-.podium:empty { display: none; }
-
-.podium-card {
-  --medal: var(--gold);
-  position: relative;
-  display: grid;
-  grid-template-columns: auto minmax(0, 1fr);
-  grid-template-areas: "avatar who" "score score";
-  gap: 14px 12px;
-  align-items: center;
-  padding: 18px;
-  background:
-    linear-gradient(180deg, color-mix(in srgb, var(--medal) 12%, transparent), transparent 70%),
-    var(--surface);
-  border: 1px solid color-mix(in srgb, var(--medal) 32%, var(--border));
-  border-radius: var(--radius);
-  overflow: hidden;
-}
-
-.podium-card.tier-2 { --medal: var(--silver); }
-.podium-card.tier-3 { --medal: var(--bronze); }
-
-.podium-rank {
-  position: absolute;
-  top: 12px; right: 14px;
-  font-family: var(--font-display);
-  font-weight: 700;
-  font-size: 15px;
-  color: var(--medal);
-}
-
-.podium-card .avatar { grid-area: avatar; }
-.podium-who { grid-area: who; min-width: 0; padding-right: 28px; }
-
-.podium-name {
-  display: flex;
-  align-items: center;
-  gap: 8px;
-  min-width: 0;
-  margin: 0;
-  font-size: 17px;
-  font-weight: 700;
-}
-
-.podium-name .name-text {
-  min-width: 0;
-  overflow: hidden;
-  text-overflow: ellipsis;
-  white-space: nowrap;
-}
-
-.podium-meta {
-  margin: 2px 0 0;
-  font-size: 13px;
-  color: var(--text-2);
-  overflow: hidden;
-  text-overflow: ellipsis;
-  white-space: nowrap;
-}
-
-.podium-score {
-  grid-area: score;
-  display: flex;
-  align-items: baseline;
-  justify-content: space-between;
-  gap: 8px;
-  padding-top: 12px;
-  border-top: 1px solid var(--border);
-}
-
-.podium-rating {
-  font-size: 28px;
-  font-weight: 700;
-  line-height: 1;
-  font-variant-numeric: tabular-nums;
-}
-
-.podium-record { font-size: 13px; color: var(--text-2); font-variant-numeric: tabular-nums; white-space: nowrap; }
 
 /* ---------- Toolbar ---------- */
 
@@ -584,13 +419,6 @@ button.row-main { cursor: pointer; }
 }
 
 .who-text { display: flex; flex-direction: column; min-width: 0; }
-
-.who-line {
-  display: flex;
-  align-items: center;
-  gap: 8px;
-  min-width: 0;
-}
 
 .who-name {
   min-width: 0;
@@ -909,7 +737,6 @@ button.row-main { cursor: pointer; }
 /* ---------- Loading / empty ---------- */
 
 body.is-loading .stats,
-body.is-loading .podium,
 body.is-loading .board,
 body.is-loading .charts {
   opacity: 0.45;
@@ -924,7 +751,6 @@ body.is-empty .charts { display: none; }
 
 @media (max-width: 860px) {
   .stats { grid-template-columns: repeat(2, minmax(0, 1fr)); }
-  .titles-list { grid-template-columns: repeat(3, minmax(0, 1fr)); }
   .charts { grid-template-columns: minmax(0, 1fr); }
 
   .list-head, .row-main {
@@ -952,29 +778,7 @@ body.is-empty .charts { display: none; }
   .stat { padding: 12px 14px; }
   .stat-value { font-size: 22px; }
 
-  /* 第一名獨佔一列，二三名並排 */
-  .podium {
-    grid-template-columns: repeat(2, minmax(0, 1fr));
-    gap: 8px;
-  }
-  .podium-card.place-1 { grid-column: 1 / -1; }
-  .podium-card { padding: 14px; gap: 10px; }
-  .podium-card:not(.place-1) {
-    grid-template-columns: minmax(0, 1fr);
-    grid-template-areas: "avatar" "who" "score";
-  }
-  .podium-card:not(.place-1) .avatar-lg { width: 40px; height: 40px; border-radius: 10px; font-size: 17px; }
-  .podium-card:not(.place-1) .podium-who { padding-right: 0; }
-  .podium-card:not(.place-1) .podium-score { flex-direction: column; align-items: flex-start; gap: 4px; padding-top: 10px; }
-  .podium-card:not(.place-1) .podium-rating { font-size: 22px; }
-  .podium-name { font-size: 15px; }
-
   .filters { gap: 8px; flex-basis: 100%; }
-  .titles-list { grid-template-columns: repeat(2, minmax(0, 1fr)); }
-  .titles-item:last-child:nth-child(odd) { grid-column: 1 / -1; }
-  .titles-item { padding: 10px; }
-  .titles-cutoff { font-size: 18px; }
-  .title-badge { font-size: 11px; padding: 0 5px; line-height: 17px; }
   .select-sm select { padding: 0 26px 0 10px; font-size: 14px; }
   .select-sm::after { right: 10px; }
 
