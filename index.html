@@ -1,123 +1,114 @@
 <!doctype html>
 <html lang="zh-Hant">
 <head>
-  <meta charset="utf-8" />
-  <title>TW WoW Classic Arena Historical Leaderboard</title>
-  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <title>台服經典版競技場天梯</title>
+  <meta name="description" content="台服魔獸世界經典版競技場歷史天梯：各賽季 2v2、3v3、5v5、積分戰場排名。">
+  <meta name="theme-color" content="#0b0e14">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cinzel:wght@600;700&family=Inter:wght@400;500;600;700&family=Noto+Sans+TC:wght@400;500;700&display=swap">
   <link rel="stylesheet" href="./src/css/styles.css">
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css">
-  <link rel="stylesheet" href="https://cdn.datatables.net/1.13.4/css/dataTables.bootstrap5.min.css">
 </head>
 <body>
-  <label for="fileInput" class="btn btn-outline-light btn-sm file-upload-btn">
-    📁 選擇檔案
-    <input type="file" id="fileInput" accept=".json" />
-  </label>
+  <header class="site-header">
+    <div class="wrap">
+      <p class="eyebrow">TW WoW Classic · Arena Ladder</p>
+      <h1 class="site-title">台服經典版競技場天梯</h1>
+      <p class="site-sub">by Yesican-ivus · 榮耀來自於夥伴</p>
+    </div>
+  </header>
 
-  <div class="container" id="app">
-    <h1 class="mb-3">TW WoW Classic Arena Historical Leaderboard</h1>
-    <h4 class="text-secondary">by Yesican-ivus 榮耀來自於夥伴</h4>
-    <div class="d-flex gap-2 mb-3 flex-wrap">
-      <button id="clearBtn" class="btn btn-secondary">清除表格</button>
-      <select id="seasonSelect" class="form-select w-auto">
-        <option value="1">S1 燃燒的遠征 煉獄 Infernal</option>
-        <option value="2">S2 燃燒的遠征 殘忍 Merciless</option>
-        <option value="3">S3 燃燒的遠征 復仇 Vengeful</option>
-        <option value="4">S4 燃燒的遠征 殘酷 Brutal</option>
-        <option value="5">S5 巫妖王之怒 致命 Deadly</option>
-        <option value="6">S6 巫妖王之怒 狂怒 Furious</option>
-        <option value="7">S7 巫妖王之怒 無情 Relentless</option>
-        <option value="8">S8 巫妖王之怒 憤怒 Wrathful</option>
-        <option value="9">S9 浩劫與重生 兇殘 Vicious</option>
-        <option value="10">S10 浩劫與重生 冷酷 Ruthless</option>
-        <option value="11">S11 浩劫與重生 災變 Cataclysmic</option>
-        <option value="12" selected>S12 熊貓人之謎 惡毒 Malevolent</option>
-        <option value="13">S13 熊貓人之謎 暴虐 Tyrannical</option>
-      </select>
-      <select id="bracketSelect" class="form-select w-auto">
-        <option value="2v2">2v2</option><option value="3v3">3v3</option><option value="5v5">5v5</option>
-      </select>
-      <button id="loadGithubBtn" class="btn btn-primary">讀取資料</button>
+  <div class="controls">
+    <div class="wrap controls-inner">
+      <label class="select season-select">
+        <span class="visually-hidden">賽季</span>
+        <select id="seasonSelect" aria-label="賽季"></select>
+      </label>
+      <div class="tabs" id="bracketTabs" role="tablist" aria-label="賽制"></div>
     </div>
-    <div class="mb-3">
-      <span class="summary-text me-4" id="summaryTeams">隊伍/角色數: -</span>
-      <span class="summary-text me-4" id="summaryRating">平均 Rating: -</span>
-      <span class="summary-text me-4" id="summaryMatches">總場次: -</span>
-      <span class="summary-text" id="summaryMax">最高 Rating: -</span>
-    </div>
-    <div id="loadingIndicator" class="text-light bg-dark p-2 mb-3" style="display:none;">
-  ⏳ Loading leaderboard...
-    </div>
-    <table id="leaderboard" class="table table-striped table-dark" style="width:100%">
-      <thead>
-        <tr>
-          <th>Rank</th>
-          <th>Name</th>
-          <th>Realm</th>
-          <th>Class</th>
-          <th>Race</th>
-          <th>Rating</th>
-          <th>Played</th>
-          <th>Won</th>
-          <th>Lost</th>
-          <th>Win%</th>
-          <th>Members</th>
-        </tr>
-      </thead>
-      <tbody></tbody>
-    </table>
-    <h3 class="mt-4">Rating 分佈圖</h3>
-    <canvas id="ratingChart" height="100"></canvas>
   </div>
 
-  <div class="modal fade" id="teamModal" tabindex="-1">
-    <div class="modal-dialog modal-lg modal-dialog-centered">
-      <div class="modal-content bg-dark text-light">
-        <div class="modal-header">
-          <h5 class="modal-title">詳情</h5>
-          <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal"></button>
-        </div>
-        <div class="modal-body">
-          <div class="d-flex align-items-center mb-3">
-            <div id="modalCrest" class="crest-box me-3" style="background:#222"></div>
-            <div>
-              <div id="modalTitle" class="h5 mb-0">-</div>
-              <div id="modalSub" class="small text-muted">-</div>
-            </div>
-          </div>
-          <div id="memberSection">
-            <div class="table-responsive">
-              <table class="table table-sm table-dark" id="memberTable">
-                <thead>
-                  <tr>
-                    <th>#</th>
-                    <th>名稱</th>
-                    <th>職業</th>
-                    <th>種族</th>
-                    <th>Rating</th>
-                    <th>Played</th>
-                    <th>Won</th>
-                    <th>Lost</th>
-                    <th>Win%</th>
-                  </tr>
-                </thead>
-                <tbody></tbody>
-              </table>
-            </div>
-          </div>
-        </div>
-        <div class="modal-footer">
-          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">關閉</button>
+  <main class="wrap">
+    <section class="board-head">
+      <div>
+        <h2 id="boardHeading" class="board-title">載入中…</h2>
+        <p id="seasonStatus" class="board-status"></p>
+      </div>
+    </section>
+
+    <section class="stats" id="stats" aria-label="賽制統計"></section>
+
+    <section class="card titles" id="titles" aria-label="頭銜門檻" hidden></section>
+
+    <section class="podium" id="podium" aria-label="前三名"></section>
+
+    <section class="board" id="board" aria-label="排行榜">
+      <div class="toolbar">
+        <label class="search">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="11" cy="11" r="7"/><path d="m20 20-3.5-3.5"/></svg>
+          <input id="searchInput" type="search" placeholder="搜尋角色、隊伍、成員或伺服器" autocomplete="off" enterkeyhint="search">
+        </label>
+        <div class="filters">
+          <label class="select select-sm">
+            <span class="visually-hidden">陣營</span>
+            <select id="factionFilter" aria-label="陣營">
+              <option value="">全部陣營</option>
+              <option value="HORDE">部落</option>
+              <option value="ALLIANCE">聯盟</option>
+            </select>
+          </label>
+          <label class="select select-sm">
+            <span class="visually-hidden">職業</span>
+            <select id="classFilter" aria-label="職業"><option value="">全部職業</option></select>
+          </label>
+          <label class="select select-sm">
+            <span class="visually-hidden">排序</span>
+            <select id="sortSelect" aria-label="排序">
+              <option value="rank">依排名</option>
+              <option value="winrate">依勝率</option>
+              <option value="played">依場次</option>
+              <option value="won">依勝場</option>
+            </select>
+          </label>
         </div>
       </div>
-    </div>
-  </div>
 
-  <script src="https://code.jquery.com/jquery-3.7.0.min.js"></script>
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
-  <script src="https://cdn.datatables.net/1.13.4/js/jquery.dataTables.min.js"></script>
-  <script src="https://cdn.datatables.net/1.13.4/js/dataTables.bootstrap5.min.js"></script>
-  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+      <p class="result-count" id="resultCount" aria-live="polite"></p>
+
+      <div class="list-head" id="listHead" aria-hidden="true">
+        <span>排名</span><span>角色 / 隊伍</span><span>分數</span><span>勝-敗</span><span>勝率</span>
+      </div>
+      <ol class="list" id="leaderboard"></ol>
+      <div class="message" id="message" hidden></div>
+      <button type="button" class="btn btn-more" id="loadMore" hidden>顯示更多</button>
+    </section>
+
+    <section class="charts" aria-label="分佈圖">
+      <article class="card">
+        <h3 class="card-title">職業分佈</h3>
+        <p class="card-sub">本賽制所有上榜角色（隊伍則計算成員）</p>
+        <div id="classChart"></div>
+      </article>
+      <article class="card">
+        <h3 class="card-title">分數分佈</h3>
+        <p class="card-sub">每一格的上榜筆數，點選或滑過查看</p>
+        <div id="ratingChart"></div>
+      </article>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="wrap footer-inner">
+      <p>資料來源：Blizzard 官方 API。本站與 Blizzard Entertainment 無關。</p>
+      <label class="btn btn-ghost">
+        開啟本機 JSON
+        <input type="file" id="fileInput" accept=".json,application/json" hidden>
+      </label>
+    </div>
+  </footer>
+
   <script type="module" src="./src/js/main.js"></script>
 </body>
 </html>

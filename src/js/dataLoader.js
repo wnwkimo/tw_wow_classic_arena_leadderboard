@@ -1,51 +1,86 @@
-// dataLoader.js - load JSON from file or URL and normalize entries
-import { safeNum } from './utils.js';
-let uidCounter = 0;
-export function parseEntries(json) {
-  if (!json || !Array.isArray(json.entries)) throw new Error('Missing entries array');
-  const processed = json.entries.map(e => {
-    const stat = e.season_match_statistics || {};
-    const played = safeNum(stat.played);
-    const won = safeNum(stat.won);
-    const lost = safeNum(stat.lost);
-    const winRate = played ? (won / played * 100) : 0;
-    const isTeam = !!e.team;
-    let memberNames = [];
-    if (isTeam && e.team?.members) {
-      memberNames = e.team.members.map(m => m.character?.name || '').filter(Boolean);
-    }
-    return {
-      uid: uidCounter++,
-      raw: e,
-      isTeam,
+// dataLoader.js - 讀取 manifest / 排行榜 JSON，並整理成畫面用的資料
+import { safeNum, pct } from './utils.js';
+import { realmName } from './constants.js';
+
+export async function loadManifest() {
+  const res = await fetch('data/manifest.json', { cache: 'no-cache' });
+  if (!res.ok) throw new Error(`manifest.json HTTP ${res.status}`);
+  return res.json();
+}
+
+export async function loadBracket(season, bracket) {
+  const res = await fetch(`data/season_${season}_${bracket}_tw_arena.json`, { cache: 'no-cache' });
+  if (!res.ok) throw new Error(`HTTP ${res.status}`);
+  return parseLeaderboard(await res.json());
+}
+
+export async function loadRewards(season) {
+  const res = await fetch(`data/season_${season}_rewards.json`, { cache: 'no-cache' });
+  if (!res.ok) throw new Error(`HTTP ${res.status}`);
+  return res.json();
+}
+
+export async function loadFile(file) {
+  return parseLeaderboard(JSON.parse(await file.text()));
+}
+
+function stats(source) {
+  const s = source?.season_match_statistics || {};
+  const played = safeNum(s.played), won = safeNum(s.won), lost = safeNum(s.lost);
+  return { played, won, lost, winRate: pct(won, played) };
+}
+
+function character(c) {
+  return {
+    name: c?.name || '-',
+    realm: c?.realm?.slug || null,
+    classId: c?.playable_class?.id ?? null,
+    raceId: c?.playable_race?.id ?? null,
+  };
+}
+
+export function parseLeaderboard(json) {
+  if (!json || typeof json !== 'object') throw new Error('不是排行榜 JSON');
+  const entries = Array.isArray(json.entries) ? json.entries : [];
+
+  const rows = entries.map((e, i) => {
+    const team = e.team;
+    const base = {
+      id: i,
       rank: e.rank ?? null,
       rating: safeNum(e.rating),
-      played, won, lost, winRate,
-      memberNames,
-      teamName: e.team?.name ?? null,
-      teamRealm: e.team?.realm?.slug ?? null,
-      members: e.team?.members ?? null,
-      charName: e.character?.name ?? null,
-      charRealm: e.character?.realm?.slug ?? null,
-      charClassId: e.character?.playable_class?.id ?? null,
-      charClassName: e.character?.playable_class?.name ?? null,
-      charRaceId: e.character?.playable_race?.id ?? null,
-      charRaceName: e.character?.playable_race?.name ?? null
+      faction: e.faction?.type || null,
+      ...stats(e),
+    };
+    if (team) {
+      const members = (team.members || []).map(m => ({
+        ...character(m.character),
+        rating: m.rating ?? null,
+        ...stats(m),
+      }));
+      const bg = team.crest?.background?.color?.rgba;
+      return {
+        ...base,
+        isTeam: true,
+        name: team.name || '-',
+        realm: team.realm?.slug || null,
+        classId: null,
+        raceId: null,
+        members,
+        crest: bg ? `rgb(${bg.r} ${bg.g} ${bg.b})` : null,
+        search: [team.name, realmName(team.realm?.slug), ...members.map(m => m.name)].join(' ').toLowerCase(),
+      };
+    }
+    const c = character(e.character);
+    return {
+      ...base,
+      ...c,
+      isTeam: false,
+      members: [],
+      search: [c.name, realmName(c.realm)].join(' ').toLowerCase(),
     };
   });
-  processed.sort((a,b)=> b.rating - a.rating);
-  return processed;
-}
-export async function loadFromFile(file) {
-  const text = await file.text();
-  const json = JSON.parse(text);
-  uidCounter = 0;
-  return parseEntries(json);
-}
-export async function loadFromUrl(url) {
-  const res = await fetch(url);
-  if (!res.ok) throw new Error(`HTTP ${res.status}`);
-  const json = await res.json();
-  uidCounter = 0;
-  return parseEntries(json);
+
+  rows.sort((a, b) => (a.rank ?? Infinity) - (b.rank ?? Infinity) || b.rating - a.rating);
+  return { rows, isTeam: rows.some(r => r.isTeam) };
 }
